@@ -1,0 +1,73 @@
+@import '../../node_modules/stylobate'
+rem = rem_px
+@import '../../node_modules/stylobate-islands'
+set-skin-namespace('islands')
+$skin-islands-button-content = '.nya-button__title'
+
+.nya-button
+  kind: button
+
+.nya-button_size_m
+  skin: button
+
+.nya-button_size_s
+  skin: button small
+
+.nya-button[disabled]
+  kind: disabled 0.6
+
+/*._nb-flying-button
+  skin: button fly
+
+._nb-small-flying-button
+  skin: button fly small
+
+._nb-action-button
+  skin: action-button
+
+._nb-small-action-button
+  skin: action-button small
+
+._nb-dark-button
+  skin: dark-button
+
+._nb-small-dark-button
+  skin: dark-button small
+
+._nb-pseudo-button
+  skin: pseudo-button
+
+._nb-small-pseudo-button
+  skin: pseudo-button small
+
+// Псевдо-кнопка
+._nb-pseudo-inverted-button
+  skin: pseudo-button _inverted
+
+// Маленькая псевдо-кнопка
+._nb-small-pseudo-inverted-button
+  skin: pseudo-button _inverted small
+
+// Промо-кнопка
+._nb-promo-button
+  skin: promo-button
+
+._nb-small-promo-button
+  skin: promo-button small
+
+._nb-large-promo-button
+  skin: promo-button large
+
+._nb-extra-large-promo-button
+  skin: promo-button xlarge
+
+// Кнопка аттача
+._nb-file-intruder
+  kind: file-intruder \
+  (-inner '&-inner') \
+  (-input '&-input') \
+  (-focus '&-focus' 'islands-button_focus_style')
+
+.nb-button.ui-state-active
+  skin: button_pressed
+*/

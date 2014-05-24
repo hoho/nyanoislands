@@ -25,10 +25,13 @@
     "devDependencies": {
         "gulp": "~3.6.2",
         "gulp-eslint": "~0.1.6",
-        "gulp-conkitty": "~0.5.4",
+        "gulp-conkitty": "~0.5.5",
         "gulp-filter": "~0.4.1",
         "gulp-concat": "~2.2.0",
         "gulp-qunit": "~0.3.3",
-        "qunitjs": "~1.12.0"
+        "qunitjs": "~1.12.0",
+        "stylobate": "~0.24.1",
+        "stylobate-islands": "~0.27.2",
+        "gulp-stylus": "~1.0.1"
     }
 }
