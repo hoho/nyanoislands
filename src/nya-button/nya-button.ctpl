@@ -1,4 +1,4 @@
-nya::button $title $size="m" $theme="normal" $type="button" $class $disabled $noAPI
+nya::button $title $size="m" $theme $type="button" $class $disabled $noAPI
     &"nya-button.css"
     &"nya-button.js"
     button%nya-button{size=$size}{theme=$theme}[type=$type]:if($disabled, [disabled]) AS $node
