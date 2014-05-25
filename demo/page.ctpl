@@ -1,0 +1,6 @@
+page
+    div
+        nya::button title="Ololo"
+        nya::button title="Alala" size="s"
+        nya::button title="Ololo" theme="action"
+        nya::button title="Alala" size="s" theme="action"
