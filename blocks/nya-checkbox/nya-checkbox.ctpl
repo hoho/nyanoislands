@@ -1,0 +1,10 @@
+nya::checkbox $name $value $size="m" $label $checked $disabled $noAPI
+    &"nya-checkbox.css"
+    &"nya-checkbox.js"
+    label%nya-checkbox{size=$size}{type="checkbox"}:if($disabled, [disabled]) AS $node
+        input%nya-checkbox(input)[type="checkbox"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $cbNode
+        span%nya-checkbox(flag){type="checkbox"}
+            span.nya-checkbox__flag__icon
+        span%nya-checkbox(label) AS $labelNode
+            $label
+    EXPOSE ($noAPI ? undefined : new Nya.Checkbox($node, $cbNode, $labelNode))

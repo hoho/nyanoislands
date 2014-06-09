@@ -1,10 +1,6 @@
-var path = require('path');
+var glob = require('glob');
 
 module.exports = {
-    nyaPattern: function() {
-        return path.normalize(path.relative(
-            path.resolve('.'),
-            path.resolve(path.join(__dirname, 'blocks/**/*.ctpl'))
-        ));
-    }
+    BASE: __dirname,
+    FILES: glob.sync('./blocks/**/*.ctpl', {cwd: __dirname})
 };

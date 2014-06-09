@@ -7,8 +7,6 @@ var filter = require('gulp-filter');
 var conkitty = require('gulp-conkitty');
 var concat = require('gulp-concat');
 
-var nyaPattern = require('nyanoislands').nyaPattern;
-
 var BUILD_DIR = './build';
 
 
@@ -36,14 +34,15 @@ gulp.task('index.html', function() {
 
 
 gulp.task('demo', function() {
-    var cssFilter = filter('**/*.css');
+    var cssFilter = filter(['**/*.css']);
     var jsFilter = filter(['**/*.js', '!tpl.js']);
 
-    return gulp.src(['./page.ctpl', nyaPattern()])
+    return gulp.src(['./page.ctpl'])
         .pipe(conkitty({
             common: 'common.js',
             templates: 'tpl.js',
-            deps: true
+            deps: true,
+            libs: {nyanoislands: require('../index.js')}
         }))
 
         .pipe(cssFilter)

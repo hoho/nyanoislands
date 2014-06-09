@@ -21,7 +21,8 @@
         "url": "https://github.com/hoho/nyanoislands/issues"
     },
     "dependencies": {
-        "babydom": "~0.0.1"
+        "babydom": "~0.0.1",
+        "glob": "~4.0.0"
     },
     "devDependencies": {
         "gulp": "~3.6.2",

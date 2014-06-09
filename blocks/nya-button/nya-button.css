@@ -1,0 +1,309 @@
+.nya-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  -moz-appearance: none;
+  font: inherit;
+}
+.nya-button::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+.nya-button {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: baseline;
+}
+.nya-button_size_m {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  user-select: none;
+  color: #000;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 15px;
+  line-height: 22px;
+  padding: 5px 15px;
+  background: rgba(0,0,0,0.3);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+}
+.nya-button_size_m:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 2px;
+}
+.nya-button_size_m .nya-button__title {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + .nya-button_size_m,
+.nya-button_size_m:active {
+  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + .nya-button_size_m:before,
+.nya-button_size_m:active:before {
+  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + .nya-button_size_m .nya-button__title,
+.nya-button_size_m:active .nya-button__title {
+  top: 1px;
+}
+.nya-button_size_m:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + .nya-button_size_m,
+.nya-button_size_m:focus {
+  outline: 0;
+}
+input[type=file]:focus + .nya-button_size_m:after,
+.nya-button_size_m:focus:after {
+  z-index: 9;
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  border-radius: inherit;
+}
+.nya-button_size_m:before {
+  background: #f7f7f7;
+  background: linear-gradient(#fff, #eee);
+}
+input[type=file]:hover + .nya-button_size_m,
+.nya-button_size_m:hover,
+input[type=file]:hover + .nya-button_size_s,
+.nya-button_size_s:hover {
+  background: rgba(0,0,0,0.31);
+  background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+}
+input[type=file]:hover + .nya-button_size_m:before,
+.nya-button_size_m:hover:before,
+input[type=file]:hover + .nya-button_size_s:before,
+.nya-button_size_s:hover:before {
+  background: #fbfaf9;
+  background: linear-gradient(#fff, #f6f5f3);
+}
+.nya-button_size_s {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  user-select: none;
+  color: #000;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 13px;
+  line-height: 18px;
+  padding: 5px 13px;
+  background: rgba(0,0,0,0.3);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+}
+.nya-button_size_s:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 2px;
+}
+.nya-button_size_s .nya-button__title {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + .nya-button_size_s,
+.nya-button_size_s:active {
+  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + .nya-button_size_s:before,
+.nya-button_size_s:active:before {
+  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + .nya-button_size_s .nya-button__title,
+.nya-button_size_s:active .nya-button__title {
+  top: 1px;
+}
+.nya-button_size_s:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + .nya-button_size_s,
+.nya-button_size_s:focus {
+  outline: 0;
+}
+input[type=file]:focus + .nya-button_size_s:after,
+.nya-button_size_s:focus:after {
+  z-index: 9;
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  border-radius: inherit;
+}
+.nya-button_size_s:before {
+  background: #f7f7f7;
+  background: linear-gradient(#fff, #eee);
+}
+.nya-button_theme_action {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  user-select: none;
+  color: #000;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 15px;
+  line-height: 22px;
+  padding: 5px 15px;
+  background: rgba(83,56,0,0.47);
+  background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+}
+.nya-button_theme_action:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 2px;
+}
+.nya-button_theme_action .nya-button__title {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + .nya-button_theme_action,
+.nya-button_theme_action:active {
+  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + .nya-button_theme_action:before,
+.nya-button_theme_action:active:before {
+  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + .nya-button_theme_action .nya-button__title,
+.nya-button_theme_action:active .nya-button__title {
+  top: 1px;
+}
+.nya-button_theme_action:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + .nya-button_theme_action,
+.nya-button_theme_action:focus {
+  outline: 0;
+}
+input[type=file]:focus + .nya-button_theme_action:after,
+.nya-button_theme_action:focus:after {
+  z-index: 9;
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  border-radius: inherit;
+}
+.nya-button_theme_action:before {
+  background: #ffd630;
+  background: linear-gradient(#ffdf60, #fc0);
+}
+input[type=file]:hover + .nya-button_theme_action,
+.nya-button_theme_action:hover,
+input[type=file]:hover + .nya-button_theme_action.nya-button_size_s,
+.nya-button_theme_action.nya-button_size_s:hover {
+  background: rgba(0,0,0,0.31);
+  background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+}
+input[type=file]:hover + .nya-button_theme_action:before,
+.nya-button_theme_action:hover:before,
+input[type=file]:hover + .nya-button_theme_action.nya-button_size_s:before,
+.nya-button_theme_action.nya-button_size_s:hover:before {
+  background: #fd5;
+  background: linear-gradient(#ffe681, #ffd428);
+}
+.nya-button_theme_action.nya-button_size_s {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  user-select: none;
+  color: #000;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 13px;
+  line-height: 18px;
+  padding: 5px 13px;
+  background: rgba(83,56,0,0.47);
+  background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+}
+.nya-button_theme_action.nya-button_size_s:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 2px;
+}
+.nya-button_theme_action.nya-button_size_s .nya-button__title {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + .nya-button_theme_action.nya-button_size_s,
+.nya-button_theme_action.nya-button_size_s:active {
+  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + .nya-button_theme_action.nya-button_size_s:before,
+.nya-button_theme_action.nya-button_size_s:active:before {
+  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + .nya-button_theme_action.nya-button_size_s .nya-button__title,
+.nya-button_theme_action.nya-button_size_s:active .nya-button__title {
+  top: 1px;
+}
+.nya-button_theme_action.nya-button_size_s:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + .nya-button_theme_action.nya-button_size_s,
+.nya-button_theme_action.nya-button_size_s:focus {
+  outline: 0;
+}
+input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
+.nya-button_theme_action.nya-button_size_s:focus:after {
+  z-index: 9;
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  border-radius: inherit;
+}
+.nya-button_theme_action.nya-button_size_s:before {
+  background: #ffd630;
+  background: linear-gradient(#ffdf60, #fc0);
+}
+.nya-button[disabled] {
+  cursor: default !important;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.nya-button[disabled] .nya-button[disabled] {
+  opacity: 1;
+}
