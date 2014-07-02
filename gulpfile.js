@@ -9,7 +9,7 @@ var filter = require('gulp-filter');
 
 
 gulp.task('eslint', function() {
-    return gulp.src(['gulpfile.js', 'nya/**/*.js'])
+    return gulp.src(['gulpfile.js', 'src/**/*.js'])
         .pipe(eslint({
             rules: {
                 'quotes': [2, 'single'],
@@ -28,11 +28,11 @@ gulp.task('eslint', function() {
 gulp.task('build', function() {
     var stylFilter = filter('**/*.styl');
 
-    return gulp.src(['nya/*/**/button.styl', 'nya/**/*.js', 'nya/**/*.ctpl'])
+    return gulp.src(['src/*/**/*.styl', '!src/*/**/_*.styl', 'src/**/*.js', 'src/**/*.ctpl'])
         .pipe(stylFilter)
         .pipe(stylus({errors: true}))
         .pipe(stylFilter.restore())
-        .pipe(gulp.dest('./blocks'));
+        .pipe(gulp.dest('./nya'));
 });
 
 
