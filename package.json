@@ -21,17 +21,18 @@
         "url": "https://github.com/hoho/nyanoislands/issues"
     },
     "dependencies": {
-        "babydom": "~0.0.1",
+        "babydom": "~0.0.3",
         "glob": "~4.0.0"
     },
     "devDependencies": {
-        "gulp": "~3.6.2",
+        "gulp": "~3.8.5",
         "gulp-eslint": "~0.1.6",
         "gulp-filter": "~0.4.1",
         "gulp-qunit": "~0.3.3",
         "qunitjs": "~1.12.0",
-        "stylobate": "~0.24.1",
-        "stylobate-islands": "~0.27.2",
-        "gulp-stylus": "~1.0.1"
+        "stylus": "~0.45.0",
+        "stylobate": "~0.24.3",
+        "stylobate-islands": "~0.27.5",
+        "gulp-stylus": "~1.0.2"
     }
 }
