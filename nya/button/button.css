@@ -23,7 +23,7 @@
   user-select: none;
   vertical-align: baseline;
 }
-.nya-button_size_m {
+.nya-button_normal_m {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -39,7 +39,7 @@
   background: rgba(0,0,0,0.3);
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
 }
-.nya-button_size_m:before {
+.nya-button_normal_m:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -48,23 +48,23 @@
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_size_m .nya-button__title {
+.nya-button_normal_m .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_size_m,
-.nya-button_size_m:active {
+input[type=file]:active + .nya-button_normal_m,
+.nya-button_normal_m:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_size_m:before,
-.nya-button_size_m:active:before {
+input[type=file]:active + .nya-button_normal_m:before,
+.nya-button_normal_m:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_size_m .nya-button__title,
-.nya-button_size_m:active .nya-button__title {
+input[type=file]:active + .nya-button_normal_m .nya-button__title,
+.nya-button_normal_m:active .nya-button__title {
   top: 1px;
 }
-.nya-button_size_m:after {
+.nya-button_normal_m:after {
   content: "";
   position: absolute;
   top: 0;
@@ -72,35 +72,35 @@ input[type=file]:active + .nya-button_size_m .nya-button__title,
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_size_m,
-.nya-button_size_m:focus {
+input[type=file]:focus + .nya-button_normal_m,
+.nya-button_normal_m:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_size_m:after,
-.nya-button_size_m:focus:after {
+input[type=file]:focus + .nya-button_normal_m:after,
+.nya-button_normal_m:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_size_m:before {
+.nya-button_normal_m:before {
   background: #f7f7f7;
   background: linear-gradient(#fff, #eee);
 }
-input[type=file]:hover + .nya-button_size_m,
-.nya-button_size_m:hover,
-input[type=file]:hover + .nya-button_size_s,
-.nya-button_size_s:hover {
+input[type=file]:hover + .nya-button_normal_m,
+.nya-button_normal_m:hover,
+input[type=file]:hover + .nya-button_normal_s,
+.nya-button_normal_s:hover {
   background: rgba(0,0,0,0.31);
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
-input[type=file]:hover + .nya-button_size_m:before,
-.nya-button_size_m:hover:before,
-input[type=file]:hover + .nya-button_size_s:before,
-.nya-button_size_s:hover:before {
+input[type=file]:hover + .nya-button_normal_m:before,
+.nya-button_normal_m:hover:before,
+input[type=file]:hover + .nya-button_normal_s:before,
+.nya-button_normal_s:hover:before {
   background: #fbfaf9;
   background: linear-gradient(#fff, #f6f5f3);
 }
-.nya-button_size_s {
+.nya-button_normal_s {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -116,7 +116,7 @@ input[type=file]:hover + .nya-button_size_s:before,
   background: rgba(0,0,0,0.3);
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
 }
-.nya-button_size_s:before {
+.nya-button_normal_s:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -125,23 +125,23 @@ input[type=file]:hover + .nya-button_size_s:before,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_size_s .nya-button__title {
+.nya-button_normal_s .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_size_s,
-.nya-button_size_s:active {
+input[type=file]:active + .nya-button_normal_s,
+.nya-button_normal_s:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_size_s:before,
-.nya-button_size_s:active:before {
+input[type=file]:active + .nya-button_normal_s:before,
+.nya-button_normal_s:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_size_s .nya-button__title,
-.nya-button_size_s:active .nya-button__title {
+input[type=file]:active + .nya-button_normal_s .nya-button__title,
+.nya-button_normal_s:active .nya-button__title {
   top: 1px;
 }
-.nya-button_size_s:after {
+.nya-button_normal_s:after {
   content: "";
   position: absolute;
   top: 0;
@@ -149,21 +149,21 @@ input[type=file]:active + .nya-button_size_s .nya-button__title,
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_size_s,
-.nya-button_size_s:focus {
+input[type=file]:focus + .nya-button_normal_s,
+.nya-button_normal_s:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_size_s:after,
-.nya-button_size_s:focus:after {
+input[type=file]:focus + .nya-button_normal_s:after,
+.nya-button_normal_s:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_size_s:before {
+.nya-button_normal_s:before {
   background: #f7f7f7;
   background: linear-gradient(#fff, #eee);
 }
-.nya-button_theme_action {
+.nya-button_action_m {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -179,7 +179,7 @@ input[type=file]:focus + .nya-button_size_s:after,
   background: rgba(83,56,0,0.47);
   background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
-.nya-button_theme_action:before {
+.nya-button_action_m:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -188,23 +188,23 @@ input[type=file]:focus + .nya-button_size_s:after,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_action .nya-button__title {
+.nya-button_action_m .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_theme_action,
-.nya-button_theme_action:active {
+input[type=file]:active + .nya-button_action_m,
+.nya-button_action_m:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_theme_action:before,
-.nya-button_theme_action:active:before {
+input[type=file]:active + .nya-button_action_m:before,
+.nya-button_action_m:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_theme_action .nya-button__title,
-.nya-button_theme_action:active .nya-button__title {
+input[type=file]:active + .nya-button_action_m .nya-button__title,
+.nya-button_action_m:active .nya-button__title {
   top: 1px;
 }
-.nya-button_theme_action:after {
+.nya-button_action_m:after {
   content: "";
   position: absolute;
   top: 0;
@@ -212,35 +212,35 @@ input[type=file]:active + .nya-button_theme_action .nya-button__title,
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_theme_action,
-.nya-button_theme_action:focus {
+input[type=file]:focus + .nya-button_action_m,
+.nya-button_action_m:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_theme_action:after,
-.nya-button_theme_action:focus:after {
+input[type=file]:focus + .nya-button_action_m:after,
+.nya-button_action_m:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_action:before {
+.nya-button_action_m:before {
   background: #ffd630;
   background: linear-gradient(#ffdf60, #fc0);
 }
-input[type=file]:hover + .nya-button_theme_action,
-.nya-button_theme_action:hover,
-input[type=file]:hover + .nya-button_theme_action.nya-button_size_s,
-.nya-button_theme_action.nya-button_size_s:hover {
+input[type=file]:hover + .nya-button_action_m,
+.nya-button_action_m:hover,
+input[type=file]:hover + .nya-button_action_s,
+.nya-button_action_s:hover {
   background: rgba(0,0,0,0.31);
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
-input[type=file]:hover + .nya-button_theme_action:before,
-.nya-button_theme_action:hover:before,
-input[type=file]:hover + .nya-button_theme_action.nya-button_size_s:before,
-.nya-button_theme_action.nya-button_size_s:hover:before {
+input[type=file]:hover + .nya-button_action_m:before,
+.nya-button_action_m:hover:before,
+input[type=file]:hover + .nya-button_action_s:before,
+.nya-button_action_s:hover:before {
   background: #fd5;
   background: linear-gradient(#ffe681, #ffd428);
 }
-.nya-button_theme_action.nya-button_size_s {
+.nya-button_action_s {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -256,7 +256,7 @@ input[type=file]:hover + .nya-button_theme_action.nya-button_size_s:before,
   background: rgba(83,56,0,0.47);
   background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
-.nya-button_theme_action.nya-button_size_s:before {
+.nya-button_action_s:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -265,23 +265,23 @@ input[type=file]:hover + .nya-button_theme_action.nya-button_size_s:before,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_action.nya-button_size_s .nya-button__title {
+.nya-button_action_s .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_theme_action.nya-button_size_s,
-.nya-button_theme_action.nya-button_size_s:active {
+input[type=file]:active + .nya-button_action_s,
+.nya-button_action_s:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_theme_action.nya-button_size_s:before,
-.nya-button_theme_action.nya-button_size_s:active:before {
+input[type=file]:active + .nya-button_action_s:before,
+.nya-button_action_s:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_theme_action.nya-button_size_s .nya-button__title,
-.nya-button_theme_action.nya-button_size_s:active .nya-button__title {
+input[type=file]:active + .nya-button_action_s .nya-button__title,
+.nya-button_action_s:active .nya-button__title {
   top: 1px;
 }
-.nya-button_theme_action.nya-button_size_s:after {
+.nya-button_action_s:after {
   content: "";
   position: absolute;
   top: 0;
@@ -289,21 +289,21 @@ input[type=file]:active + .nya-button_theme_action.nya-button_size_s .nya-button
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_theme_action.nya-button_size_s,
-.nya-button_theme_action.nya-button_size_s:focus {
+input[type=file]:focus + .nya-button_action_s,
+.nya-button_action_s:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
-.nya-button_theme_action.nya-button_size_s:focus:after {
+input[type=file]:focus + .nya-button_action_s:after,
+.nya-button_action_s:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_action.nya-button_size_s:before {
+.nya-button_action_s:before {
   background: #ffd630;
   background: linear-gradient(#ffdf60, #fc0);
 }
-.nya-button_theme_pseudo {
+.nya-button_pseudo_m {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -316,7 +316,7 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   line-height: 22px;
   padding: 3px 11px;
 }
-.nya-button_theme_pseudo:before {
+.nya-button_pseudo_m:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -325,7 +325,7 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_pseudo:after {
+.nya-button_pseudo_m:after {
   content: "";
   position: absolute;
   top: 0;
@@ -333,23 +333,23 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   bottom: 0;
   left: 0;
 }
-.nya-button_theme_pseudo .nya-button__title {
+.nya-button_pseudo_m .nya-button__title {
   position: relative;
   display: block;
 }
-.nya-button_theme_pseudo:hover {
+.nya-button_pseudo_m:hover {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
 }
-.nya-button_theme_pseudo:focus {
+.nya-button_pseudo_m:focus {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
   outline: 0;
 }
-.nya-button_theme_pseudo:focus:after {
+.nya-button_pseudo_m:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_pseudo.nya-button_size_s {
+.nya-button_pseudo_s {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -362,7 +362,7 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   line-height: 18px;
   padding: 3px 10px;
 }
-.nya-button_theme_pseudo.nya-button_size_s:before {
+.nya-button_pseudo_s:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -371,7 +371,7 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_pseudo.nya-button_size_s:after {
+.nya-button_pseudo_s:after {
   content: "";
   position: absolute;
   top: 0;
@@ -379,23 +379,35 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   bottom: 0;
   left: 0;
 }
-.nya-button_theme_pseudo.nya-button_size_s .nya-button__title {
+.nya-button_pseudo_s .nya-button__title {
   position: relative;
   display: block;
 }
-.nya-button_theme_pseudo.nya-button_size_s:hover {
+.nya-button_pseudo_s:hover {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
 }
-.nya-button_theme_pseudo.nya-button_size_s:focus {
+.nya-button_pseudo_s:focus {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
   outline: 0;
 }
-.nya-button_theme_pseudo.nya-button_size_s:focus:after {
+.nya-button_pseudo_s:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_dark {
+.nya-button_pseudo_m:active,
+.nya-button_pseudo_s:active {
+  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+.nya-button_pseudo_m:active:before,
+.nya-button_pseudo_s:active:before {
+  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+.nya-button_pseudo_m:active .nya-button__title,
+.nya-button_pseudo_s:active .nya-button__title {
+  top: 1px;
+}
+.nya-button_dark_m {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -412,7 +424,7 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   background: rgba(0,0,0,0.77);
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
 }
-.nya-button_theme_dark:before {
+.nya-button_dark_m:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -421,23 +433,23 @@ input[type=file]:focus + .nya-button_theme_action.nya-button_size_s:after,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_dark .nya-button__title {
+.nya-button_dark_m .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_theme_dark,
-.nya-button_theme_dark:active {
+input[type=file]:active + .nya-button_dark_m,
+.nya-button_dark_m:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_theme_dark:before,
-.nya-button_theme_dark:active:before {
+input[type=file]:active + .nya-button_dark_m:before,
+.nya-button_dark_m:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_theme_dark .nya-button__title,
-.nya-button_theme_dark:active .nya-button__title {
+input[type=file]:active + .nya-button_dark_m .nya-button__title,
+.nya-button_dark_m:active .nya-button__title {
   top: 1px;
 }
-.nya-button_theme_dark:after {
+.nya-button_dark_m:after {
   content: "";
   position: absolute;
   top: 0;
@@ -445,32 +457,32 @@ input[type=file]:active + .nya-button_theme_dark .nya-button__title,
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_theme_dark,
-.nya-button_theme_dark:focus {
+input[type=file]:focus + .nya-button_dark_m,
+.nya-button_dark_m:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_theme_dark:after,
-.nya-button_theme_dark:focus:after {
+input[type=file]:focus + .nya-button_dark_m:after,
+.nya-button_dark_m:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_dark:before {
+.nya-button_dark_m:before {
   background: #4f4f4f;
   background: linear-gradient(#5c5c5c, #424242);
   box-shadow: inset 0 1px rgba(255,255,255,0.1);
 }
-input[type=file]:hover:not(:checked) + .nya-button_theme_dark,
-.nya-button_theme_dark:not([disabled]):hover {
+input[type=file]:hover:not(:checked) + .nya-button_dark_m,
+.nya-button_dark_m:not([disabled]):hover {
   background: rgba(0,0,0,0.74);
   background: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
 }
-input[type=file]:hover:not(:checked) + .nya-button_theme_dark:before,
-.nya-button_theme_dark:not([disabled]):hover:before {
+input[type=file]:hover:not(:checked) + .nya-button_dark_m:before,
+.nya-button_dark_m:not([disabled]):hover:before {
   background: #575757;
   background: linear-gradient(#666, #474747);
 }
-.nya-button_theme_dark.nya-button_size_s {
+.nya-button_dark_s {
   font-size: 15px;
   line-height: 22px;
   font-family: Arial, sans-serif;
@@ -487,7 +499,7 @@ input[type=file]:hover:not(:checked) + .nya-button_theme_dark:before,
   background: rgba(0,0,0,0.77);
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
 }
-.nya-button_theme_dark.nya-button_size_s:before {
+.nya-button_dark_s:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -496,23 +508,23 @@ input[type=file]:hover:not(:checked) + .nya-button_theme_dark:before,
   left: 1px;
   border-radius: 2px;
 }
-.nya-button_theme_dark.nya-button_size_s .nya-button__title {
+.nya-button_dark_s .nya-button__title {
   position: relative;
   display: block;
 }
-input[type=file]:active + .nya-button_theme_dark.nya-button_size_s,
-.nya-button_theme_dark.nya-button_size_s:active {
+input[type=file]:active + .nya-button_dark_s,
+.nya-button_dark_s:active {
   box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
-input[type=file]:active + .nya-button_theme_dark.nya-button_size_s:before,
-.nya-button_theme_dark.nya-button_size_s:active:before {
+input[type=file]:active + .nya-button_dark_s:before,
+.nya-button_dark_s:active:before {
   box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
-input[type=file]:active + .nya-button_theme_dark.nya-button_size_s .nya-button__title,
-.nya-button_theme_dark.nya-button_size_s:active .nya-button__title {
+input[type=file]:active + .nya-button_dark_s .nya-button__title,
+.nya-button_dark_s:active .nya-button__title {
   top: 1px;
 }
-.nya-button_theme_dark.nya-button_size_s:after {
+.nya-button_dark_s:after {
   content: "";
   position: absolute;
   top: 0;
@@ -520,28 +532,28 @@ input[type=file]:active + .nya-button_theme_dark.nya-button_size_s .nya-button__
   bottom: 0;
   left: 0;
 }
-input[type=file]:focus + .nya-button_theme_dark.nya-button_size_s,
-.nya-button_theme_dark.nya-button_size_s:focus {
+input[type=file]:focus + .nya-button_dark_s,
+.nya-button_dark_s:focus {
   outline: 0;
 }
-input[type=file]:focus + .nya-button_theme_dark.nya-button_size_s:after,
-.nya-button_theme_dark.nya-button_size_s:focus:after {
+input[type=file]:focus + .nya-button_dark_s:after,
+.nya-button_dark_s:focus:after {
   z-index: 9;
   box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
-.nya-button_theme_dark.nya-button_size_s:before {
+.nya-button_dark_s:before {
   background: #4f4f4f;
   background: linear-gradient(#5c5c5c, #424242);
   box-shadow: inset 0 1px rgba(255,255,255,0.1);
 }
-input[type=file]:hover:not(:checked) + .nya-button_theme_dark.nya-button_size_s,
-.nya-button_theme_dark.nya-button_size_s:not([disabled]):hover {
+input[type=file]:hover:not(:checked) + .nya-button_dark_s,
+.nya-button_dark_s:not([disabled]):hover {
   background: rgba(0,0,0,0.74);
   background: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
 }
-input[type=file]:hover:not(:checked) + .nya-button_theme_dark.nya-button_size_s:before,
-.nya-button_theme_dark.nya-button_size_s:not([disabled]):hover:before {
+input[type=file]:hover:not(:checked) + .nya-button_dark_s:before,
+.nya-button_dark_s:not([disabled]):hover:before {
   background: #575757;
   background: linear-gradient(#666, #474747);
 }

@@ -6,6 +6,8 @@ var eslint = require('gulp-eslint');
 var qunit = require('gulp-qunit');
 var stylus = require('gulp-stylus');
 var filter = require('gulp-filter');
+var add = require('gulp-add');
+var fs = require('fs');
 
 
 gulp.task('eslint', function() {
@@ -32,6 +34,7 @@ gulp.task('build', function() {
         .pipe(stylFilter)
         .pipe(stylus({errors: true}))
         .pipe(stylFilter.restore())
+        .pipe(add('babydom.js', fs.readFileSync(require.resolve('babydom'), {encoding: 'utf8'})))
         .pipe(gulp.dest('./nya'));
 });
 

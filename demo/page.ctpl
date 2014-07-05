@@ -1,10 +1,29 @@
 page
-    div
-        nya::button title="Ololo"
-        nya::button title="Alala" size="s"
+    dl
+        dt
+            "Normal button"
+        dd
+            nya::button title="Normal"
+            " "
+            nya::button title="Small" size="s"
 
-        nya::button title="Ololo" theme="action"
-        nya::button title="Alala" size="s" theme="action"
+        dt
+            "Action button"
+        dd
+            nya::button title="Normal" theme="action"
+            " "
+            nya::button title="Small" theme="action" size="s"
 
-        nya::button title="Ololo" theme="dark"
-        nya::button title="Alala" size="s" theme="dark"
+        dt
+            "Dark button"
+        dd
+            nya::button title="Normal" theme="dark"
+            " "
+            nya::button title="Small" theme="dark" size="s"
+
+        dt
+            "Pseudo button"
+        dd
+            nya::button title="Normal" theme="pseudo"
+            " "
+            nya::button title="Small" theme="pseudo" size="s"

@@ -4,41 +4,47 @@
 $skin-islands-button-content = '.nya-button__title'
 $skin-islands-button-disabled = '[disabled]'
 
+
 .nya-button
   kind: button
-  position: relative // Why is it there?
-  text-align: center // Fixes #323
+  position: relative
+  text-align: center
 
 
-.nya-button_size_m
+.nya-button_normal_m
   skin: button
 
 
-.nya-button_size_s
+.nya-button_normal_s
   skin: button small
 
 
-.nya-button_theme_action
+.nya-button_action_m
   skin: action-button
 
 
-.nya-button_theme_action.nya-button_size_s
+.nya-button_action_s
   skin: action-button small
 
 
-.nya-button_theme_pseudo
+.nya-button_pseudo_m
   skin: pseudo-button
 
 
-.nya-button_theme_pseudo.nya-button_size_s
+.nya-button_pseudo_s
   skin: pseudo-button small
 
 
-.nya-button_theme_dark
+.nya-button_pseudo_m:active,
+.nya-button_pseudo_s:active
+  skin: button_pressed
+
+
+.nya-button_dark_m
   skin: dark-button
 
 
-.nya-button_theme_dark.nya-button_size_s
+.nya-button_dark_s
   skin: dark-button small
 
 

@@ -1,8 +1,8 @@
-nya::button $title $size="m" $theme $type="button" $class $disabled $noAPI
+nya::button $title $theme="normal" $size="m" $type="button" $class $disabled $noAPI
     &"button.css"
     &"button.js"
-    button%nya-button{size=$size}{theme=$theme}[type=$type]:if($disabled, [disabled]) AS $node
-        @class +$class
+    button%nya-button[type=$type]:if($disabled, [disabled]) AS $node
+        @class +('nya-button_' + $theme + '_' + $size + ($class ? ' ' + $class : ''))
         span%nya-button(title) AS $titleNode
             $title
     EXPOSE ($noAPI ? undefined : new Nya.Button($node, $titleNode))

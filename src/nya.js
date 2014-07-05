@@ -1,6 +1,6 @@
 'use strict';
 
-var Nya = (function(nyaProto, undefined) {
+var Nya = (function(nyaProto) {
     function Nya() {}
 
     nyaProto = Nya.prototype;
