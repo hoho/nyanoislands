@@ -1,0 +1,13 @@
+nya::radio $label $name $size="m" $checked $class $disabled $noAPI
+    &"radio.css"
+    &"radio.js"
+    label%nya-radio{size=$size}:if($disabled, .nya-radio_disabled) AS $node
+        @class +$class
+
+        input%nya-radio(input)[type="radio"][name=$name]:if($checked, [checked]):if($disabled, [disabled]) AS $r
+        span%nya-radio(flag)
+            span%nya-radio(flag-icon)
+        span%nya-radio(label) AS $l
+            $label
+
+    EXPOSE ($noAPI ? undefined : new Nya.Radio($node, $r, $l))

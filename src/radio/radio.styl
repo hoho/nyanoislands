@@ -1,0 +1,34 @@
+@import '../nya'
+
+
+.nya-radio
+  kind: block inline
+  skin: para no-margin
+
+  cursor: pointer
+
+
+.nya-radio__input
+  kind: hidden visually
+
+
+.nya-radio__flag
+  kind: icon
+  skin: radio (-icon '& > .nya-radio__flag-icon')
+
+
+.nya-radio__input:checked + .nya-radio__flag
+  skin: button_checked
+
+
+.nya-radio-input:focus + .nya-radio__flag
+  skin: button_focus
+
+
+.nya-radio_size_s,
+.nya-radio_size_s .nya-radio__flag
+  skin: para2 no-margin
+
+
+.nya-radio_disabled
+  kind: disabled 0.6

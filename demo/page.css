@@ -5,7 +5,11 @@ dt
 
 code
 {
+    color: #aaa;
+
     display: block;
 
     margin: 10px 0 30px;
+
+    white-space: pre;
 }

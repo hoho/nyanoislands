@@ -9,42 +9,77 @@ page
             code
                 'nya::button title="Normal"'
 
+            nya::button title="Normal Disabled" disabled=(true)
+            code
+                'nya::button title="Normal Disabled" disabled=(true)'
+
             nya::button title="Small" size="s"
             code
                 'nya::button title="Small" size="s"'
 
+            nya::button title="Small Disabled" size="s" disabled=(true)
+            code
+                'nya::button title="Small Disabled" size="s" disabled=(true)'
+
+
         dt
             "Action button"
         dd
-            nya::button title="Normal" theme="action"
+            nya::button title="Action" theme="action"
             code
-                'nya::button title="Normal" theme="action"'
+                'nya::button title="Action" theme="action"'
 
-            nya::button title="Small" theme="action" size="s"
+            nya::button title="Action Disabled" theme="action" disabled=(true)
             code
-                'nya::button title="Small" theme="action" size="s"'
+                'nya::button title="Action Disabled" theme="action" disabled=(true)'
+
+            nya::button title="Action Small" theme="action" size="s"
+            code
+                'nya::button title="Action Small" theme="action" size="s"'
+
+            nya::button title="Action Small Disabled" theme="action" size="s" disabled=(true)
+            code
+                'nya::button title="Action Small Disabled" theme="action" size="s" disabled=(true)'
+
 
         dt
             "Dark button"
         dd
-            nya::button title="Normal" theme="dark"
+            nya::button title="Dark" theme="dark"
             code
-                'nya::button title="Normal" theme="dark"'
+                'nya::button title="Dark" theme="dark"'
 
-            nya::button title="Small" theme="dark" size="s"
+            nya::button title="Dark Disabled" theme="dark" disabled=(true)
             code
-                'nya::button title="Small" theme="dark" size="s"'
+                'nya::button title="Dark Disabled" theme="dark" disabled=(true)'
+
+            nya::button title="Dark Small" theme="dark" size="s"
+            code
+                'nya::button title="Dark Small" theme="dark" size="s"'
+
+            nya::button title="Dark Small Disabled" theme="dark" size="s" disabled=(true)
+            code
+                'nya::button title="Dark Small Disabled" theme="dark" size="s" disabled=(true)'
+
 
         dt
             "Pseudo button"
         dd
-            nya::button title="Normal" theme="pseudo"
+            nya::button title="Pseudo" theme="pseudo"
             code
-                'nya::button title="Normal" theme="pseudo"'
+                'nya::button title="Pseudo" theme="pseudo"'
 
-            nya::button title="Small" theme="pseudo" size="s"
+            nya::button title="Pseudo Disabled" theme="pseudo" disabled=(true)
             code
-                'nya::button title="Small" theme="pseudo" size="s"'
+                'nya::button title="Pseudo Disabled" theme="pseudo" disabled=(true)'
+
+            nya::button title="Pseudo Small" theme="pseudo" size="s"
+            code
+                'nya::button title="Pseudo Small" theme="pseudo" size="s"'
+
+            nya::button title="Pseudo Small Disabled" theme="pseudo" size="s" disabled=(true)
+            code
+                'nya::button title="Pseudo Small Disabled" theme="pseudo" size="s" disabled=(true)'
 
 
         dt
@@ -82,3 +117,41 @@ page
             nya::checkbox label="Small Checked Disabled" name="checkbox8" size="s" checked=(true) disabled=(true)
             code
                 'nya::checkbox label="Small Checked Disabled" name="checkbox8" size="s" checked=(true) disabled=(true)'
+
+
+        dt
+            "Radio"
+        dd
+            nya::radio label="Normal" name="radio1"
+            br
+            nya::radio label="Normal Checked" name="radio1" checked=(true)
+            code
+                'nya::radio label="Normal" name="radio1"'
+                '\nbr\n'
+                'nya::radio label="Normal Checked" name="radio1" checked=(true)'
+
+            nya::radio label="Normal Disabled" name="radio2" disabled=(true)
+            br
+            nya::radio label="Normal Checked Disabled" name="radio2" checked=(true) disabled=(true)
+            code
+                'nya::radio label="Normal Disabled" name="radio2" disabled=(true)'
+                '\nbr\n'
+                'nya::radio label="Normal Checked Disabled" name="radio2" checked=(true) disabled=(true)'
+
+
+            nya::radio label="Small" name="radio3" size="s"
+            br
+            nya::radio label="Small Checked" name="radio3" size="s" checked=(true)
+            code
+                'nya::radio label="Small" name="radio3" size="s"'
+                '\nbr\n'
+                'nya::radio label="Small Checked" name="radio3" size="s" checked=(true)'
+
+            nya::radio label="Small Disabled" name="radio4" size="s" disabled=(true)
+            br
+            nya::radio label="Small Checked Disabled" name="radio4" size="s" checked=(true) disabled=(true)
+            code
+                'nya::radio label="Small Disabled" name="radio4" size="s" disabled=(true)'
+                '\nbr\n'
+                'nya::radio label="Small Checked Disabled" name="radio4" size="s" checked=(true) disabled=(true)'
+

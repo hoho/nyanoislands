@@ -10,6 +10,7 @@ Nya.Button = Nya.extend({
 
     on: function(event, handler) {
         $B(this._n).on(event, handler);
+        return this;
     },
 
     title: function(val) {
