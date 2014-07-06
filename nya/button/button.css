@@ -18,9 +18,13 @@
   display: inline-block;
   white-space: nowrap;
   text-decoration: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: baseline;
 }
 .nya-button_normal_m {
@@ -29,14 +33,20 @@
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 15px;
   line-height: 22px;
   padding: 5px 15px;
   background: rgba(0,0,0,0.3);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
 }
 .nya-button_normal_m:before {
@@ -54,11 +64,13 @@
 }
 input[type=file]:active + .nya-button_normal_m,
 .nya-button_normal_m:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_normal_m:before,
 .nya-button_normal_m:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_normal_m .nya-button__title,
 .nya-button_normal_m:active .nya-button__title {
@@ -79,11 +91,14 @@ input[type=file]:focus + .nya-button_normal_m,
 input[type=file]:focus + .nya-button_normal_m:after,
 .nya-button_normal_m:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_normal_m:before {
   background: #f7f7f7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: -webkit-linear-gradient(#fff, #eee);
   background: linear-gradient(#fff, #eee);
 }
 input[type=file]:hover + .nya-button_normal_m,
@@ -91,6 +106,8 @@ input[type=file]:hover + .nya-button_normal_m,
 input[type=file]:hover + .nya-button_normal_s,
 .nya-button_normal_s:hover {
   background: rgba(0,0,0,0.31);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
 input[type=file]:hover + .nya-button_normal_m:before,
@@ -98,6 +115,8 @@ input[type=file]:hover + .nya-button_normal_m:before,
 input[type=file]:hover + .nya-button_normal_s:before,
 .nya-button_normal_s:hover:before {
   background: #fbfaf9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f6f5f3));
+  background: -webkit-linear-gradient(#fff, #f6f5f3);
   background: linear-gradient(#fff, #f6f5f3);
 }
 .nya-button_normal_s {
@@ -106,14 +125,20 @@ input[type=file]:hover + .nya-button_normal_s:before,
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 13px;
   line-height: 18px;
   padding: 5px 13px;
   background: rgba(0,0,0,0.3);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
 }
 .nya-button_normal_s:before {
@@ -131,11 +156,13 @@ input[type=file]:hover + .nya-button_normal_s:before,
 }
 input[type=file]:active + .nya-button_normal_s,
 .nya-button_normal_s:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_normal_s:before,
 .nya-button_normal_s:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_normal_s .nya-button__title,
 .nya-button_normal_s:active .nya-button__title {
@@ -156,11 +183,14 @@ input[type=file]:focus + .nya-button_normal_s,
 input[type=file]:focus + .nya-button_normal_s:after,
 .nya-button_normal_s:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_normal_s:before {
   background: #f7f7f7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: -webkit-linear-gradient(#fff, #eee);
   background: linear-gradient(#fff, #eee);
 }
 .nya-button_action_m {
@@ -169,14 +199,20 @@ input[type=file]:focus + .nya-button_normal_s:after,
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 15px;
   line-height: 22px;
   padding: 5px 15px;
   background: rgba(83,56,0,0.47);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(96,64,0,0.4)), to(rgba(70,47,0,0.54)));
+  background: -webkit-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
   background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
 .nya-button_action_m:before {
@@ -194,11 +230,13 @@ input[type=file]:focus + .nya-button_normal_s:after,
 }
 input[type=file]:active + .nya-button_action_m,
 .nya-button_action_m:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_action_m:before,
 .nya-button_action_m:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_action_m .nya-button__title,
 .nya-button_action_m:active .nya-button__title {
@@ -219,11 +257,14 @@ input[type=file]:focus + .nya-button_action_m,
 input[type=file]:focus + .nya-button_action_m:after,
 .nya-button_action_m:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_action_m:before {
   background: #ffd630;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffdf60), to(#fc0));
+  background: -webkit-linear-gradient(#ffdf60, #fc0);
   background: linear-gradient(#ffdf60, #fc0);
 }
 input[type=file]:hover + .nya-button_action_m,
@@ -231,6 +272,8 @@ input[type=file]:hover + .nya-button_action_m,
 input[type=file]:hover + .nya-button_action_s,
 .nya-button_action_s:hover {
   background: rgba(0,0,0,0.31);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
 input[type=file]:hover + .nya-button_action_m:before,
@@ -238,6 +281,8 @@ input[type=file]:hover + .nya-button_action_m:before,
 input[type=file]:hover + .nya-button_action_s:before,
 .nya-button_action_s:hover:before {
   background: #fd5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe681), to(#ffd428));
+  background: -webkit-linear-gradient(#ffe681, #ffd428);
   background: linear-gradient(#ffe681, #ffd428);
 }
 .nya-button_action_s {
@@ -246,14 +291,20 @@ input[type=file]:hover + .nya-button_action_s:before,
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 13px;
   line-height: 18px;
   padding: 5px 13px;
   background: rgba(83,56,0,0.47);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(96,64,0,0.4)), to(rgba(70,47,0,0.54)));
+  background: -webkit-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
   background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
 .nya-button_action_s:before {
@@ -271,11 +322,13 @@ input[type=file]:hover + .nya-button_action_s:before,
 }
 input[type=file]:active + .nya-button_action_s,
 .nya-button_action_s:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_action_s:before,
 .nya-button_action_s:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_action_s .nya-button__title,
 .nya-button_action_s:active .nya-button__title {
@@ -296,11 +349,14 @@ input[type=file]:focus + .nya-button_action_s,
 input[type=file]:focus + .nya-button_action_s:after,
 .nya-button_action_s:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_action_s:before {
   background: #ffd630;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffdf60), to(#fc0));
+  background: -webkit-linear-gradient(#ffdf60, #fc0);
   background: linear-gradient(#ffdf60, #fc0);
 }
 .nya-button_pseudo_m {
@@ -311,7 +367,8 @@ input[type=file]:focus + .nya-button_action_s:after,
   vertical-align: baseline;
   color: #000;
   border-radius: 3px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
   font-size: 15px;
   line-height: 22px;
   padding: 3px 11px;
@@ -338,15 +395,18 @@ input[type=file]:focus + .nya-button_action_s:after,
   display: block;
 }
 .nya-button_pseudo_m:hover {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
 }
 .nya-button_pseudo_m:focus {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
   outline: 0;
 }
 .nya-button_pseudo_m:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_pseudo_s {
@@ -357,7 +417,8 @@ input[type=file]:focus + .nya-button_action_s:after,
   vertical-align: baseline;
   color: #000;
   border-radius: 3px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
   font-size: 13px;
   line-height: 18px;
   padding: 3px 10px;
@@ -384,24 +445,29 @@ input[type=file]:focus + .nya-button_action_s:after,
   display: block;
 }
 .nya-button_pseudo_s:hover {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
 }
 .nya-button_pseudo_s:focus {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
   outline: 0;
 }
 .nya-button_pseudo_s:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_pseudo_m:active,
 .nya-button_pseudo_s:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 .nya-button_pseudo_m:active:before,
 .nya-button_pseudo_s:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 .nya-button_pseudo_m:active .nya-button__title,
 .nya-button_pseudo_s:active .nya-button__title {
@@ -413,15 +479,21 @@ input[type=file]:focus + .nya-button_action_s:after,
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 15px;
   line-height: 22px;
   padding: 5px 15px;
   color: #f2f2f2;
   background: rgba(0,0,0,0.77);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.7)), to(rgba(0,0,0,0.84)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
 }
 .nya-button_dark_m:before {
@@ -439,11 +511,13 @@ input[type=file]:focus + .nya-button_action_s:after,
 }
 input[type=file]:active + .nya-button_dark_m,
 .nya-button_dark_m:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_dark_m:before,
 .nya-button_dark_m:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_dark_m .nya-button__title,
 .nya-button_dark_m:active .nya-button__title {
@@ -464,22 +538,30 @@ input[type=file]:focus + .nya-button_dark_m,
 input[type=file]:focus + .nya-button_dark_m:after,
 .nya-button_dark_m:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_dark_m:before {
   background: #4f4f4f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5c5c5c), to(#424242));
+  background: -webkit-linear-gradient(#5c5c5c, #424242);
   background: linear-gradient(#5c5c5c, #424242);
-  box-shadow: inset 0 1px rgba(255,255,255,0.1);
+  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.1);
+          box-shadow: inset 0 1px rgba(255,255,255,0.1);
 }
 input[type=file]:hover:not(:checked) + .nya-button_dark_m,
 .nya-button_dark_m:not([disabled]):hover {
   background: rgba(0,0,0,0.74);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.66)), to(rgba(0,0,0,0.82)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
   background: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
 }
 input[type=file]:hover:not(:checked) + .nya-button_dark_m:before,
 .nya-button_dark_m:not([disabled]):hover:before {
   background: #575757;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#474747));
+  background: -webkit-linear-gradient(#666, #474747);
   background: linear-gradient(#666, #474747);
 }
 .nya-button_dark_s {
@@ -488,15 +570,21 @@ input[type=file]:hover:not(:checked) + .nya-button_dark_m:before,
   font-family: Arial, sans-serif;
   position: relative;
   vertical-align: baseline;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #000;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   font-size: 13px;
   line-height: 18px;
   padding: 5px 13px;
   color: #f2f2f2;
   background: rgba(0,0,0,0.77);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.7)), to(rgba(0,0,0,0.84)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.84));
 }
 .nya-button_dark_s:before {
@@ -514,11 +602,13 @@ input[type=file]:hover:not(:checked) + .nya-button_dark_m:before,
 }
 input[type=file]:active + .nya-button_dark_s,
 .nya-button_dark_s:active {
-  box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
 }
 input[type=file]:active + .nya-button_dark_s:before,
 .nya-button_dark_s:active:before {
-  box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
 }
 input[type=file]:active + .nya-button_dark_s .nya-button__title,
 .nya-button_dark_s:active .nya-button__title {
@@ -539,22 +629,30 @@ input[type=file]:focus + .nya-button_dark_s,
 input[type=file]:focus + .nya-button_dark_s:after,
 .nya-button_dark_s:focus:after {
   z-index: 9;
-  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-button_dark_s:before {
   background: #4f4f4f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5c5c5c), to(#424242));
+  background: -webkit-linear-gradient(#5c5c5c, #424242);
   background: linear-gradient(#5c5c5c, #424242);
-  box-shadow: inset 0 1px rgba(255,255,255,0.1);
+  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.1);
+          box-shadow: inset 0 1px rgba(255,255,255,0.1);
 }
 input[type=file]:hover:not(:checked) + .nya-button_dark_s,
 .nya-button_dark_s:not([disabled]):hover {
   background: rgba(0,0,0,0.74);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.66)), to(rgba(0,0,0,0.82)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
   background: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.82));
 }
 input[type=file]:hover:not(:checked) + .nya-button_dark_s:before,
 .nya-button_dark_s:not([disabled]):hover:before {
   background: #575757;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#474747));
+  background: -webkit-linear-gradient(#666, #474747);
   background: linear-gradient(#666, #474747);
 }
 .nya-button[disabled],

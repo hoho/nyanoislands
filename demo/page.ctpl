@@ -1,29 +1,84 @@
 page
+    &"page.css"
+
     dl
         dt
             "Normal button"
         dd
             nya::button title="Normal"
-            " "
+            code
+                'nya::button title="Normal"'
+
             nya::button title="Small" size="s"
+            code
+                'nya::button title="Small" size="s"'
 
         dt
             "Action button"
         dd
             nya::button title="Normal" theme="action"
-            " "
+            code
+                'nya::button title="Normal" theme="action"'
+
             nya::button title="Small" theme="action" size="s"
+            code
+                'nya::button title="Small" theme="action" size="s"'
 
         dt
             "Dark button"
         dd
             nya::button title="Normal" theme="dark"
-            " "
+            code
+                'nya::button title="Normal" theme="dark"'
+
             nya::button title="Small" theme="dark" size="s"
+            code
+                'nya::button title="Small" theme="dark" size="s"'
 
         dt
             "Pseudo button"
         dd
             nya::button title="Normal" theme="pseudo"
-            " "
+            code
+                'nya::button title="Normal" theme="pseudo"'
+
             nya::button title="Small" theme="pseudo" size="s"
+            code
+                'nya::button title="Small" theme="pseudo" size="s"'
+
+
+        dt
+            "Checkbox"
+        dd
+            nya::checkbox label="Normal" name="checkbox1"
+            code
+                'nya::checkbox label="Normal" name="checkbox1"'
+
+            nya::checkbox label="Normal Checked" name="checkbox2" checked=(true)
+            code
+                'nya::checkbox label="Normal Checked" name="checkbox2" checked=(true)'
+
+            nya::checkbox label="Normal Disabled" name="checkbox3" disabled=(true)
+            code
+                'nya::checkbox label="Normal Disabled" name="checkbox3" disabled=(true)'
+
+            nya::checkbox label="Normal Checked Disabled" name="checkbox4" checked=(true) disabled=(true)
+            code
+                'nya::checkbox label="Normal Checked Disabled" name="checkbox4" checked=(true) disabled=(true)'
+
+
+            nya::checkbox label="Small" name="checkbox5" size="s"
+            code
+                'nya::checkbox label="Small" name="checkbox5" size="s"'
+
+            nya::checkbox label="Small Checked" name="checkbox6" size="s" checked=(true)
+            code
+                'nya::checkbox label="Small Checked" name="checkbox6" size="s" checked=(true)'
+
+            nya::checkbox label="Small Disabled" name="checkbox7" size="s" disabled=(true)
+            code
+                'nya::checkbox label="Small Disabled" name="checkbox7" size="s" disabled=(true)'
+
+            nya::checkbox label="Small Checked Disabled" name="checkbox8" size="s" checked=(true) disabled=(true)
+            code
+                'nya::checkbox label="Small Checked Disabled" name="checkbox8" size="s" checked=(true) disabled=(true)'

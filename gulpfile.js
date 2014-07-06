@@ -7,6 +7,7 @@ var qunit = require('gulp-qunit');
 var stylus = require('gulp-stylus');
 var filter = require('gulp-filter');
 var add = require('gulp-add');
+var prefix = require('gulp-autoprefixer');
 var fs = require('fs');
 
 
@@ -29,11 +30,15 @@ gulp.task('eslint', function() {
 
 gulp.task('build', function() {
     var stylFilter = filter('**/*.styl');
+    var cssFilter = filter(['**/*.css']);
 
-    return gulp.src(['src/*/**/*.styl', '!src/*/**/_*.styl', 'src/**/*.js', 'src/**/*.ctpl'])
+    return gulp.src(['src/*/**/*.styl', '!src/*/**/_*.styl', 'src/**/*.js', 'src/**/*.ctpl', 'src/nya.css'])
         .pipe(stylFilter)
         .pipe(stylus({errors: true}))
         .pipe(stylFilter.restore())
+        .pipe(cssFilter)
+        .pipe(prefix('last 1 version', '> 1%'))
+        .pipe(cssFilter.restore())
         .pipe(add('babydom.js', fs.readFileSync(require.resolve('babydom'), {encoding: 'utf8'})))
         .pipe(gulp.dest('./nya'));
 });

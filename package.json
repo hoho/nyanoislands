@@ -29,6 +29,7 @@
         "gulp-eslint": "~0.1.7",
         "gulp-filter": "~0.4.1",
         "gulp-add": "~0.0.1",
+        "gulp-autoprefixer": "~0.0.7",
         "gulp-qunit": "~0.3.3",
         "qunitjs": "~1.14.0",
         "stylus": "~0.45.0",

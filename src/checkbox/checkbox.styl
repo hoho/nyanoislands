@@ -1,0 +1,34 @@
+@import '../nya'
+
+
+.nya-checkbox
+  kind: block inline
+  skin: para no-margin
+
+  cursor: pointer
+
+
+.nya-checkbox__input
+  kind: hidden visually
+
+
+.nya-checkbox__flag
+  kind: icon
+  skin: checkbox (-icon '& > .nya-checkbox__flag-icon')
+
+
+.nya-checkbox__input:checked + .nya-checkbox__flag
+  skin: button_checked
+
+
+.nya-checkbox-input:focus + .nya-checkbox__flag
+  skin: button_focus
+
+
+.nya-checkbox_size_s,
+.nya-checkbox_size_s .nya-checkbox__flag
+  skin: para2 no-margin
+
+
+.nya-checkbox_disabled
+  kind: disabled 0.6
