@@ -1,5 +1,6 @@
 nya::radio $label $name $size="m" $checked $class $disabled $noAPI
     &"radio.css"
+    &"../checkbox/checkbox.js"
     &"radio.js"
     label%nya-radio{size=$size}:if($disabled, .nya-radio_disabled) AS $node
         @class +$class
