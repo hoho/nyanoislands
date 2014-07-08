@@ -1,0 +1,15 @@
+dt
+{
+    padding: 10px 0;
+}
+
+dd code
+{
+    color: #aaa;
+
+    display: block;
+
+    margin: 10px 0 30px;
+
+    white-space: pre;
+}

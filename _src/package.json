@@ -1,0 +1,30 @@
+{
+    "name": "nyanoislands-demo",
+    "version": "0.0.0",
+    "scripts": {
+        "test": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hoho/nyanoislands.git"
+    },
+    "keywords": [
+    ],
+    "author": "Marat Abdullin <dakota@brokenpipe.ru>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hoho/nyanoislands/issues"
+    },
+    "dependencies": {
+        "babydom": "~0.0.1"
+    },
+    "devDependencies": {
+        "gulp": "~3.8.5",
+        "gulp-eslint": "~0.1.6",
+        "gulp-conkitty": "~0.5.7",
+        "gulp-filter": "~0.4.1",
+        "gulp-concat": "~2.2.0",
+        "gulp-minify-css": "~0.3.4",
+        "gulp-uglify": "~0.3.1"
+    }
+}

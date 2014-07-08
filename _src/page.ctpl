@@ -1,0 +1,478 @@
+page
+    &"page.css"
+
+    h1
+        "Conkitty templates for visual components"
+
+    h2
+        "Button"
+
+    h3
+        "Template arguments"
+    code
+        'nya::button title [theme] [size] [type] [href] [class] [disabled] [noAPI]'
+    ul
+        li
+            code
+                "title"
+            " — button title;"
+        li
+            code
+                "theme"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"normal"'
+            ', "action", "dark", "pseudo";'
+        li
+            code
+                "size"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"m"'
+            ', "s";'
+        li
+            code
+                "type"
+            " — "
+            em
+                "(optional, ignored if "
+            code
+                "href"
+            em
+                " is present) "
+            strong
+                '"button"'
+            ', "submit", "reset";'
+        li
+            code
+                "href"
+            " — "
+            em
+                "(optional) "
+            "href for link button;"
+        li
+            code
+                "class"
+            " — "
+            em
+                "(optional) "
+            "additional classes for button tag (whitespace-separated);"
+        li
+            code
+                "disabled"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "noAPI"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            "."
+
+    h3
+        "API"
+    code
+        'nya::button title="Button" AS $btn // Template call exposes API object.'
+    ul
+        li
+            code
+                "$btn.on(event, handler)"
+            " — add event handler;"
+        li
+            code
+                "$btn.title([value])"
+            " — get or set title;"
+        li
+            code
+                "$btn.href([value])"
+            " — get or set href (for link button);"
+        li
+            code
+                "$btn.disabled([value])"
+            " — get or set disabled state."
+
+    h3
+        "Examples"
+    dl
+        dt
+            "Normal button"
+        dd
+            nya::button title="Normal"
+            code
+                'nya::button title="Normal"'
+
+            nya::button title="Normal Disabled" disabled=(true)
+            code
+                'nya::button title="Normal Disabled" disabled=(true)'
+
+            nya::button title="Small" size="s"
+            code
+                'nya::button title="Small" size="s"'
+
+            nya::button title="Small Disabled" size="s" disabled=(true)
+            code
+                'nya::button title="Small Disabled" size="s" disabled=(true)'
+
+
+        dt
+            "Link button"
+        dd
+            nya::button title="Link" href="#link"
+            code
+                'nya::button title="Link" href="#link"'
+
+            nya::button title="Link Disabled" href="#link" disabled=(true)
+            code
+                'nya::button title="Link Disabled" href="#link" disabled=(true)'
+
+            nya::button title="Link Small" href="#link" size="s"
+            code
+                'nya::button title="Link Small" href="#link" size="s"'
+
+            nya::button title="Link Small Disabled" href="#link" size="s" disabled=(true)
+            code
+                'nya::button title="Link Small Disabled" href="#link" size="s" disabled=(true)'
+
+
+        dt
+            "Action button"
+        dd
+            nya::button title="Action" theme="action"
+            code
+                'nya::button title="Action" theme="action"'
+
+            nya::button title="Action Disabled" theme="action" disabled=(true)
+            code
+                'nya::button title="Action Disabled" theme="action" disabled=(true)'
+
+            nya::button title="Action Small" theme="action" size="s"
+            code
+                'nya::button title="Action Small" theme="action" size="s"'
+
+            nya::button title="Action Small Disabled" theme="action" size="s" disabled=(true)
+            code
+                'nya::button title="Action Small Disabled" theme="action" size="s" disabled=(true)'
+
+
+        dt
+            "Dark button"
+        dd
+            nya::button title="Dark" theme="dark"
+            code
+                'nya::button title="Dark" theme="dark"'
+
+            nya::button title="Dark Disabled" theme="dark" disabled=(true)
+            code
+                'nya::button title="Dark Disabled" theme="dark" disabled=(true)'
+
+            nya::button title="Dark Small" theme="dark" size="s"
+            code
+                'nya::button title="Dark Small" theme="dark" size="s"'
+
+            nya::button title="Dark Small Disabled" theme="dark" size="s" disabled=(true)
+            code
+                'nya::button title="Dark Small Disabled" theme="dark" size="s" disabled=(true)'
+
+
+        dt
+            "Pseudo button"
+        dd
+            nya::button title="Pseudo" theme="pseudo"
+            code
+                'nya::button title="Pseudo" theme="pseudo"'
+
+            nya::button title="Pseudo Disabled" theme="pseudo" disabled=(true)
+            code
+                'nya::button title="Pseudo Disabled" theme="pseudo" disabled=(true)'
+
+            nya::button title="Pseudo Small" theme="pseudo" size="s"
+            code
+                'nya::button title="Pseudo Small" theme="pseudo" size="s"'
+
+            nya::button title="Pseudo Small Disabled" theme="pseudo" size="s" disabled=(true)
+            code
+                'nya::button title="Pseudo Small Disabled" theme="pseudo" size="s" disabled=(true)'
+
+
+    h2
+        "Checkbox"
+
+    h3
+        "Template arguments"
+    code
+        'nya::checkbox label name value [size] [checked] [class] [disabled] [noAPI]'
+    ul
+        li
+            code
+                "label"
+            " — checkbox label;"
+        li
+            code
+                "name"
+            " — checkbox input name;"
+        li
+            code
+                "value"
+            " — checkbox input value;"
+        li
+            code
+                "size"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"m"'
+            ', "s";'
+        li
+            code
+                "checked"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "class"
+            " — "
+            em
+                "(optional) "
+            "additional classes (whitespace-separated);"
+        li
+            code
+                "disabled"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "noAPI"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            "."
+
+    h3
+        "API"
+    code
+        'nya::checkbox label="Checkbox" name="checkbox1" value="yes" AS $cb // Template call exposes API object.'
+    ul
+        li
+            code
+                "$cb.on(event, handler)"
+            " — add event handler;"
+        li
+            code
+                "$cb.checked([value])"
+            " — get or set checked state;"
+        li
+            code
+                "$cb.val([value])"
+            " — get or set checkbox value;"
+        li
+            code
+                "$cb.label([value])"
+            " — get or set label;"
+        li
+            code
+                "$cb.disabled([value])"
+            " — get or set disabled state."
+
+    h3
+        "Examples"
+    dl
+        dt
+            "Normal checkbox"
+        dd
+            nya::checkbox label="Normal" name="checkbox1" value="yes"
+            code
+                'nya::checkbox label="Normal" name="checkbox1" value="yes"'
+
+            nya::checkbox label="Normal Checked" name="checkbox2" value="yes" checked=(true)
+            code
+                'nya::checkbox label="Normal Checked" name="checkbox2" value="yes" checked=(true)'
+
+            nya::checkbox label="Normal Disabled" name="checkbox3" value="yes" disabled=(true)
+            code
+                'nya::checkbox label="Normal Disabled" name="checkbox3" value="yes" disabled=(true)'
+
+            nya::checkbox label="Normal Checked Disabled" name="checkbox4" value="yes" checked=(true) disabled=(true)
+            code
+                'nya::checkbox label="Normal Checked Disabled" name="checkbox4" value="yes" checked=(true) disabled=(true)'
+
+        dt
+            "Small checkbox"
+        dd
+            nya::checkbox label="Small" name="checkbox5" value="yes" size="s"
+            code
+                'nya::checkbox label="Small" name="checkbox5" value="yes" size="s"'
+
+            nya::checkbox label="Small Checked" name="checkbox6" value="yes" size="s" checked=(true)
+            code
+                'nya::checkbox label="Small Checked" name="checkbox6" value="yes" size="s" checked=(true)'
+
+            nya::checkbox label="Small Disabled" name="checkbox7" value="yes" size="s" disabled=(true)
+            code
+                'nya::checkbox label="Small Disabled" name="checkbox7" value="yes" size="s" disabled=(true)'
+
+            nya::checkbox label="Small Checked Disabled" name="checkbox8" value="yes" size="s" checked=(true) disabled=(true)
+            code
+                'nya::checkbox label="Small Checked Disabled" name="checkbox8" value="yes" size="s" checked=(true) disabled=(true)'
+
+
+    h2
+        "Radio"
+
+    h3
+        "Template arguments"
+    code
+        'nya::radio label name value [size] [checked] [class] [disabled] [noAPI]'
+    ul
+        li
+            code
+                "label"
+            " — radio label;"
+        li
+            code
+                "name"
+            " — radio input name;"
+        li
+            code
+                "value"
+            " — radio input value;"
+        li
+            code
+                "size"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"m"'
+            ', "s";'
+        li
+            code
+                "checked"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "class"
+            " — "
+            em
+                "(optional) "
+            "additional classes (whitespace-separated);"
+        li
+            code
+                "disabled"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "noAPI"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            "."
+
+    h3
+        "API"
+    code
+        'nya::radio label="Radio" name="radio1" value="yes" AS $r // Template call exposes API object.'
+    ul
+        li
+            code
+                "$r.on(event, handler)"
+            " — add event handler;"
+        li
+            code
+                "$r.checked([value])"
+            " — get or set checked state;"
+        li
+            code
+                "$r.val([value])"
+            " — get or set checkbox value;"
+        li
+            code
+                "$r.label([value])"
+            " — get or set label;"
+        li
+            code
+                "$r.disabled([value])"
+            " — get or set disabled state."
+
+    h3
+        "Examples"
+    dl
+        dt
+            "Normal radio"
+        dd
+            nya::radio label="Normal" name="radio1" value="yes"
+            br
+            nya::radio label="Normal Checked" name="radio1" value="no" checked=(true)
+            code
+                'nya::radio label="Normal" name="radio1" value="yes"'
+                '\nbr\n'
+                'nya::radio label="Normal Checked" name="radio1" value="no" checked=(true)'
+
+            nya::radio label="Normal Disabled" name="radio2" value="yes" disabled=(true)
+            br
+            nya::radio label="Normal Checked Disabled" name="radio2" value="no" checked=(true) disabled=(true)
+            code
+                'nya::radio label="Normal Disabled" name="radio2" value="yes" disabled=(true)'
+                '\nbr\n'
+                'nya::radio label="Normal Checked Disabled" name="radio2" value="no" checked=(true) disabled=(true)'
+
+        dt
+            "Small radio"
+        dd
+            nya::radio label="Small" name="radio3" value="yes" size="s"
+            br
+            nya::radio label="Small Checked" name="radio3" value="no" size="s" checked=(true)
+            code
+                'nya::radio label="Small" name="radio3" value="yes" size="s"'
+                '\nbr\n'
+                'nya::radio label="Small Checked" name="radio3" value="no" size="s" checked=(true)'
+
+            nya::radio label="Small Disabled" name="radio4" value="yes" size="s" disabled=(true)
+            br
+            nya::radio label="Small Checked Disabled" name="radio4" value="no" size="s" checked=(true) disabled=(true)
+            code
+                'nya::radio label="Small Disabled" name="radio4" value="yes" size="s" disabled=(true)'
+                '\nbr\n'
+                'nya::radio label="Small Checked Disabled" name="radio4" value="no" size="s" checked=(true) disabled=(true)'
+
