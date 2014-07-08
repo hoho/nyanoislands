@@ -1,11 +1,11 @@
-nya::radio $label $name $size="m" $checked $class $disabled $noAPI
+nya::radio $label $name $value $size="m" $checked $class $disabled $noAPI
     &"radio.css"
     &"../checkbox/checkbox.js"
     &"radio.js"
     label%nya-radio{size=$size}:if($disabled, .nya-radio_disabled) AS $node
         @class +$class
 
-        input%nya-radio(input)[type="radio"][name=$name]:if($checked, [checked]):if($disabled, [disabled]) AS $r
+        input%nya-radio(input)[type="radio"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $r
         span%nya-radio(flag)
             span%nya-radio(flag-icon)
         span%nya-radio(label) AS $l

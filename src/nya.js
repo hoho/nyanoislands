@@ -10,7 +10,9 @@ var Nya = (function(nyaProto) {
             key,
             Proxy = function() {},
             proxyProto,
-            NyaDescendant = obj.init || function() {};
+            NyaDescendant = function() {
+                if (this.init) { this.init.apply(this, arguments); }
+            };
 
         Proxy.prototype = proto;
         NyaDescendant.prototype = proxyProto = new Proxy();

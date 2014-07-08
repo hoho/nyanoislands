@@ -3,6 +3,8 @@
 'use strict';
 
 Nya.Checkbox = Nya.extend({
+    _d: 'nya-checkbox_disabled',
+
     init: function(node, checkbox, label) {
         this._n = node;
         this._c = checkbox;
@@ -19,16 +21,20 @@ Nya.Checkbox = Nya.extend({
         return val === undefined ? ret : this;
     },
 
+    val: function(val) {
+        var ret = $B(this._c).attr('value', val);
+        return val === undefined ? ret : this;
+    },
+
     label: function(val) {
         var ret = $B(this._l).text(val);
         return val === undefined ? ret : this;
     },
 
     disabled: function(val) {
-        var c = $B(this._c),
-            ret = c.attr('disabled', val);
+        var ret = $B(this._c).attr('disabled', val);
         if (val !== undefined) {
-            $B(this._n).toggleClass('nya-checkbox_disabled', !!val);
+            $B(this._n).toggleClass(this._d, !!val);
             ret = this;
         }
         return ret;

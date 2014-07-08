@@ -1,2 +1,2 @@
 /* global Nya */
-Nya.Radio = Nya.Checkbox;
+Nya.Radio = Nya.Checkbox.extend({_d: 'nya-radio_disabled'});
