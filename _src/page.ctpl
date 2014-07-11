@@ -27,13 +27,13 @@ page
             "npm install nyanoislands"
         " and"
     code.block
-
-       ".pipe(conkitty({\n"
-       "    common: 'common.js',\n"
-       "    templates: 'tpl.js',\n"
-       "    deps: true, // We need external templates.\n"
-       "    libs: {nyanoislands: require('nyanoislands')} // Here they are.\n"
-       "}))"
+        "// Assume we're inside gulp pipeline.\n"
+        ".pipe(conkitty({\n"
+        "    common: 'common.js',\n"
+        "    templates: 'tpl.js',\n"
+        "    deps: true, // We need external templates.\n"
+        "    libs: {nyanoislands: require('nyanoislands')} // Here they are.\n"
+        "}))"
     p
         "now you can use templates from "
         code
