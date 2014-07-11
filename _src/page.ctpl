@@ -5,6 +5,42 @@ page
         "Conkitty templates for visual components"
 
     h2
+        "How to use"
+
+    p
+        "Assume we use "
+        a[href="http://gulpjs.com/"]
+            "Gulp"
+        " and "
+        a[href="https://www.npmjs.org/package/gulp-conkitty/"]
+            "gulp-conkitty"
+        " to build templates."
+    p
+        code
+            "gulp-conkitty"
+
+        " task has "
+        code
+            "libs"
+        " settting and all we need is "
+        code
+            "npm install nyanoislands"
+        " and"
+    code.block
+
+       ".pipe(conkitty({\n"
+       "    common: 'common.js',\n"
+       "    templates: 'tpl.js',\n"
+       "    deps: true, // We need external templates.\n"
+       "    libs: {nyanoislands: require('nyanoislands')} // Here they are.\n"
+       "}))"
+    p
+        "now you can use templates from "
+        code
+            "nya"
+        " namespace."
+
+    h2
         "Button"
 
     h3

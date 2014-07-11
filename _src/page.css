@@ -1,15 +1,33 @@
+code
+{
+    background: #f4f4f4;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+    padding: 2px 4px;
+}
+
 dt
 {
     padding: 10px 0;
 }
 
+dd code,
+code.block
+{
+    display: block;
+
+    overflow: auto;
+
+    white-space: pre;
+}
+
+
 dd code
 {
     color: #aaa;
 
-    display: block;
-
     margin: 10px 0 30px;
-
-    white-space: pre;
 }
