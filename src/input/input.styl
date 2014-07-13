@@ -1,0 +1,65 @@
+@import '../nya'
+
+
+.nya-input_reset_no
+  kind: input
+  skin: input
+
+
+.nya-input__controller:focus
+  skin: input_focus
+
+
+.nya-input_size_s
+  skin: input small
+  -webkit-appearance: textfield
+
+
+.nya-input_reset_yes
+  kind: field $islands_s $islands_s
+  skin: input-box
+
+
+.nya-input_reset_yes.nya-input_size_s
+  skin: input-box small
+
+
+.nya-input
+  .nya-input__content
+    kind: field-content
+
+  .nya-input__controller
+    kind: input
+    z-index: 9
+    width: 100%
+    height: 100%
+
+  & textarea.nya-input__controller
+    vertical-align: top
+    resize: none
+
+  .nya-input__view
+    border: 1px solid transparent
+    kind: fill -1px
+    skin: input-view no-focus
+
+  //&:not(._nb-is-disabled):focus ._nb-input-view
+  //&:not(._nb-is-disabled)._nb-is-focused ._nb-input-view
+  //  skin: input_focus
+
+  .nya-input__reset
+    kind: field-right 0.5*$islands_s
+    skin: icon _remove with-hover
+    margin-right: $islands_s * -1
+    height: auto
+
+    &:before
+      content: " " // utf nbsp here
+
+
+.nya-input__controller::-ms-clear
+  display: none
+
+
+.nya-input_disabled
+  kind: disabled 0.6

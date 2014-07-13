@@ -1,0 +1,30 @@
+nya::input $name $value $size="m" $placeholder $reset=(false) $multiline=(false) $class $disabled $noAPI
+    &"input.css"
+    &"input.js"
+
+    CHOOSE
+        WHEN $reset
+            label%nya-input{size=$size}{reset="yes"} AS $node
+                @class +$class
+
+                span%nya-input(reset) AS $resetNode
+                span%nya-input(content)
+                    [name=$name]:if($multiline, textarea, input[value=$value])%nya-input(controller)[placeholder=$placeholder] AS $inputNode
+                        TEST $multiline
+                            $value
+                    span%nya-input(view)
+                        """&nbsp;"""
+
+        OTHERWISE
+            %nya-input{size=$size}{reset="no"}%nya-input(controller)[name=$name]:if($multiline, textarea, input[value=$value])[placeholder=$placeholder] AS $inputNode
+                @class +$class
+
+                TEST $multiline
+                    $value
+
+    EXPOSE JS
+        if ($resetNode) {
+            $B($resetNode).on('click', function() { $inputNode.value = ''; });
+        }
+
+        return $noAPI ? undefined : new Nya.Input($node, $inputNode);
