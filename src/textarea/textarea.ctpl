@@ -1,0 +1,3 @@
+nya::textarea $name $value $size $placeholder $reset $rows $class $disabled $noAPI
+    nya::_input $name $value $size $placeholder $reset ($rows || true) $class $disabled $noAPI AS $ret
+    EXPOSE $ret

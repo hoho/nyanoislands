@@ -6,13 +6,13 @@
   skin: input
 
 
-.nya-input__controller:focus
+.nya-input_reset_no:focus
+.nya-input__controller:focus + .nya-input__view
   skin: input_focus
 
 
 .nya-input_size_s
   skin: input small
-  -webkit-appearance: textfield
 
 
 .nya-input_reset_yes
@@ -42,10 +42,6 @@
     border: 1px solid transparent
     kind: fill -1px
     skin: input-view no-focus
-
-  //&:not(._nb-is-disabled):focus ._nb-input-view
-  //&:not(._nb-is-disabled)._nb-is-focused ._nb-input-view
-  //  skin: input_focus
 
   .nya-input__reset
     kind: field-right 0.5*$islands_s
