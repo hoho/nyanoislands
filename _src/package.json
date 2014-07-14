@@ -24,7 +24,7 @@
         "gulp-conkitty": "~0.5.7",
         "gulp-filter": "~0.4.1",
         "gulp-concat": "~2.2.0",
-        "gulp-minify-css": "~0.3.4",
+        "gulp-minify-css": "~0.3.6",
         "gulp-uglify": "~0.3.1"
     }
 }

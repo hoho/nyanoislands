@@ -99,7 +99,7 @@ page
             " — "
             em
                 "(optional) "
-            "additional classes for button tag (whitespace-separated);"
+            "additional classes (whitespace-separated);"
         li
             code
                 "disabled"
@@ -447,7 +447,6 @@ page
             strong
                 "(false)"
             "."
-
     h3
         "API"
     code
@@ -473,7 +472,6 @@ page
             code
                 "$r.disabled([value])"
             " — get or set disabled state."
-
     h3
         "Examples"
     dl
@@ -515,3 +513,318 @@ page
                 '\nbr\n'
                 'nya::radio label="Small Checked Disabled" name="radio4" value="no" size="s" checked=(true) disabled=(true)'
 
+
+    h2
+        "Input"
+    h3
+        "Template arguments"
+    code
+        'nya::input name [value] [size] [placeholder] [reset] [class] [disabled] [noAPI]'
+    ul
+        li
+            code
+                "name"
+            " — input name;"
+        li
+            code
+                "value"
+            " — "
+            em
+                "(optional) "
+            "input value"
+        li
+            code
+                "size"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"m"'
+            ', "s";'
+        li
+            code
+                "placeholder"
+            " — "
+            em
+                "(optional) "
+            "empty input placeholder"
+        li
+            code
+                "reset"
+            " — "
+            em
+                "(optional) "
+            "with reset button to clear value;"
+        li
+            code
+                "class"
+            " — "
+            em
+                "(optional) "
+            "additional classes (whitespace-separated);"
+        li
+            code
+                "disabled"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "noAPI"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            "."
+    h3
+        "API"
+    code
+        'nya::input name="input" AS $i // Template call exposes API object.'
+    ul
+        li
+            code
+                "$i.on(event, handler)"
+            " — add event handler;"
+        li
+            code
+                "$i.val([value])"
+            " — get or set value;"
+        li
+            code
+                "$i.disabled([value])"
+            " — get or set disabled state."
+    h3
+        "Examples"
+    dl
+        dt
+            "Normal input"
+        dd
+            nya::input name="input1" value="Normal"
+            code
+                'nya::input name="input1" value="Normal"'
+
+            nya::input name="input2" value="Normal Disabled" disabled=(true)
+            code
+                'nya::input name="input2" value="Normal Disabled" disabled=(true)'
+
+        dt
+            "Small input"
+        dd
+            nya::input name="input3" value="Small" size="s"
+            code
+                'nya::input name="input3" value="Small" size="s"'
+
+            nya::input name="input4" value="Small Disabled" size="s" disabled=(true)
+            code
+                'nya::input name="input4" value="Small Disabled" size="s" disabled=(true)'
+
+        dt
+            "With placeholder"
+        dd
+            nya::input name="input5" value="" placeholder="Hello world"
+            code
+                'nya::input name="input5" value="" placeholder="Hello world"'
+
+            nya::input name="input6" value="" placeholder="Hello world" disabled=(true)
+            code
+                'nya::input name="input6" value="" placeholder="Hello world" disabled=(true)'
+
+            nya::input name="input7" value="" size="s" placeholder="Hello world"
+            code
+                'nya::input name="input7" value="" size="s" placeholder="Hello world"'
+
+            nya::input name="input8" value="" size="s" placeholder="Hello world" disabled=(true)
+            code
+                'nya::input name="input8" value="" size="s" placeholder="Hello world" disabled=(true)'
+
+        dt
+            "With reset"
+        dd
+            nya::input name="input9" value="Normal Reset" reset=(true)
+            code
+                'nya::input name="input9" value="Normal Reset" reset=(true)'
+
+            nya::input name="input10" value="Normal Disabled Reset" reset=(true) disabled=(true)
+            code
+                'nya::input name="input10" value="Normal Disabled Reset" reset=(true) disabled=(true)'
+
+            nya::input name="input11" value="Small Reset" size="s" reset=(true)
+            code
+                'nya::input name="input11" value="Small Reset" size="s" reset=(true)'
+
+            nya::input name="input12" value="Small Disabled Reset" size="s" reset=(true) disabled=(true)
+            code
+                'nya::input name="input12" value="Small Disabled Reset" size="s" reset=(true) disabled=(true)'
+
+
+    h2
+        "Textarea"
+    h3
+        "Template arguments"
+    code
+        'nya::textarea name [value] [size] [placeholder] [reset] [rows] [class] [disabled] [noAPI]'
+    ul
+        li
+            code
+                "name"
+            " — textarea name;"
+        li
+            code
+                "value"
+            " — "
+            em
+                "(optional) "
+            "textarea value"
+        li
+            code
+                "size"
+            " — "
+            em
+                "(optional) "
+            strong
+                '"m"'
+            ', "s";'
+        li
+            code
+                "placeholder"
+            " — "
+            em
+                "(optional) "
+            "empty textarea placeholder"
+        li
+            code
+                "reset"
+            " — "
+            em
+                "(optional) "
+            "with reset button to clear value;"
+        li
+            code
+                "rows"
+            " — "
+            em
+                "(optional) "
+            "number of rows;"
+        li
+            code
+                "class"
+            " — "
+            em
+                "(optional) "
+            "additional classes (whitespace-separated);"
+        li
+            code
+                "disabled"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            ";"
+        li
+            code
+                "noAPI"
+            " — "
+            em
+                "(optional) "
+            "(true), "
+            strong
+                "(false)"
+            "."
+    h3
+        "API"
+    code
+        'nya::textarea name="textarea" AS $t // Template call exposes API object.'
+    ul
+        li
+            code
+                "$t.on(event, handler)"
+            " — add event handler;"
+        li
+            code
+                "$t.val([value])"
+            " — get or set value;"
+        li
+            code
+                "$t.disabled([value])"
+            " — get or set disabled state."
+    h3
+        "Examples"
+    dl
+        dt
+            "Normal textarea"
+        dd
+            nya::textarea name="textarea1" value="Normal"
+            code
+                'nya::textarea name="textarea1" value="Normal"'
+
+            nya::textarea name="textarea2" value="Normal Disabled" disabled=(true)
+            code
+                'nya::textarea name="textarea2" value="Normal Disabled" disabled=(true)'
+
+        dt
+            "Small textarea"
+        dd
+            nya::textarea name="textarea3" value="Small" size="s"
+            code
+                'nya::textarea name="textarea3" value="Small" size="s"'
+
+            nya::textarea name="textarea4" value="Small Disabled" size="s" disabled=(true)
+            code
+                'nya::textarea name="textarea4" value="Small Disabled" size="s" disabled=(true)'
+
+        dt
+            "With placeholder"
+        dd
+            nya::textarea name="textarea5" value="" placeholder="Hello world"
+            code
+                'nya::textarea name="textarea5" value="" placeholder="Hello world"'
+
+            nya::textarea name="textarea6" value="" placeholder="Hello world" disabled=(true)
+            code
+                'nya::textarea name="textarea6" value="" placeholder="Hello world" disabled=(true)'
+
+            nya::textarea name="textarea7" value="" size="s" placeholder="Hello world"
+            code
+                'nya::textarea name="textarea7" value="" size="s" placeholder="Hello world"'
+
+            nya::textarea name="textarea8" value="" size="s" placeholder="Hello world" disabled=(true)
+            code
+                'nya::textarea name="textarea8" value="" size="s" placeholder="Hello world" disabled=(true)'
+
+        dt
+            "With reset"
+        dd
+            nya::textarea name="textarea9" value="Normal Reset" reset=(true)
+            code
+                'nya::textarea name="textarea9" value="Normal Reset" reset=(true)'
+
+            nya::textarea name="textarea10" value="Normal Disabled Reset" reset=(true) disabled=(true)
+            code
+                'nya::textarea name="textarea10" value="Normal Disabled Reset" reset=(true) disabled=(true)'
+
+            nya::textarea name="textarea11" value="Small Reset" size="s" reset=(true)
+            code
+                'nya::textarea name="textarea11" value="Small Reset" size="s" reset=(true)'
+
+            nya::textarea name="textarea12" value="Small Disabled Reset" size="s" reset=(true) disabled=(true)
+            code
+                'nya::textarea name="textarea12" value="Small Disabled Reset" size="s" reset=(true) disabled=(true)'
+
+        dt
+            "With number of rows"
+        dd
+            nya::textarea name="textarea13" value="Normal Rows" rows=(5)
+            code
+                'nya::textarea name="textarea13" value="Normal Rows" rows=(5)'
+
+            nya::textarea name="textarea13" value="Small Rows" size="s" rows=(5)
+            code
+                'nya::textarea name="textarea13" value="Small Rows" size="s" rows=(5)'

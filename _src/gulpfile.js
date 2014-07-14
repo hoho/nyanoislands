@@ -51,7 +51,8 @@ gulp.task('demo', function() {
 
         .pipe(cssFilter)
         .pipe(concat('deps.css'))
-        .pipe(minifyCSS())
+        // TODO: Uncomment when https://github.com/GoalSmashers/clean-css/issues/316 is fixed.
+        //.pipe(minifyCSS())
         .pipe(cssFilter.restore())
 
         .pipe(jsFilter)
