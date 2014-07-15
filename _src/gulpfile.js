@@ -46,7 +46,7 @@ gulp.task('demo', function() {
             common: 'common.js',
             templates: 'tpl.js',
             deps: true,
-            libs: {nyanoislands: require('../../src/index.js')}
+            libs: {nyanoislands: require('nyanoislands')}
         }))
 
         .pipe(cssFilter)
