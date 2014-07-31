@@ -8,6 +8,11 @@ Nya.Input = Nya.extend({
         this._i = inputNode;
     },
 
+    on: function(event, handler) {
+        $B(this._n).on(event, handler);
+        return this;
+    },
+
     val: function(val) {
         var ret = $B(this._i).attr('value', val);
         return val === undefined ? ret : this;
