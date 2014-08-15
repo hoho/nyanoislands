@@ -1,4 +1,4 @@
-nya::_input $name $value $size="m" $placeholder $reset $rows $class $disabled $noAPI
+nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disabled $noAPI
     &"input.css"
     &"input.js"
 
@@ -9,14 +9,14 @@ nya::_input $name $value $size="m" $placeholder $reset $rows $class $disabled $n
 
                 span%nya-input(reset) AS $resetNode
                 span%nya-input(content)
-                    [name=$name]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])%nya-input(controller)[placeholder=$placeholder]:if($disabled, [disabled]) AS $inputNode
+                    [name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])%nya-input(controller)[placeholder=$placeholder]:if($disabled, [disabled]) AS $inputNode
                         TEST $rows
                             $value
                     span%nya-input(view)
                         """&nbsp;"""
 
         OTHERWISE
-            %nya-input{size=$size}{reset="no"}%nya-input(controller)[name=$name]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .nya-input_disabled[disabled]) AS $inputNode
+            %nya-input{size=$size}{reset="no"}%nya-input(controller)[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .nya-input_disabled[disabled]) AS $inputNode
                 @class +$class
 
                 TEST $rows
@@ -30,6 +30,6 @@ nya::_input $name $value $size="m" $placeholder $reset $rows $class $disabled $n
         return $noAPI ? undefined : new Nya.Input($node, $inputNode);
 
 
-nya::input $name $value $size $placeholder $reset $class $disabled $noAPI
-    nya::_input $name $value $size $placeholder $reset (false) $class $disabled $noAPI AS $ret
+nya::input $name $value $size $placeholder $id $reset $class $disabled $noAPI
+    nya::_input $name $value $size $placeholder $id $reset (false) $class $disabled $noAPI AS $ret
     EXPOSE $ret
