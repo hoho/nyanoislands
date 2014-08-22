@@ -31,8 +31,7 @@
 }
 .nya-input_reset_no {
   width: 400px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid transparent;
   padding: 5px 10px;
   line-height: 20px;
@@ -42,18 +41,12 @@
   border-top-color: rgba(0,0,0,0.38);
   border-bottom-color: rgba(0,0,0,0.16);
   background: #fff;
-/* ie fallback */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background: -webkit-linear-gradient(#fff, #fff);
   background: linear-gradient(#fff, #fff);
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
-  -webkit-background-size: 16px 16px;
-          background-size: 16px 16px;
-  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  background-clip: padding-box;
+  background-size: 16px 16px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
   -webkit-appearance: none;
-/* override for <input type="search"> */
 }
 .nya-input_reset_no,
 .nya-input_reset_yes,
@@ -61,8 +54,7 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 100%;
   cursor: text;
   vertical-align: baseline;
@@ -72,8 +64,7 @@
   border-color: rgba(94,76,2,0.42);
   border-top-color: rgba(78,62,2,0.515);
   border-bottom-color: rgba(117,93,0,0.335);
-  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
 }
 .nya-input_reset_no:focus {
   z-index: 9;
@@ -84,12 +75,10 @@
   border-color: rgba(94,76,2,0.42);
   border-top-color: rgba(78,62,2,0.515);
   border-bottom-color: rgba(117,93,0,0.335);
-  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
 }
 .nya-input_size_s {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid transparent;
   padding: 5px 10px;
   line-height: 16px;
@@ -99,34 +88,26 @@
   border-top-color: rgba(0,0,0,0.38);
   border-bottom-color: rgba(0,0,0,0.16);
   background: #fff;
-/* ie fallback */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background: -webkit-linear-gradient(#fff, #fff);
   background: linear-gradient(#fff, #fff);
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
-  -webkit-background-size: 16px 16px;
-          background-size: 16px 16px;
-  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  background-clip: padding-box;
+  background-size: 16px 16px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
   -webkit-appearance: none;
-/* override for <input type="search"> */
 }
 .nya-input_size_s:focus {
   outline: none;
   border-color: rgba(94,76,2,0.42);
   border-top-color: rgba(78,62,2,0.515);
   border-bottom-color: rgba(117,93,0,0.335);
-  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
 }
 .nya-input_size_s:focus {
   z-index: 9;
 }
 .nya-input_reset_yes {
   width: 400px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid transparent;
   padding: 5px 10px;
   line-height: 20px;
@@ -160,8 +141,7 @@
   float: right;
 }
 .nya-input_reset_yes.nya-input_size_s {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid transparent;
   padding: 5px 10px;
   line-height: 16px;
@@ -189,18 +169,12 @@
   border-top-color: rgba(0,0,0,0.38);
   border-bottom-color: rgba(0,0,0,0.16);
   background: #fff;
-/* ie fallback */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background: -webkit-linear-gradient(#fff, #fff);
   background: linear-gradient(#fff, #fff);
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
-  -webkit-background-size: 16px 16px;
-          background-size: 16px 16px;
-  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  background-clip: padding-box;
+  background-size: 16px 16px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
   -webkit-appearance: none;
-/* override for <input type="search"> */
 }
 .nya-input .nya-input__reset {
   margin: -5px -5px -5px 0;

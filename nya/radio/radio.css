@@ -29,14 +29,12 @@
           user-select: none;
   color: #000;
   border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
-          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
   width: 1em;
   height: 1em;
   padding: 0 1px 1px 0;
   line-height: 1em;
   background: rgba(0,0,0,0.3);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0.4)));
   background: -webkit-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   text-align: center;
@@ -71,13 +69,11 @@ input[type=file]:focus + .nya-radio__flag,
 input[type=file]:focus + .nya-radio__flag:after,
 .nya-radio__flag:focus:after {
   z-index: 9;
-  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
-          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-radio__flag:before {
   background: #f7f7f7;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
   background: -webkit-linear-gradient(#fff, #eee);
   background: linear-gradient(#fff, #eee);
 }
@@ -100,17 +96,14 @@ input:not(:checked) + .nya-radio__flag > .nya-radio__flag-icon {
 .nya-radio__input:checked + .nya-radio__flag,
 .nya-radio__input:checked + .nya-radio__flag:hover {
   background: rgba(255,236,166,0.4);
-  -webkit-box-shadow: 0 1px 7px rgba(30,23,0,0.8) inset, 0 2px 0 -1px rgba(255,255,255,0.2);
-          box-shadow: 0 1px 7px rgba(30,23,0,0.8) inset, 0 2px 0 -1px rgba(255,255,255,0.2);
+  box-shadow: 0 1px 7px rgba(30,23,0,0.8) inset, 0 2px 0 -1px rgba(255,255,255,0.2);
 }
 .nya-radio__input:checked + .nya-radio__flag:before,
 .nya-radio__input:checked + .nya-radio__flag:hover:before {
   background: #fff1be;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffeca6), to(#fff6d5));
   background: -webkit-linear-gradient(#ffeca6, #fff6d5);
   background: linear-gradient(#ffeca6, #fff6d5);
-  -webkit-box-shadow: 0 1px 3px -1px rgba(0,0,0,0.45) inset;
-          box-shadow: 0 1px 3px -1px rgba(0,0,0,0.45) inset;
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,0.45) inset;
 }
 .nya-radio__input:checked + .nya-radio__flag .button-content,
 .nya-radio__input:checked + .nya-radio__flag:hover .button-content {
@@ -121,8 +114,7 @@ input:not(:checked) + .nya-radio__flag > .nya-radio__flag-icon {
 }
 .nya-radio-input:focus + .nya-radio__flag:after {
   z-index: 9;
-  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
-          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
   border-radius: inherit;
 }
 .nya-radio_size_s,

@@ -25,5 +25,10 @@ Nya.Input = Nya.extend({
             ret = this;
         }
         return ret;
+    },
+
+    focus: function() {
+        $B(this._i).emit('focus');
+        return this;
     }
 });

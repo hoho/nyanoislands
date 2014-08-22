@@ -38,5 +38,10 @@ Nya.Checkbox = Nya.extend({
             ret = this;
         }
         return ret;
+    },
+
+    focus: function() {
+        $B(this._c).emit('focus');
+        return this;
     }
 });

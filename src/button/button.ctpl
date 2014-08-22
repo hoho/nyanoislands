@@ -5,4 +5,5 @@ nya::button $title $theme="normal" $size="m" $type="button" $href $class $disabl
         @class +('nya-button_' + $theme + '_' + $size + ($class ? ' ' + $class : ''))
         span%nya-button(title) AS $titleNode
             $title
+        PAYLOAD
     EXPOSE ($noAPI ? undefined : new Nya.Button($node, $titleNode))

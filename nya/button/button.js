@@ -31,5 +31,10 @@ Nya.Button = Nya.extend({
             ret = this;
         }
         return ret;
+    },
+
+    focus: function() {
+        $B(this._n).emit('focus');
+        return this;
     }
 });
