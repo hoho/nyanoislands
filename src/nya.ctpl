@@ -2,3 +2,7 @@ nya::
     &|(typeof theme === 'undefined' ? '"nya.light.css"' : '"nya.' + theme + '.css"')|
     &"babydom.js"
     &"nya.js"
+
+
+nya::core
+    // Empty template in case only core styles are needed.

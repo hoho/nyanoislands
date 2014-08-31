@@ -6,28 +6,37 @@ var eslint = require('gulp-eslint');
 var prefix = require('gulp-autoprefixer');
 var less = require('gulp-less');
 var add = require('gulp-add');
+var conkitty = require('gulp-conkitty');
+var gulpFilter = require('gulp-filter');
+var concat = require('gulp-concat');
 
 var fs = require('fs');
 var path = require('path');
+var del = require('del');
 
 // TODO: Replace with require.resolve() as soon as Bootstrap will release a fix.
 var BOOTSTRAP_PATH = '.';
 var DEST = 'nya';
 
 
+gulp.task('clean', function(cb) {
+    del([DEST, 'tmp'], cb);
+});
+
+
 gulp.task('eslint', function() {
-    return gulp.src(['gulpfile.js', 'src/**/*.js'])
-        .pipe(eslint({
-            rules: {
-                'quotes': [2, 'single'],
-                'no-shadow-restricted-names': 0,
-                'no-underscore-dangle': 0
-            },
-            env: {
-                'node': true,
-                'browser': true
-            }
-        }))
+    var rules = {
+        'quotes': [2, 'single'],
+        'no-shadow-restricted-names': 0,
+        'no-underscore-dangle': 0
+    };
+
+    gulp.src('src/**/*.js')
+        .pipe(eslint({rules: rules, env: {browser: true}}))
+        .pipe(eslint.format());
+
+    gulp.src('gulpfile.js')
+        .pipe(eslint({rules: rules, env: {node: true}}))
         .pipe(eslint.format());
 });
 
@@ -46,30 +55,59 @@ gulp.task('copy-bootstrap', function() {
 
 // Copy .less files with variables.
 gulp.task('copy-less', function() {
-    gulp.src(['src/dark.less', 'src/light.less'])
+    return gulp.src(['src/dark.less', 'src/light.less'])
         .pipe(gulp.dest(DEST));
 });
 
 
 gulp.task('copy-templates', function() {
-    gulp.src('src/**/*.ctpl')
+    return gulp.src('src/**/*.ctpl')
         .pipe(gulp.dest(DEST));
 });
 
 
 gulp.task('copy-scripts', function() {
-    gulp.src('src/**/*.js')
-        .pipe(add('babydom.js', fs.readFileSync(require.resolve('babydom'), {encoding: 'utf8'})))
+    return gulp.src(['src/**/*.js', require.resolve('babydom')])
         .pipe(gulp.dest(DEST));
 });
 
 
-gulp.task('build-less', ['copy-bootstrap', 'copy-templates', 'copy-less', 'copy-scripts'], function() {
-    return gulp.src(['src/nya.light.less', 'src/nya.dark.less', 'src/*/**/*.less'])
+gulp.task('build-less', ['copy-bootstrap', 'copy-less'], function() {
+    return gulp.src(['src/**/*.light.less', 'src/**/*.dark.less'])
         .pipe(less({paths: [BOOTSTRAP_PATH, DEST]}))
         .pipe(prefix('last 1 version', '> 1%'))
         .pipe(gulp.dest(DEST));
 });
 
 
-gulp.task('default', ['eslint', 'build-less']);
+gulp.task('build', ['build-less', 'copy-templates', 'copy-scripts']);
+
+
+gulp.task('test-pages', ['build'], function() {
+    var nyanoislands = require('./index.js');
+
+    ['', 'light', 'dark'].forEach(function(theme) {
+        var cssFilter = gulpFilter('**/*.css');
+        var jsFilter = gulpFilter(['**/*.js']);
+
+        return gulp.src('test-page/test-page.ctpl')
+            .pipe(conkitty({
+                common: 'common.js',
+                templates: 'tpl.js',
+                libs: {nyanoislands: nyanoislands},
+                deps: true,
+                env: theme ? {theme: theme} : undefined
+            }))
+            .pipe(cssFilter)
+            .pipe(concat('test-page.css'))
+            .pipe(cssFilter.restore())
+            .pipe(jsFilter)
+            .pipe(concat('test-page.js'))
+            .pipe(jsFilter.restore())
+            .pipe(add('test-page.html', fs.readFileSync('test-page/test-page.html', {encoding: 'utf8'})))
+            .pipe(gulp.dest(path.join('tmp', 'test-pages', theme)));
+    });
+});
+
+
+gulp.task('default', ['eslint', 'build', 'test-pages']);
