@@ -1,0 +1,92 @@
+.nya-checkbox__input
+{
+  position: absolute !important;
+
+  clip: rect(1px,1px,1px,1px) !important;
+}
+
+
+.nya-checkbox__flag
+{
+  background: @input-bg;
+
+  border: 1px solid @input-border;
+
+  border-radius: 3px;
+
+  display: inline-block;
+
+  height: 15px;
+
+  margin: -3px 6px 0 0;
+
+  position: relative;
+
+  text-align: center;
+
+  user-select: none;
+
+  vertical-align: middle;
+
+  width: 15px;
+}
+
+
+.nya-checkbox__flag > .nya-checkbox__flag-icon
+{
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+
+  color: @checkbox-flag-color;
+
+  height: 18px;
+
+  left: 50%;
+
+  margin: -16px 0 0 -2px;
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: scale(.9) rotate(47deg) skewX(15deg);
+
+  width: 8px;
+}
+
+
+.nya-checkbox__flag-icon
+{
+  visibility: hidden;
+}
+
+
+.nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon
+{
+  visibility: visible;
+}
+
+
+.nya-checkbox__input:checked + .nya-checkbox__flag,
+.nya-checkbox__input:checked + .nya-checkbox__flag:hover
+{
+  background: @checkbox-checked-background;
+
+  border: 1px solid @checkbox-checked-border;
+}
+
+
+.nya-checkbox__input:focus + .nya-checkbox__flag
+{
+  box-shadow: 0 0 6px 2px @input-border-focus;
+
+  outline: 0;
+}
+
+
+.nya-checkbox.disabled
+{
+  opacity: 0.6;
+
+  pointer-events: none;
+}

@@ -1,13 +1,22 @@
-nya::checkbox $label $name $value $size="m" $checked $id $class $disabled $noAPI
-    &"checkbox.css"
+nya::checkbox $label $name $value $size="m" $checked $id $inline $class $disabled $noAPI
+    &|(typeof theme === 'undefined' ? '"checkbox.light.css"' : '"checkbox.' + theme + '.css"')|
     &"checkbox.js"
-    label%nya-checkbox{size=$size}:if($disabled, .nya-checkbox_disabled) AS $node
-        @class +$class
 
-        input%nya-checkbox(input)[id=$id][type="checkbox"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $c
-        span%nya-checkbox(flag)
-            span%nya-checkbox(flag-icon)
-        span%nya-checkbox(label) AS $l
+    SET $inner
+        input.nya-checkbox__input[id=$id][type="checkbox"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $c
+        span.nya-checkbox__flag
+            span.nya-checkbox__flag-icon
+        span.nya-checkbox__label AS $l
             $label
+    CHOOSE
+        WHEN $inline
+            label.nya-checkbox.checkbox-inline:if($disabled, .disabled) AS $node
+                @class +$class
+                ((($inner)))
+        OTHERWISE
+            div.nya-checkbox.checkbox:if($disabled, .disabled) AS $node
+                @class +$class
+                label
+                    ((($inner)))
 
     EXPOSE ($noAPI ? undefined : new Nya.Checkbox($node, $c, $l))

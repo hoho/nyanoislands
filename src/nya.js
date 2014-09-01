@@ -1,6 +1,6 @@
-'use strict';
+window.Nya = (function(nyaProto) {
+    'use strict';
 
-var Nya = (function(nyaProto) {
     function Nya() {}
 
     nyaProto = Nya.prototype;
