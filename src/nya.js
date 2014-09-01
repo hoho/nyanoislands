@@ -28,5 +28,21 @@ var Nya = (function(nyaProto) {
         return NyaDescendant;
     };
 
+    Nya.THEMES = {
+        default: 'default',
+        primary: 'primary',
+        success: 'success',
+        info:    'info',
+        warning: 'warning',
+        danger:  'danger'
+    };
+
+    Nya.SIZES = {
+        l:  'lg',
+        m:  '',
+        s:  'sm',
+        xs: 'xs'
+    };
+
     return Nya;
 })();

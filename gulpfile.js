@@ -55,7 +55,7 @@ gulp.task('copy-bootstrap', function() {
 
 // Copy .less files with variables.
 gulp.task('copy-less', function() {
-    return gulp.src(['src/dark.less', 'src/light.less'])
+    return gulp.src(['src/common.less', 'src/dark.less', 'src/light.less'])
         .pipe(gulp.dest(DEST));
 });
 

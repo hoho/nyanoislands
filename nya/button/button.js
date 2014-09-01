@@ -38,3 +38,10 @@ Nya.Button = Nya.extend({
         return this;
     }
 });
+
+
+Nya.Button.getClass = function(theme, size, extra) {
+    theme = theme === 'link' ? theme : (Nya.THEMES[theme] || 'default');
+    size = Nya.SIZES[size];
+    return 'btn-' + theme + (size ? ' btn-' + size : '') + (extra ? ' ' + extra : '');
+};
