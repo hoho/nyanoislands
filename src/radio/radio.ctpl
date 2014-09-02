@@ -1,14 +1,23 @@
-nya::radio $label $name $value $size="m" $checked $id $class $disabled $noAPI
-    &"radio.css"
+nya::radio $label $name $value $size="m" $checked $id $inline $class $disabled $noAPI
+    &|(typeof theme === 'undefined' ? '"radio.light.css"' : '"radio.' + theme + '.css"')|
     &"../checkbox/checkbox.js"
     &"radio.js"
-    label%nya-radio{size=$size}:if($disabled, .nya-radio_disabled) AS $node
-        @class +$class
 
-        input%nya-radio(input)[id=$id][type="radio"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $r
-        span%nya-radio(flag)
-            span%nya-radio(flag-icon)
-        span%nya-radio(label) AS $l
+    SET $inner
+        input.nya-radio__input[id=$id][type="radio"][name=$name][value=$value]:if($checked, [checked]):if($disabled, [disabled]) AS $r
+        span.nya-radio__flag
+            span.nya-radio__flag-icon
+        span.nya-radio__label AS $l
             $label
+    CHOOSE
+        WHEN $inline
+            label.nya-radio.radio-inline:if($disabled, .disabled) AS $node
+                @class +$class
+                ((($inner)))
+        OTHERWISE
+            div.nya-radio.radio:if($disabled, .disabled) AS $node
+                @class +$class
+                label
+                    ((($inner)))
 
     EXPOSE ($noAPI ? undefined : new Nya.Radio($node, $r, $l))

@@ -4,8 +4,6 @@
     'use strict';
 
     Nya.Checkbox = Nya.extend({
-        _d: 'nya-checkbox_disabled',
-
         init: function (node, checkbox, label) {
             this._n = node;
             this._c = checkbox;
@@ -35,7 +33,7 @@
         disabled: function (val) {
             var ret = $B(this._c).attr('disabled', val);
             if (val !== undefined) {
-                $B(this._n).toggleClass(this._d, !!val);
+                $B(this._n).toggleClass('disabled', !!val);
                 ret = this;
             }
             return ret;

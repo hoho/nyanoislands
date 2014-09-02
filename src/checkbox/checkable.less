@@ -1,0 +1,64 @@
+.nya-checkable(@name) {
+  .nya-@{name}__input {
+    position: absolute !important;
+
+    clip: rect(1px, 1px, 1px, 1px) !important;
+  }
+
+  .nya-@{name}__flag {
+    background: @input-bg;
+
+    border: 1px solid @input-border;
+
+    border-radius: 3px;
+
+    display: inline-block;
+
+    height: 15px;
+
+    margin: -3px 6px 0 0;
+
+    position: relative;
+
+    text-align: center;
+
+    user-select: none;
+
+    vertical-align: middle;
+
+    width: 15px;
+
+    .nya-checkable__flag(@name);
+  }
+
+  .nya-@{name}__flag > .nya-@{name}__flag-icon {
+    position: absolute;
+
+    .nya-checkable__flag-icon(@name);
+  }
+
+  .nya-@{name}__flag-icon {
+    visibility: hidden;
+  }
+
+  .nya-@{name}__input:checked + .nya-@{name}__flag > .nya-@{name}__flag-icon {
+    visibility: visible;
+  }
+
+  .nya-@{name}__input:checked + .nya-@{name}__flag,
+  .nya-@{name}__input:checked + .nya-@{name}__flag:hover {
+    background: @checkable-checked-background;
+
+    border: 1px solid @checkable-checked-border;
+  }
+
+  .nya-@{name}__input:focus + .nya-@{name}__flag {
+    .tab-focus();
+  }
+
+  .nya-@{name}.disabled {
+    opacity: 0.6;
+
+    pointer-events: none;
+  }
+}

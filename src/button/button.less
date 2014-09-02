@@ -1,9 +1,9 @@
-.nya-button:focus,
-.nya-button:focus:active
+.nya-button.btn
 {
-  box-shadow: 0 0 6px 2px @input-border-focus;
-
-  outline: 0;
+  &:active,
+  &.active {
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
 }
 
 
