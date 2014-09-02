@@ -25,17 +25,19 @@
   color: #ffffff;
   height: 18px;
   left: 5px;
-  top: -10px;
+  top: -9px;
   -webkit-transform: scale(0.9) rotate(47deg) skewX(15deg);
       -ms-transform: scale(0.9) rotate(47deg) skewX(15deg);
           transform: scale(0.9) rotate(47deg) skewX(15deg);
   width: 8px;
 }
 .nya-checkbox__flag-icon {
-  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
-  visibility: visible;
+  opacity: 1;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag,
 .nya-checkbox__input:checked + .nya-checkbox__flag:hover {
@@ -46,8 +48,8 @@
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 6px 2px rgba(255, 204, 0, 0.7);
-  outline: none;
+  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  outline: 0;
 }
 .nya-checkbox.disabled {
   opacity: 0.6;

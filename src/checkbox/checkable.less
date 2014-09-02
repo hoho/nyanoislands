@@ -38,11 +38,12 @@
   }
 
   .nya-@{name}__flag-icon {
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s ease;
   }
 
   .nya-@{name}__input:checked + .nya-@{name}__flag > .nya-@{name}__flag-icon {
-    visibility: visible;
+    opacity: 1;
   }
 
   .nya-@{name}__input:checked + .nya-@{name}__flag,
