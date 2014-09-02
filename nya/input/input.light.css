@@ -1,0 +1,16 @@
+.nya-input_reset {
+  position: relative;
+}
+.nya-input_reset .nya-input__input {
+  padding-right: 25px;
+  resize: none;
+}
+.nya-input_reset .nya-input__input::-ms-clear {
+  display: none;
+}
+.nya-input_reset .close {
+  color: #333333;
+  position: absolute;
+  right: 6px;
+  top: 5px;
+}

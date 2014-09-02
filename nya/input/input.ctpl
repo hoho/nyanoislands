@@ -1,22 +1,21 @@
 nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disabled $noAPI
-    &"input.css"
+    &|(typeof theme === 'undefined' ? '"input.light.css"' : '"input.' + theme + '.css"')|
     &"input.js"
 
     CHOOSE
         WHEN $reset
-            label%nya-input{size=$size}{reset="yes"}:if($disabled, .nya-input_disabled) AS $node
+            div.nya-input.nya-input_reset AS $node
                 @class +$class
 
-                span%nya-input(reset) AS $resetNode
-                span%nya-input(content)
-                    [name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])%nya-input(controller)[placeholder=$placeholder]:if($disabled, [disabled]) AS $inputNode
-                        TEST $rows
-                            $value
-                    span%nya-input(view)
-                        """&nbsp;"""
+                .nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
+                    TEST $rows
+                        $value
+                span.close AS $resetNode
+                    span
+                        """&times;"""
 
         OTHERWISE
-            %nya-input{size=$size}{reset="no"}%nya-input(controller)[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .nya-input_disabled[disabled]) AS $inputNode
+            .nya-input.nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
                 @class +$class
 
                 TEST $rows
@@ -24,9 +23,11 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
 
     EXPOSE JS
         if ($resetNode) {
-            $B($resetNode).on('click', function() { $inputNode.value = ''; });
+            $B($resetNode).on('click', function() {
+                $inputNode.value = '';
+                $B($inputNode).emit('focus');
+            });
         }
-
         return $noAPI ? undefined : new Nya.Input($node, $inputNode);
 
 

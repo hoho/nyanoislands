@@ -1,0 +1,23 @@
+.nya-input_reset {
+  position: relative;
+
+  .nya-input__input {
+    padding-right: @padding-base-horizontal + 13;
+
+    resize: none;
+  }
+
+  .nya-input__input::-ms-clear {
+    display: none;
+  }
+
+  .close {
+    color: @input-reset-color;
+
+    position: absolute;
+
+    right: @padding-base-vertical;
+
+    top: @padding-base-vertical - 1;
+  }
+}

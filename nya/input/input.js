@@ -22,7 +22,7 @@
         disabled: function(val) {
             var ret = $B(this._i).attr('disabled', val);
             if (val !== undefined) {
-                $B(this._n).toggleClass('nya-input_disabled', !!val);
+                $B(this._i).toggleClass('disabled', !!val);
                 ret = this;
             }
             return ret;
