@@ -45,4 +45,7 @@
         }
     });
 
+    Nya.Checkbox.getClass = function(size, extra) {
+        return (size === 's' ? ' checkable-sm' : '') + (extra ? ' ' + extra : '');
+    };
 })(Nya);

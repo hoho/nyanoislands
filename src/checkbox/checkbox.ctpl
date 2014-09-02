@@ -11,11 +11,11 @@ nya::checkbox $label $name $value $size="m" $checked $id $inline $class $disable
     CHOOSE
         WHEN $inline
             label.nya-checkbox.checkbox-inline:if($disabled, .disabled) AS $node
-                @class +$class
+                @class +(Nya.Checkbox.getClass($size, $class))
                 ((($inner)))
         OTHERWISE
             div.nya-checkbox.checkbox:if($disabled, .disabled) AS $node
-                @class +$class
+                @class +(Nya.Checkbox.getClass($size, $class))
                 label
                     ((($inner)))
 

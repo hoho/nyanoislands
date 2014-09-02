@@ -12,11 +12,11 @@ nya::radio $label $name $value $size="m" $checked $id $inline $class $disabled $
     CHOOSE
         WHEN $inline
             label.nya-radio.radio-inline:if($disabled, .disabled) AS $node
-                @class +$class
+                @class +(Nya.Radio.getClass($size, $class))
                 ((($inner)))
         OTHERWISE
             div.nya-radio.radio:if($disabled, .disabled) AS $node
-                @class +$class
+                @class +(Nya.Radio.getClass($size, $class))
                 label
                     ((($inner)))
 

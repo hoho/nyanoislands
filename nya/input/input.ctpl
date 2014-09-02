@@ -5,7 +5,7 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
     CHOOSE
         WHEN $reset
             div.nya-input.nya-input_reset AS $node
-                @class +$class
+                @class +(Nya.Input.getClass($size, $class))
 
                 .nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
                     TEST $rows
@@ -16,7 +16,7 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
 
         OTHERWISE
             .nya-input.nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
-                @class +$class
+                @class +(Nya.Input.getClass($size, $class))
 
                 TEST $rows
                     $value

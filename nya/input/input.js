@@ -33,4 +33,9 @@
             return this;
         }
     });
+
+    Nya.Input.getClass = function(size, extra) {
+        size = Nya.SIZES[size];
+        return (size ? ' input-' + size : '') + (extra ? ' ' + extra : '');
+    };
 })();
