@@ -74,13 +74,13 @@ page
 
                 section
                     p
-                        nya::button title="Large button" size="l" theme="primary"
+                        nya::button title="Large button" size="l"
                         " "
-                        nya::button title="Default button" theme="primary"
+                        nya::button title="Default button"
                         " "
-                        nya::button title="Small button" size="s" theme="primary"
+                        nya::button title="Small button" size="s"
                         " "
-                        nya::button title="Mini button" size="xs" theme="primary"
+                        nya::button title="Mini button" size="xs"
 
             div.col-lg-6
                 section

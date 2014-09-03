@@ -619,19 +619,19 @@ $C.tpl["page"] = function() {
                     .elem("section")
                         .p()
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Large button", "primary", "l");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Large button", undefined, "l");
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default button", "primary");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default button");
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Small button", "primary", "s");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Small button", undefined, "s");
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Mini button", "primary", "xs");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Mini button", undefined, "xs");
                             })
                 .end(3)
                 .div({"class": "col-lg-6"})
