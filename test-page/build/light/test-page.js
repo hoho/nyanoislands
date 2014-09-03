@@ -466,7 +466,7 @@ $C.tpl["page"] = function() {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .act(function() {
-            $C._tpl["nya::head"].call(new $ConkittyEnvClass(this), "Examples", "https://center.yandex-team.ru/user/avatar/hoho/50/square");
+            $C._tpl["nya::head"].call(new $ConkittyEnvClass(this), "Examples");
         })
         .div({"class": "container"})
             .div({"class": "row"})
