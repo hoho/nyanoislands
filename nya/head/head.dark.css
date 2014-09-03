@@ -1,0 +1,42 @@
+.nya-head {
+  background: #1c1e22;
+  box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  z-index: -1;
+}
+.nya-head__title {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 20px;
+  height: 50px;
+  line-height: 49px;
+  overflow: hidden;
+  padding: 0 20px 0 10px;
+  position: relative;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.nya-head__title:before {
+  background-color: #6eb541;
+  background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
+  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.4);
+  content: '';
+  display: block;
+  height: 500px;
+  position: absolute;
+  right: -71.2233047px;
+  top: -225px;
+  -webkit-transform: scaleX(0.5) rotate(45deg);
+      -ms-transform: scaleX(0.5) rotate(45deg);
+          transform: scaleX(0.5) rotate(45deg);
+  width: 500px;
+  z-index: -1;
+}
+.nya-head__avatar {
+  background: #999999 no-repeat;
+  background-size: cover;
+  float: right;
+  height: 50px;
+  width: 50px;
+}

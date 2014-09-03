@@ -1,0 +1,7 @@
+nya::head $title $avatar
+    &|(typeof theme === 'undefined' ? '"head.light.css"' : '"head.' + theme + '.css"')|
+    div.nya-head
+        div.nya-head__title
+            $title
+        TEST $avatar
+            div.nya-head__avatar[style=('background-image: url(' + $avatar + ');')]
