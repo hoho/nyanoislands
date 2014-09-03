@@ -1,5 +1,5 @@
 page
-    nya::head title="Examples" avatar="https://center.yandex-team.ru/user/avatar/hoho/50/square"
+    nya::head title="Examples"
 
     div.container
         div.row
