@@ -1,3 +1,6 @@
+.checkable-sm {
+  font-size: 12px;
+}
 .nya-checkbox__input {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -17,6 +20,10 @@
           user-select: none;
   vertical-align: middle;
   width: 15px;
+}
+.checkable-sm .nya-checkbox__flag {
+  height: 13px;
+  width: 13px;
 }
 .nya-checkbox__flag > .nya-checkbox__flag-icon {
   position: absolute;
@@ -54,4 +61,10 @@
 .nya-checkbox.disabled {
   opacity: 0.6;
   pointer-events: none;
+}
+.checkable-sm .nya-checkbox__flag-icon {
+  height: 16px;
+  left: 4px;
+  top: -8px;
+  width: 7px;
 }
