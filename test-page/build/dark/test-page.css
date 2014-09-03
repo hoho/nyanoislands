@@ -3292,3 +3292,283 @@ button.close {
     display: none !important;
   }
 }
+
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
+.nya-head {
+  background: #3a3f44;
+  box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  z-index: -1;
+}
+.nya-head__title {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 20px;
+  height: 50px;
+  line-height: 49px;
+  overflow: hidden;
+  padding: 0 20px 0 10px;
+  position: relative;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.nya-head__title:before {
+  background-color: #6eb541;
+  background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
+  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.4);
+  content: '';
+  display: block;
+  height: 500px;
+  position: absolute;
+  right: -71.2233047px;
+  top: -225px;
+  -webkit-transform: scaleX(0.5) rotate(45deg);
+      -ms-transform: scaleX(0.5) rotate(45deg);
+          transform: scaleX(0.5) rotate(45deg);
+  width: 500px;
+  z-index: -1;
+}
+.nya-head__avatar {
+  background: #999999 no-repeat;
+  background-size: cover;
+  float: right;
+  height: 50px;
+  width: 50px;
+}
+
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
+.nya-button.btn:active,
+.nya-button.btn.active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.nya-button:active .nya-button__title {
+  position: relative;
+  top: 1px;
+}
+
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
+.checkable-sm {
+  font-size: 13px;
+}
+label.nya-checkbox,
+.nya-checkbox label {
+  padding-left: 0;
+}
+.nya-checkbox__input {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+.nya-checkbox__flag {
+  background: #000000;
+  border: 1px solid #3a3f44;
+  border-radius: 3px;
+  display: inline-block;
+  height: 15px;
+  margin: -3px 6px 0 0;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  width: 15px;
+}
+.checkable-sm .nya-checkbox__flag {
+  height: 13px;
+  width: 13px;
+}
+.nya-checkbox__flag > .nya-checkbox__flag-icon {
+  position: absolute;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  color: #ffffff;
+  height: 18px;
+  left: 5px;
+  top: -9px;
+  -webkit-transform: scale(0.9) rotate(47deg) skewX(15deg);
+      -ms-transform: scale(0.9) rotate(47deg) skewX(15deg);
+          transform: scale(0.9) rotate(47deg) skewX(15deg);
+  width: 8px;
+}
+.nya-checkbox__flag-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+}
+.nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.nya-checkbox__input:checked + .nya-checkbox__flag,
+.nya-checkbox__input:checked + .nya-checkbox__flag:hover {
+  background: #52575c;
+  border: 1px solid #7a8288;
+}
+.nya-checkbox__input:focus + .nya-checkbox__flag {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+  outline: 0;
+}
+.nya-checkbox.disabled {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  pointer-events: none;
+}
+.nya-checkbox.disabled .nya-checkbox__flag {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.checkable-sm .nya-checkbox__flag-icon {
+  height: 16px;
+  left: 4px;
+  top: -8px;
+  width: 7px;
+}
+
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
+.checkable-sm {
+  font-size: 13px;
+}
+label.nya-radio,
+.nya-radio label {
+  padding-left: 0;
+}
+.nya-radio__input {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+.nya-radio__flag {
+  background: #000000;
+  border: 1px solid #3a3f44;
+  border-radius: 3px;
+  display: inline-block;
+  height: 15px;
+  margin: -3px 6px 0 0;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  width: 15px;
+  border-radius: 100%;
+}
+.checkable-sm .nya-radio__flag {
+  height: 13px;
+  width: 13px;
+}
+.nya-radio__flag > .nya-radio__flag-icon {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 100%;
+  height: 7px;
+  left: 3px;
+  top: 3px;
+  width: 7px;
+}
+.nya-radio__flag-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+}
+.nya-radio__input:checked + .nya-radio__flag > .nya-radio__flag-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.nya-radio__input:checked + .nya-radio__flag,
+.nya-radio__input:checked + .nya-radio__flag:hover {
+  background: #52575c;
+  border: 1px solid #7a8288;
+}
+.nya-radio__input:focus + .nya-radio__flag {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+  outline: 0;
+}
+.nya-radio.disabled {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  pointer-events: none;
+}
+.nya-radio.disabled .nya-radio__flag {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.checkable-sm .nya-radio__flag-icon {
+  height: 5px;
+  left: 3px;
+  top: 3px;
+  width: 5px;
+}
+
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
+.nya-input_reset {
+  position: relative;
+}
+.nya-input_reset .nya-input__input {
+  padding-right: 25px;
+  resize: none;
+}
+.nya-input_reset .nya-input__input::-ms-clear {
+  display: none;
+}
+.nya-input_reset .close {
+  color: #cccccc;
+  position: absolute;
+  right: 6px;
+  top: 4px;
+}

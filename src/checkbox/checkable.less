@@ -1,4 +1,9 @@
 .nya-checkable(@name) {
+  label.nya-@{name},
+  .nya-@{name} label {
+    padding-left: 0;
+  }
+
   .nya-@{name}__input {
     position: absolute !important;
 
@@ -46,12 +51,13 @@
   }
 
   .nya-@{name}__flag-icon {
-    opacity: 0;
+    .opacity(0);
+
     transition: opacity .3s ease;
   }
 
   .nya-@{name}__input:checked + .nya-@{name}__flag > .nya-@{name}__flag-icon {
-    opacity: 1;
+    .opacity(1);
   }
 
   .nya-@{name}__input:checked + .nya-@{name}__flag,
@@ -66,9 +72,13 @@
   }
 
   .nya-@{name}.disabled {
-    opacity: 0.6;
+    .opacity(.65);
 
     pointer-events: none;
+
+    .nya-@{name}__flag {
+      .opacity(.5);
+    }
   }
 }
 

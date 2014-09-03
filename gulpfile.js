@@ -20,7 +20,7 @@ var DEST = 'nya';
 
 
 gulp.task('clean', function(cb) {
-    del([DEST, 'tmp'], cb);
+    del([DEST, 'tmp', path.join('test-page', 'build')], cb);
 });
 
 
@@ -105,7 +105,7 @@ gulp.task('test-pages', ['build'], function() {
             .pipe(concat('test-page.js'))
             .pipe(jsFilter.restore())
             .pipe(add('test-page.html', fs.readFileSync('test-page/test-page.html', {encoding: 'utf8'})))
-            .pipe(gulp.dest(path.join('tmp', 'test-pages', theme)));
+            .pipe(gulp.dest(path.join('test-page', 'build', theme)));
     });
 });
 

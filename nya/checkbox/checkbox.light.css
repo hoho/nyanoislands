@@ -1,5 +1,19 @@
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
 .checkable-sm {
-  font-size: 12px;
+  font-size: 13px;
+}
+label.nya-checkbox,
+.nya-checkbox label {
+  padding-left: 0;
 }
 .nya-checkbox__input {
   position: absolute !important;
@@ -40,11 +54,13 @@
 }
 .nya-checkbox__flag-icon {
   opacity: 0;
+  filter: alpha(opacity=0);
   -webkit-transition: opacity .3s ease;
           transition: opacity .3s ease;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
   opacity: 1;
+  filter: alpha(opacity=100);
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag,
 .nya-checkbox__input:checked + .nya-checkbox__flag:hover {
@@ -59,8 +75,13 @@
   outline: 0;
 }
 .nya-checkbox.disabled {
-  opacity: 0.6;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
   pointer-events: none;
+}
+.nya-checkbox.disabled .nya-checkbox__flag {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 .checkable-sm .nya-checkbox__flag-icon {
   height: 16px;

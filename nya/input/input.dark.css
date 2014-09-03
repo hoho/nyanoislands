@@ -1,3 +1,13 @@
+label {
+  font-weight: normal;
+}
+.control-label {
+  font-size: 13px;
+}
+.form-horizontal .control-label {
+  padding-top: 9px;
+  text-align: left;
+}
 .nya-input_reset {
   position: relative;
 }
@@ -12,5 +22,5 @@
   color: #cccccc;
   position: absolute;
   right: 6px;
-  top: 5px;
+  top: 4px;
 }

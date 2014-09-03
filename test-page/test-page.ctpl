@@ -1,0 +1,282 @@
+page
+    nya::head title="Examples" avatar="https://center.yandex-team.ru/user/avatar/hoho/50/square"
+
+    div.container
+        div.row
+            div.col-lg-12
+                h1#buttons
+                    "Buttons"
+
+        div.row
+            div.col-lg-6
+                section
+                    p
+                        nya::button title="Default"
+                        " "
+                        nya::button title="Primary" theme="primary"
+                        " "
+                        nya::button title="Success" theme="success"
+                        " "
+                        nya::button title="Info" theme="info"
+                        " "
+                        nya::button title="Warning" theme="warning"
+                        " "
+                        nya::button title="Danger" theme="danger"
+                        " "
+                        nya::button title="Link" theme="link"
+
+                section
+                    p
+                        nya::button title="Default" disabled=(true)
+                        " "
+                        nya::button title="Primary" theme="primary" disabled=(true)
+                        " "
+                        nya::button title="Success" theme="success" disabled=(true)
+                        " "
+                        nya::button title="Info" theme="info" disabled=(true)
+                        " "
+                        nya::button title="Warning" theme="warning" disabled=(true)
+                        " "
+                        nya::button title="Danger" theme="danger" disabled=(true)
+                        " "
+                        nya::button title="Link" theme="link" disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    div.btn-group
+                        nya::button title="Default"
+                        nya::button class="dropdown-toggle"
+                            span.nya-button__title
+                                span.caret
+                    " "
+                    div.btn-group
+                        nya::button title="Primary" theme="primary"
+                        nya::button class="dropdown-toggle" theme="primary"
+                            span.nya-button__title
+                                span.caret
+                    " "
+                    div.btn-group
+                        nya::button title="Success" theme="success"
+                        nya::button class="dropdown-toggle" theme="success"
+                            span.nya-button__title
+                                span.caret
+                    " "
+                    div.btn-group
+                        nya::button title="Info" theme="info"
+                        nya::button class="dropdown-toggle" theme="info"
+                            span.nya-button__title
+                                span.caret
+                    " "
+                    div.btn-group
+                        nya::button title="Warning" theme="warning"
+                        nya::button class="dropdown-toggle" theme="warning"
+                            span.nya-button__title
+                                span.caret
+
+                section
+                    p
+                        nya::button title="Large button" size="l" theme="primary"
+                        " "
+                        nya::button title="Default button" theme="primary"
+                        " "
+                        nya::button title="Small button" size="s" theme="primary"
+                        " "
+                        nya::button title="Mini button" size="xs" theme="primary"
+
+            div.col-lg-6
+                section
+                    p
+                        nya::button title="Block level button" size="l" class="btn-block"
+
+                section[style="margin-bottom: 15px;"]
+                    div.btn-group.btn-group-justified
+                        nya::button title="Left" class="btn-block" href="#"
+                        nya::button title="Middle" class="btn-block" href="#"
+                        nya::button title="Right" class="btn-block" href="#"
+
+                section[style="margin-bottom: 15px;"]
+                    div.btn-group
+                        nya::button title="1"
+                        nya::button title="2"
+                        nya::button title="3"
+                        nya::button title="4"
+                    " "
+                    div.btn-group
+                        nya::button title="5"
+                        nya::button title="6"
+                        nya::button title="7"
+                    " "
+                    div.btn-group
+                        nya::button title="8"
+                        div.btn-group
+                            nya::button title="Dropdown " class="dropdown-toggle"
+                                span.nya-button__title
+                                    span.caret
+
+                section
+                    div.btn-group-vertical
+                        nya::button title="Button"
+                        nya::button title="Button"
+                        nya::button title="Button"
+                        nya::button title="Button"
+
+        div.row
+            div.col-lg-12
+                h1#checkables
+                    "Checkboxes and radios"
+
+        div.row
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    nya::checkbox label="Block checkbox 1" name="cb1" value="val1"
+                    nya::checkbox label="Block checkbox 2" name="cb2" value="val2" checked=(true)
+                    nya::checkbox label="Block checkbox 3" name="cb3" value="val3" disabled=(true)
+                    nya::checkbox label="Block checkbox 4" name="cb4" value="val4" checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::checkbox label="Inline 1" name="icb1" value="val1" inline=(true)
+                    nya::checkbox label="Inline 2" name="icb2" value="val2" inline=(true) checked=(true)
+                    nya::checkbox label="Inline 3" name="icb3" value="val3" inline=(true) disabled=(true)
+                    nya::checkbox label="Inline 3" name="icb4" value="val4" inline=(true) checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::checkbox label="Small checkbox 1" name="scb1" value="val1" size="s"
+                    nya::checkbox label="Small checkbox 2" name="scb2" value="val2" size="s" checked=(true)
+                    nya::checkbox label="Small checkbox 3" name="scb3" value="val3" size="s" disabled=(true)
+                    nya::checkbox label="Small checkbox 4" name="scb4" value="val4" size="s" checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::checkbox label="Small inline 1" name="sicb1" value="val1" inline=(true) size="s"
+                    nya::checkbox label="Small inline 2" name="sicb2" value="val2" inline=(true) size="s" checked=(true)
+                    nya::checkbox label="Small inline 3" name="sicb3" value="val3" inline=(true) size="s" disabled=(true)
+                    nya::checkbox label="Small inline 4" name="sicb4" value="val4" inline=(true) size="s" checked=(true) disabled=(true)
+
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    nya::radio label="Block radio 1" name="r" value="val1"
+                    nya::radio label="Block radio 2" name="r" value="val2" checked=(true)
+                    nya::radio label="Block radio 3" name="rd" value="val3" disabled=(true)
+                    nya::radio label="Block radio 4" name="rd" value="val4" checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::radio label="Inline 1" name="ir" value="val1" inline=(true)
+                    nya::radio label="Inline 2" name="ir" value="val2" inline=(true) checked=(true)
+                    nya::radio label="Inline 3" name="ird" value="val3" inline=(true) disabled=(true)
+                    nya::radio label="Inline 4" name="ird" value="val4" inline=(true) checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::radio label="Small radio 1" name="sr" value="val1" size="s"
+                    nya::radio label="Small radio 2" name="sr" value="val2" size="s" checked=(true)
+                    nya::radio label="Small radio 3" name="srd" value="val3" size="s" disabled=(true)
+                    nya::radio label="Small radio 4" name="srd" value="val4" size="s" checked=(true) disabled=(true)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::radio label="Small inline 1" name="sir" value="val1" inline=(true) size="s"
+                    nya::radio label="Small inline 2" name="sir" value="val2" inline=(true) size="s" checked=(true)
+                    nya::radio label="Small inline 3" name="sird" value="val3" inline=(true) size="s" disabled=(true)
+                    nya::radio label="Small inline 4" name="sird" value="val4" inline=(true) size="s" checked=(true) disabled=(true)
+
+
+        div.row
+            div.col-lg-12
+                h1#Forms
+                    "Forms"
+
+        div.row
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    div.well
+                        form.form-horizontal
+                            fieldset
+                                legend
+                                    "Legend"
+                                div.form-group
+                                    label[for="inputEmail"].col-lg-2.control-label
+                                        "Email"
+                                    div.col-lg-10
+                                        nya::input id="inputEmail" placeholder="Email"
+                                div.form-group
+                                    label[for="inputPassword"].col-lg-2.control-label
+                                        "Password"
+                                    div.col-lg-10
+                                        nya::input type="password" id="inputPassword" placeholder="Password"
+                                        nya::checkbox label="Checkbox"
+                                div.form-group
+                                    label[for="textArea"].col-lg-2.control-label
+                                        "Textarea"
+                                    div.col-lg-10
+                                        nya::textarea rows="3" id="textArea"
+                                        span.help-block
+                                            "A longer block of help text that breaks onto a new line and may extend beyond one line."
+                                div.form-group
+                                    label.col-lg-2.control-label
+                                        "Radios"
+                                    div.col-lg-10
+                                        nya::radio label="Option one is this" name="optionsRadios" id="optionsRadios1" value="option1" checked=(true)
+                                        nya::radio label="Option two can be something else" name="optionsRadios" id="optionsRadios2" value="option2"
+                                div.form-group
+                                    label[for="select"].col-lg-2.control-label
+                                        "Selects"
+                                    div.col-lg-10
+                                        select.form-control#select
+                                            option
+                                                "1"
+                                            option
+                                                "2"
+                                            option
+                                                "3"
+                                            option
+                                                "4"
+                                            option
+                                                "5"
+                                        br
+                                        select.form-control[multiple]
+                                            option
+                                                "1"
+                                            option
+                                                "2"
+                                            option
+                                                "3"
+                                            option
+                                                "4"
+                                            option
+                                                "5"
+                                div.form-group
+                                    div.col-lg-10.col-lg-offset-2
+                                        nya::button title="Cancel"
+                                        " "
+                                        nya::button title="Submit" theme="success"
+
+            div.col-lg-4.col-lg-offset-1
+                form
+                    div.form-group
+                        label.control-label[for="focusedInput"]
+                            "Focused input"
+                        nya::input id="focusedInput" value="This is focused..."
+                    div.form-group
+                        label.control-label[for="disabledInput"]
+                            "Disabled input"
+                        nya::input id="disabledInput" placeholder="Disabled input here..." disabled=(true)
+                    div.form-group.has-warning
+                        label.control-label[for="inputWarning"]
+                            "Input warning"
+                        nya::input id="inputWarning"
+                    div.form-group.has-error
+                        label.control-label[for="inputError"]
+                            "Input error"
+                        nya::input id="inputError"
+                    div.form-group.has-success
+                        label.control-label[for="inputSuccess"]
+                            "Input success"
+                        nya::input id="inputSuccess"
+                    div.form-group
+                        label.control-label[for="inputTextarea"]
+                            "Textarea"
+                        nya::textarea id="inputTextarea"
+                    div.form-group
+                        label.control-label[for="inputReset"]
+                            "Input with reset"
+                        nya::input id="inputReset" reset=(true)
+                    div.form-group
+                        label.control-label[for="textareaReset"]
+                            "Textarea with reset"
+                        nya::textarea id="textareaReset" reset=(true)

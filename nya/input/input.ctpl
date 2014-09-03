@@ -1,4 +1,4 @@
-nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disabled $noAPI
+nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $disabled $noAPI
     &|(typeof theme === 'undefined' ? '"input.light.css"' : '"input.' + theme + '.css"')|
     &"input.js"
 
@@ -7,7 +7,7 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
             div.nya-input.nya-input_reset AS $node
                 @class +(Nya.Input.getClass($size, $class))
 
-                .nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
+                .nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
                     TEST $rows
                         $value
                 span.close AS $resetNode
@@ -15,7 +15,7 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
                         """&times;"""
 
         OTHERWISE
-            .nya-input.nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
+            .nya-input.nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
                 @class +(Nya.Input.getClass($size, $class))
 
                 TEST $rows
@@ -31,6 +31,6 @@ nya::_input $name $value $size="m" $placeholder $id $reset $rows $class $disable
         return $noAPI ? undefined : new Nya.Input($node, $inputNode);
 
 
-nya::input $name $value $size $placeholder $id $reset $class $disabled $noAPI
-    nya::_input $name $value $size $placeholder $id $reset (false) $class $disabled $noAPI AS $ret
+nya::input $name $value $size $type $placeholder $id $reset $class $disabled $noAPI
+    nya::_input $name $value $size $type $placeholder $id $reset (false) $class $disabled $noAPI AS $ret
     EXPOSE $ret
