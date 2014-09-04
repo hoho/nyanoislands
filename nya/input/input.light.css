@@ -1,18 +1,8 @@
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .nya-input_reset {
   position: relative;
 }
 .nya-input_reset .nya-input__input {
-  padding-right: 25px;
+  padding-right: 27px;
   resize: none;
 }
 .nya-input_reset .nya-input__input::-ms-clear {
@@ -21,6 +11,6 @@ label {
 .nya-input_reset .close {
   color: #333333;
   position: absolute;
-  right: 6px;
-  top: 4px;
+  right: 5px;
+  top: 3px;
 }

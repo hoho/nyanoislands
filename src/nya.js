@@ -30,6 +30,7 @@ window.Nya = (function(nyaProto) {
 
     Nya.THEMES = {
         default: 'default',
+        action:  'action',
         primary: 'primary',
         success: 'success',
         info:    'info',

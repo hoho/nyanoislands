@@ -1,13 +1,3 @@
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .checkable-sm {
   font-size: 13px;
 }
@@ -55,8 +45,8 @@ label.nya-checkbox,
 .nya-checkbox__flag-icon {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity .3s ease;
-          transition: opacity .3s ease;
+  -webkit-transition: opacity .2s ease;
+          transition: opacity .2s ease;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
   opacity: 1;

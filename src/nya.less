@@ -44,3 +44,30 @@
 // Utility classes
 @import "node_modules/bootstrap/less/utilities.less";
 @import "node_modules/bootstrap/less/responsive-utilities.less";
+
+
+label {
+  font-weight: normal;
+}
+
+.control-label {
+  font-size: @font-size-small;
+}
+
+.form-horizontal .control-label {
+  padding-top: @padding-base-vertical + 3;
+
+  text-align: left;
+}
+
+.form-control {
+  .box-shadow(none);
+}
+
+.btn-action {
+  .button-variant(@btn-action-color; @btn-action-bg; @btn-action-border);
+}
+
+.well {
+  .box-shadow(none);
+}

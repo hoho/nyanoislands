@@ -13,6 +13,9 @@ page
                     p
                         nya::button title="Default"
                         " "
+                        nya::button title="Action" theme="action"
+                section
+                    p
                         nya::button title="Primary" theme="primary"
                         " "
                         nya::button title="Success" theme="success"
@@ -29,6 +32,9 @@ page
                     p
                         nya::button title="Default" disabled=(true)
                         " "
+                        nya::button title="Action" theme="action" disabled=(true)
+                section
+                    p
                         nya::button title="Primary" theme="primary" disabled=(true)
                         " "
                         nya::button title="Success" theme="success" disabled=(true)
@@ -89,9 +95,9 @@ page
 
                 section[style="margin-bottom: 15px;"]
                     div.btn-group.btn-group-justified
-                        nya::button title="Left" class="btn-block" href="#"
-                        nya::button title="Middle" class="btn-block" href="#"
-                        nya::button title="Right" class="btn-block" href="#"
+                        nya::button title="Left" href="#"
+                        nya::button title="Middle" href="#"
+                        nya::button title="Right" href="#"
 
                 section[style="margin-bottom: 15px;"]
                     div.btn-group
@@ -244,14 +250,14 @@ page
                                     div.col-lg-10.col-lg-offset-2
                                         nya::button title="Cancel"
                                         " "
-                                        nya::button title="Submit" theme="success"
+                                        nya::button title="Submit" theme="action"
 
             div.col-lg-4.col-lg-offset-1
                 form
                     div.form-group
-                        label.control-label[for="focusedInput"]
-                            "Focused input"
-                        nya::input id="focusedInput" value="This is focused..."
+                        label.control-label[for="input"]
+                            "Input"
+                        nya::input id="input" value="This is input..."
                     div.form-group
                         label.control-label[for="disabledInput"]
                             "Disabled input"

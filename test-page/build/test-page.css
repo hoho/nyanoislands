@@ -1,13 +1,3 @@
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -295,7 +285,7 @@ a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  box-shadow: 0 0 7px #ffcc00;
   outline: 0;
 }
 figure {
@@ -311,14 +301,14 @@ img {
   height: auto;
 }
 .img-rounded {
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 4px;
+  border-radius: 3px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -718,14 +708,14 @@ code {
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 kbd {
   padding: 2px 4px;
   font-size: 90%;
   color: #ffffff;
   background-color: #333333;
-  border-radius: 3px;
+  border-radius: 2px;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 kbd kbd {
@@ -744,7 +734,7 @@ pre {
   color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 pre code {
   padding: 0;
@@ -1708,12 +1698,12 @@ input[type="checkbox"]:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  box-shadow: 0 0 7px #ffcc00;
   outline: 0;
 }
 output {
   display: block;
-  padding-top: 7px;
+  padding-top: 6px;
   font-size: 15px;
   line-height: 1.42857143;
   color: #555555;
@@ -1721,8 +1711,8 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 35px;
-  padding: 6px 12px;
+  height: 33px;
+  padding: 5px 14px;
   font-size: 15px;
   line-height: 1.42857143;
   color: #555555;
@@ -1735,7 +1725,7 @@ output {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: rgba(255, 204, 0, 0.7);
+  border-color: #ffcc00;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 204, 0, 0.6);
 }
@@ -1771,20 +1761,20 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  line-height: 35px;
+  line-height: 33px;
   line-height: 1.42857143 \0;
 }
 input[type="date"].input-sm,
 input[type="time"].input-sm,
 input[type="datetime-local"].input-sm,
 input[type="month"].input-sm {
-  line-height: 31px;
+  line-height: 27px;
 }
 input[type="date"].input-lg,
 input[type="time"].input-lg,
 input[type="datetime-local"].input-lg,
 input[type="month"].input-lg {
-  line-height: 48px;
+  line-height: 40px;
 }
 .form-group {
   margin-bottom: 15px;
@@ -1851,8 +1841,8 @@ fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 .form-control-static {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   margin-bottom: 0;
 }
 .form-control-static.input-lg,
@@ -1862,15 +1852,15 @@ fieldset[disabled] .checkbox label {
 }
 .input-sm,
 .form-horizontal .form-group-sm .form-control {
-  height: 31px;
-  padding: 5px 10px;
+  height: 27px;
+  padding: 3px 11px;
   font-size: 13px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 select.input-sm {
-  height: 31px;
-  line-height: 31px;
+  height: 27px;
+  line-height: 27px;
 }
 textarea.input-sm,
 select[multiple].input-sm {
@@ -1878,15 +1868,15 @@ select[multiple].input-sm {
 }
 .input-lg,
 .form-horizontal .form-group-lg .form-control {
-  height: 48px;
-  padding: 10px 16px;
+  height: 40px;
+  padding: 6px 16px;
   font-size: 19px;
   line-height: 1.33;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 select.input-lg {
-  height: 48px;
-  line-height: 48px;
+  height: 40px;
+  line-height: 40px;
 }
 textarea.input-lg,
 select[multiple].input-lg {
@@ -1896,7 +1886,7 @@ select[multiple].input-lg {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 43.75px;
+  padding-right: 41.25px;
 }
 .form-control-feedback {
   position: absolute;
@@ -1904,20 +1894,20 @@ select[multiple].input-lg {
   right: 0;
   z-index: 2;
   display: block;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
   text-align: center;
 }
 .input-lg + .form-control-feedback {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
 }
 .input-sm + .form-control-feedback {
-  width: 31px;
-  height: 31px;
-  line-height: 31px;
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
 }
 .has-success .help-block,
 .has-success .control-label,
@@ -2053,11 +2043,11 @@ select[multiple].input-lg {
 .form-horizontal .checkbox-inline {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 7px;
+  padding-top: 6px;
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 28px;
+  min-height: 27px;
 }
 .form-horizontal .form-group {
   margin-left: -15px;
@@ -2067,7 +2057,7 @@ select[multiple].input-lg {
   .form-horizontal .control-label {
     text-align: right;
     margin-bottom: 0;
-    padding-top: 7px;
+    padding-top: 6px;
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -2076,12 +2066,12 @@ select[multiple].input-lg {
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 14.3px;
+    padding-top: 8.98px;
   }
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
-    padding-top: 6px;
+    padding-top: 4px;
   }
 }
 .btn {
@@ -2094,10 +2084,10 @@ select[multiple].input-lg {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: 6px 12px;
+  padding: 5px 14px;
   font-size: 15px;
   line-height: 1.42857143;
-  border-radius: 4px;
+  border-radius: 3px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2109,7 +2099,7 @@ select[multiple].input-lg {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  box-shadow: 0 0 7px #ffcc00;
   outline: 0;
 }
 .btn:hover,
@@ -2412,24 +2402,24 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 10px 16px;
+  padding: 6px 16px;
   font-size: 19px;
   line-height: 1.33;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .btn-sm,
 .btn-group-sm > .btn {
-  padding: 5px 10px;
+  padding: 3px 11px;
   font-size: 13px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 1px 5px;
+  padding: 1px 7px;
   font-size: 13px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 .btn-block {
   display: block;
@@ -2475,7 +2465,7 @@ input[type="button"].btn-block {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
@@ -2704,12 +2694,12 @@ input[type="button"].btn-block {
   border-radius: 0;
 }
 .btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
+  border-top-right-radius: 3px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 3px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -2770,17 +2760,17 @@ input[type="button"].btn-block {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 48px;
-  padding: 10px 16px;
+  height: 40px;
+  padding: 6px 16px;
   font-size: 19px;
   line-height: 1.33;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn {
-  height: 48px;
-  line-height: 48px;
+  height: 40px;
+  line-height: 40px;
 }
 textarea.input-group-lg > .form-control,
 textarea.input-group-lg > .input-group-addon,
@@ -2793,17 +2783,17 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  height: 31px;
-  padding: 5px 10px;
+  height: 27px;
+  padding: 3px 11px;
   font-size: 13px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn {
-  height: 31px;
-  line-height: 31px;
+  height: 27px;
+  line-height: 27px;
 }
 textarea.input-group-sm > .form-control,
 textarea.input-group-sm > .input-group-addon,
@@ -2830,7 +2820,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: middle;
 }
 .input-group-addon {
-  padding: 6px 12px;
+  padding: 5px 14px;
   font-size: 15px;
   font-weight: normal;
   line-height: 1;
@@ -2838,17 +2828,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-.input-group-addon.input-sm {
-  padding: 5px 10px;
-  font-size: 13px;
   border-radius: 3px;
 }
+.input-group-addon.input-sm {
+  padding: 3px 11px;
+  font-size: 13px;
+  border-radius: 2px;
+}
 .input-group-addon.input-lg {
-  padding: 10px 16px;
+  padding: 6px 16px;
   font-size: 19px;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
@@ -2977,7 +2967,7 @@ a.label:focus {
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .well blockquote {
@@ -2986,11 +2976,11 @@ a.label:focus {
 }
 .well-lg {
   padding: 24px;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .well-sm {
   padding: 9px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 .close {
   float: right;
@@ -3292,7 +3282,6 @@ button.close {
     display: none !important;
   }
 }
-
 label {
   font-weight: normal;
 }
@@ -3300,9 +3289,57 @@ label {
   font-size: 13px;
 }
 .form-horizontal .control-label {
-  padding-top: 9px;
+  padding-top: 8px;
   text-align: left;
 }
+.form-control {
+  box-shadow: none;
+}
+.btn-action {
+  color: #333333;
+  background-color: #ffdb4d;
+  border-color: rgba(191, 153, 0, 0.5);
+}
+.btn-action:hover,
+.btn-action:focus,
+.btn-action:active,
+.btn-action.active,
+.open > .dropdown-toggle.btn-action {
+  color: #333333;
+  background-color: #ffd11a;
+  border-color: rgba(130, 104, 0, 0.5);
+}
+.btn-action:active,
+.btn-action.active,
+.open > .dropdown-toggle.btn-action {
+  background-image: none;
+}
+.btn-action.disabled,
+.btn-action[disabled],
+fieldset[disabled] .btn-action,
+.btn-action.disabled:hover,
+.btn-action[disabled]:hover,
+fieldset[disabled] .btn-action:hover,
+.btn-action.disabled:focus,
+.btn-action[disabled]:focus,
+fieldset[disabled] .btn-action:focus,
+.btn-action.disabled:active,
+.btn-action[disabled]:active,
+fieldset[disabled] .btn-action:active,
+.btn-action.disabled.active,
+.btn-action[disabled].active,
+fieldset[disabled] .btn-action.active {
+  background-color: #ffdb4d;
+  border-color: rgba(191, 153, 0, 0.5);
+}
+.btn-action .badge {
+  color: #ffdb4d;
+  background-color: #333333;
+}
+.well {
+  box-shadow: none;
+}
+
 .nya-head {
   background: #f6f5f3;
   box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.1);
@@ -3346,16 +3383,6 @@ label {
   width: 50px;
 }
 
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .nya-button.btn:active,
 .nya-button.btn.active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -3365,16 +3392,6 @@ label {
   top: 1px;
 }
 
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .checkable-sm {
   font-size: 13px;
 }
@@ -3422,8 +3439,8 @@ label.nya-checkbox,
 .nya-checkbox__flag-icon {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity .3s ease;
-          transition: opacity .3s ease;
+  -webkit-transition: opacity .2s ease;
+          transition: opacity .2s ease;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
   opacity: 1;
@@ -3438,7 +3455,7 @@ label.nya-checkbox,
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  box-shadow: 0 0 7px #ffcc00;
   outline: 0;
 }
 .nya-checkbox.disabled {
@@ -3457,16 +3474,6 @@ label.nya-checkbox,
   width: 7px;
 }
 
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .checkable-sm {
   font-size: 13px;
 }
@@ -3511,8 +3518,8 @@ label.nya-radio,
 .nya-radio__flag-icon {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity .3s ease;
-          transition: opacity .3s ease;
+  -webkit-transition: opacity .2s ease;
+          transition: opacity .2s ease;
 }
 .nya-radio__input:checked + .nya-radio__flag > .nya-radio__flag-icon {
   opacity: 1;
@@ -3527,7 +3534,7 @@ label.nya-radio,
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  box-shadow: 0 0 7px rgba(255, 204, 0, 0.7);
+  box-shadow: 0 0 7px #ffcc00;
   outline: 0;
 }
 .nya-radio.disabled {
@@ -3546,21 +3553,11 @@ label.nya-radio,
   width: 5px;
 }
 
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .nya-input_reset {
   position: relative;
 }
 .nya-input_reset .nya-input__input {
-  padding-right: 25px;
+  padding-right: 27px;
   resize: none;
 }
 .nya-input_reset .nya-input__input::-ms-clear {
@@ -3569,6 +3566,6 @@ label {
 .nya-input_reset .close {
   color: #333333;
   position: absolute;
-  right: 6px;
-  top: 4px;
+  right: 5px;
+  top: 3px;
 }

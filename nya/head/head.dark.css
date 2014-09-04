@@ -1,13 +1,3 @@
-label {
-  font-weight: normal;
-}
-.control-label {
-  font-size: 13px;
-}
-.form-horizontal .control-label {
-  padding-top: 9px;
-  text-align: left;
-}
 .nya-head {
   background: #3a3f44;
   box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.1);

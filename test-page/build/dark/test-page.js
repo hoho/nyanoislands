@@ -483,6 +483,12 @@ $C.tpl["page"] = function() {
                             })
                             .text(" ")
                             .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Action", "action");
+                            })
+                    .end(2)
+                    .elem("section")
+                        .p()
+                            .act(function() {
                                 $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary");
                             })
                             .text(" ")
@@ -512,6 +518,12 @@ $C.tpl["page"] = function() {
                                 $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Action", "action", undefined, undefined, undefined, undefined, (true));
+                            })
+                    .end(2)
+                    .elem("section")
+                        .p()
                             .act(function() {
                                 $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary", undefined, undefined, undefined, undefined, (true));
                             })
@@ -644,13 +656,13 @@ $C.tpl["page"] = function() {
                     .elem("section", {"style": "margin-bottom: 15px;"})
                         .div({"class": "btn-group btn-group-justified"})
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Left", undefined, undefined, undefined, "#", "btn-block");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Left", undefined, undefined, undefined, "#");
                             })
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Middle", undefined, undefined, undefined, "#", "btn-block");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Middle", undefined, undefined, undefined, "#");
                             })
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Right", undefined, undefined, undefined, "#", "btn-block");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Right", undefined, undefined, undefined, "#");
                             })
                     .end(2)
                     .elem("section", {"style": "margin-bottom: 15px;"})
@@ -936,17 +948,17 @@ $C.tpl["page"] = function() {
                                             })
                                             .text(" ")
                                             .act(function() {
-                                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Submit", "success");
+                                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Submit", "action");
                                             })
                 .end(7)
                 .div({"class": "col-lg-4 col-lg-offset-1"})
                     .elem("form")
                         .div({"class": "form-group"})
-                            .elem("label", {"class": "control-label", "for": "focusedInput"})
-                                .text("Focused input")
+                            .elem("label", {"class": "control-label", "for": "input"})
+                                .text("Input")
                             .end()
                             .act(function() {
-                                $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "This is focused...", undefined, undefined, undefined, "focusedInput");
+                                $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "This is input...", undefined, undefined, undefined, "input");
                             })
                         .end()
                         .div({"class": "form-group"})
@@ -1636,6 +1648,7 @@ window.Nya = (function(nyaProto) {
 
     Nya.THEMES = {
         default: 'default',
+        action:  'action',
         primary: 'primary',
         success: 'success',
         info:    'info',
