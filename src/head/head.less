@@ -1,13 +1,12 @@
 @nya-head-height: 50px;
 @_nya-head-arrow: 500px;
-@_nya-head-arrow-shadow: 2px;
 
 .nya-head {
   background: @nya-head-background;
 
-  box-shadow: inset 1px -1px 2px rgba(0,0,0,.1);
+  border-bottom: 1px solid @nya-head-border;
 
-  height: @nya-head-height;
+  height: @nya-head-height + 1;
 
   z-index: -1;
 
@@ -34,9 +33,9 @@
 
     &:before {
       background-color: @nya-head-arrow-background;
-      background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
+      background-image: linear-gradient(-45deg, rgba(0, 0, 0, .2) 40%, rgba(255, 255, 255, .2) 60%);
 
-      box-shadow: 1px -1px @_nya-head-arrow-shadow rgba(0,0,0,.4);
+      box-shadow: 1px -1px 0px rgba(0, 0, 0, .3);
 
       content: '';
 
@@ -46,7 +45,7 @@
 
       position: absolute;
 
-      right: (@_nya-head-arrow * sqrt(2) - @_nya-head-arrow) / 2 - @_nya-head-arrow * sqrt(2) / 4 + @_nya-head-arrow-shadow;
+      right: (@_nya-head-arrow * sqrt(2) - @_nya-head-arrow) / 2 - @_nya-head-arrow * sqrt(2) / 4 + 1;
 
       top: @nya-head-height / 2 - @_nya-head-arrow / 2;
 
@@ -62,6 +61,8 @@
     background: @gray-lighter no-repeat;
 
     background-size: cover;
+
+    display: block;
 
     float: right;
 

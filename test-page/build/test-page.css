@@ -3342,8 +3342,8 @@ fieldset[disabled] .btn-action.active {
 
 .nya-head {
   background: #f6f5f3;
-  box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.1);
-  height: 50px;
+  border-bottom: 1px solid #dddddd;
+  height: 51px;
   z-index: -1;
 }
 .nya-head__title {
@@ -3362,12 +3362,12 @@ fieldset[disabled] .btn-action.active {
   background-color: #6eb541;
   background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
   background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
-  box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px -1px 0px rgba(0, 0, 0, 0.3);
   content: '';
   display: block;
   height: 500px;
   position: absolute;
-  right: -71.2233047px;
+  right: -72.2233047px;
   top: -225px;
   -webkit-transform: scaleX(0.5) rotate(45deg);
       -ms-transform: scaleX(0.5) rotate(45deg);
@@ -3378,6 +3378,7 @@ fieldset[disabled] .btn-action.active {
 .nya-head__avatar {
   background: #eeeeee no-repeat;
   background-size: cover;
+  display: block;
   float: right;
   height: 50px;
   width: 50px;

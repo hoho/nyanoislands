@@ -1019,7 +1019,7 @@ $C.tpl["page"] = function() {
     .end(6);
 };
 
-$C._tpl["nya::head"] = function($title, $avatar) {
+$C._tpl["nya::head"] = function($title, $avatar, $avatarURL) {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .div({"class": "nya-head"})
@@ -1027,8 +1027,10 @@ $C._tpl["nya::head"] = function($title, $avatar) {
                 .text(function $C_head_5_14() { return $title; })
             .end()
             .test(function $C_head_6_15() { return $avatar; })
-                .div(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");"}})
-    .end(4);
+                .a(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$avatarURL}})
+            .end(2)
+            .act(function() { $ConkittyEnv.l(this); })
+    .end(2);
 };
 
 $C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $class, $disabled, $noAPI) {

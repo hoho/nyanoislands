@@ -1,7 +1,8 @@
-nya::head $title $avatar
+nya::head $title $avatar $avatarURL
     &|(typeof theme === 'undefined' ? '"head.light.css"' : '"head.' + theme + '.css"')|
     div.nya-head
         div.nya-head__title
             $title
         TEST $avatar
-            div.nya-head__avatar[style=('background-image: url(' + $avatar + ');')]
+            a.nya-head__avatar[style=('background-image: url(' + $avatar + ');')][href=$avatarURL]
+        PAYLOAD
