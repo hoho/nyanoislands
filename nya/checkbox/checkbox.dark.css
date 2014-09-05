@@ -70,8 +70,10 @@ label.nya-checkbox,
   pointer-events: none;
 }
 .nya-checkbox.disabled .nya-checkbox__flag {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  background: #000000;
+  border-color: #3a3f44;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
 }
 .checkable-sm .nya-checkbox__flag-icon {
   height: 16px;

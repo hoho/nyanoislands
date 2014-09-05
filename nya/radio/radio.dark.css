@@ -67,8 +67,10 @@ label.nya-radio,
   pointer-events: none;
 }
 .nya-radio.disabled .nya-radio__flag {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  background: #000000;
+  border-color: #3a3f44;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
 }
 .checkable-sm .nya-radio__flag-icon {
   height: 5px;

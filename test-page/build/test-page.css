@@ -1719,7 +1719,7 @@ output {
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
-  border-radius: none;
+  border-radius: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -3464,8 +3464,10 @@ label.nya-checkbox,
   pointer-events: none;
 }
 .nya-checkbox.disabled .nya-checkbox__flag {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  background: #ffffff;
+  border-color: #cccccc;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
 }
 .checkable-sm .nya-checkbox__flag-icon {
   height: 16px;
@@ -3543,8 +3545,10 @@ label.nya-radio,
   pointer-events: none;
 }
 .nya-radio.disabled .nya-radio__flag {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  background: #ffffff;
+  border-color: #cccccc;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
 }
 .checkable-sm .nya-radio__flag-icon {
   height: 5px;
