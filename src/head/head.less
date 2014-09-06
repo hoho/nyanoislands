@@ -23,11 +23,11 @@
 
     overflow: hidden;
 
-    padding: 0 20px 0 10px;
+    padding: 0 30px 0 20px;
 
     position: relative;
 
-    text-shadow: 1px 1px rgba(0,0,0,.1);
+    text-shadow: 1px 1px rgba(0, 0, 0, .1);
 
     z-index: 1;
 
@@ -57,6 +57,13 @@
     }
   }
 
+  &__title:hover,
+  &__title:focus {
+    color: @nya-head-arrow-text;
+
+    text-decoration: none;
+  }
+
   &__avatar {
     background: @gray-lighter no-repeat;
 
@@ -69,5 +76,19 @@
     height: @nya-head-height;
 
     width: @nya-head-height;
+  }
+
+  &__nav {
+    display: inline-block;
+
+    font-size: 15px;
+
+    height: 50px;
+
+    line-height: 50px;
+
+    padding: 0 20px;
+
+    vertical-align: top;
   }
 }

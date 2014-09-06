@@ -11,7 +11,7 @@
   height: 50px;
   line-height: 49px;
   overflow: hidden;
-  padding: 0 20px 0 10px;
+  padding: 0 30px 0 20px;
   position: relative;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -33,6 +33,11 @@
   width: 500px;
   z-index: -1;
 }
+.nya-head__title:hover,
+.nya-head__title:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
 .nya-head__avatar {
   background: #eeeeee no-repeat;
   background-size: cover;
@@ -40,4 +45,12 @@
   float: right;
   height: 50px;
   width: 50px;
+}
+.nya-head__nav {
+  display: inline-block;
+  font-size: 15px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  vertical-align: top;
 }
