@@ -994,6 +994,14 @@ $C.tpl["page"] = function() {
                             })
                         .end()
                         .div({"class": "form-group"})
+                            .elem("label", {"class": "control-label", "for": "inputReset"})
+                                .text("Input with reset")
+                            .end()
+                            .act(function() {
+                                $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "Input with reset", undefined, undefined, undefined, "inputReset", (true));
+                            })
+                        .end()
+                        .div({"class": "form-group"})
                             .elem("label", {"class": "control-label", "for": "inputTextarea"})
                                 .text("Textarea")
                             .end()
@@ -1002,21 +1010,52 @@ $C.tpl["page"] = function() {
                             })
                         .end()
                         .div({"class": "form-group"})
-                            .elem("label", {"class": "control-label", "for": "inputReset"})
-                                .text("Input with reset")
-                            .end()
-                            .act(function() {
-                                $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, undefined, undefined, undefined, undefined, "inputReset", (true));
-                            })
-                        .end()
-                        .div({"class": "form-group"})
                             .elem("label", {"class": "control-label", "for": "textareaReset"})
                                 .text("Textarea with reset")
                             .end()
                             .act(function() {
-                                $C._tpl["nya::textarea"].call(new $ConkittyEnvClass(this), undefined, undefined, undefined, undefined, "textareaReset", (true));
+                                $C._tpl["nya::textarea"].call(new $ConkittyEnvClass(this), undefined, "Textarea with reset", undefined, undefined, "textareaReset", (true));
                             })
-    .end(6);
+                        .end()
+                        .div({"class": "form-group"})
+                            .elem("label", {"class": "control-label", "for": "inputWithButton"})
+                                .text("Input with button")
+                            .end()
+                            .div({"class": "input-group"})
+                                .act(function() {
+                                    $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "Input with button", undefined, undefined, undefined, "inputWithButton");
+                                })
+                                .span({"class": "input-group-btn"})
+                                    .act(function() {
+                                        $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Button", "action");
+                                    })
+                        .end(3)
+                        .div({"class": "form-group"})
+                            .elem("label", {"class": "control-label", "for": "inputWithButtonLarge"})
+                                .text("Large input with button")
+                            .end()
+                            .div({"class": "input-group"})
+                                .act(function() {
+                                    $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "Large input with button", "l", undefined, undefined, "inputWithButtonLarge");
+                                })
+                                .span({"class": "input-group-btn"})
+                                    .act(function() {
+                                        $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Button", "action", "l");
+                                    })
+                        .end(3)
+                        .div({"class": "form-group"})
+                            .elem("label", {"class": "control-label", "for": "inputWithButtonSmall"})
+                                .text("Small input with button")
+                            .end()
+                            .div({"class": "input-group"})
+                                .act(function() {
+                                    $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), undefined, "Small input with button", "s", undefined, undefined, "inputWithButtonSmall");
+                                })
+                                .span({"class": "input-group-btn"})
+                                    .act(function() {
+                                        $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Button", "action", "s");
+                                    })
+    .end(8);
 };
 
 $C._tpl["nya::head"] = function($title, $avatar, $avatarURL) {

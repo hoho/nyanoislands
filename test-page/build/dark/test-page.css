@@ -3339,6 +3339,18 @@ fieldset[disabled] .btn-action.active {
 .well {
   box-shadow: none;
 }
+.input-group .btn {
+  height: 33px;
+}
+.input-group .btn-lg {
+  height: 40px;
+}
+.input-group .btn-sm {
+  height: 27px;
+}
+.input-group .btn-xs {
+  height: auto;
+}
 
 .nya-head {
   background: #3a3f44;

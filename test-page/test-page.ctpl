@@ -275,14 +275,35 @@ page
                             "Input success"
                         nya::input id="inputSuccess"
                     div.form-group
+                        label.control-label[for="inputReset"]
+                            "Input with reset"
+                        nya::input id="inputReset" reset=(true) value="Input with reset"
+                    div.form-group
                         label.control-label[for="inputTextarea"]
                             "Textarea"
                         nya::textarea id="inputTextarea"
                     div.form-group
-                        label.control-label[for="inputReset"]
-                            "Input with reset"
-                        nya::input id="inputReset" reset=(true)
-                    div.form-group
                         label.control-label[for="textareaReset"]
                             "Textarea with reset"
-                        nya::textarea id="textareaReset" reset=(true)
+                        nya::textarea id="textareaReset" reset=(true) value="Textarea with reset"
+                    div.form-group
+                        label.control-label[for="inputWithButton"]
+                            "Input with button"
+                        div.input-group
+                            nya::input id="inputWithButton" value="Input with button"
+                            span.input-group-btn
+                                nya::button title="Button" theme="action"
+                    div.form-group
+                        label.control-label[for="inputWithButtonLarge"]
+                            "Large input with button"
+                        div.input-group
+                            nya::input id="inputWithButtonLarge" value="Large input with button" size="l"
+                            span.input-group-btn
+                                nya::button title="Button" theme="action" size="l"
+                    div.form-group
+                        label.control-label[for="inputWithButtonSmall"]
+                            "Small input with button"
+                        div.input-group
+                            nya::input id="inputWithButtonSmall" value="Small input with button" size="s"
+                            span.input-group-btn
+                                nya::button title="Button" theme="action" size="s"
