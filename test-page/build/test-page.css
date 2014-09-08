@@ -3413,10 +3413,34 @@ fieldset[disabled] .btn-action.active {
 .nya-head__nav {
   display: inline-block;
   font-size: 15px;
+  font-weight: 500;
   height: 50px;
-  line-height: 50px;
+  line-height: 44px;
   padding: 0 20px;
   vertical-align: top;
+}
+.nya-head__nav-item {
+  display: inline-block;
+  padding-right: 30px;
+}
+.nya-head__nav-link {
+  border-top: 3px solid transparent;
+  color: #333333;
+  display: inline-block;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease;
+          transition: border-color 0.3s ease, color 0.3s ease;
+}
+.nya-head__nav-link:hover {
+  border-color: #2a6496;
+  color: #2a6496;
+  text-decoration: none;
+}
+.nya-head__nav-link:focus {
+  box-shadow: none;
+}
+.nya-head__nav-item_current .nya-head__nav-link {
+  border-color: #333333;
+  color: #333333;
 }
 
 .nya-button.btn:active,

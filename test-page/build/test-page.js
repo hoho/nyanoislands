@@ -466,7 +466,19 @@ $C.tpl["page"] = function() {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .act(function() {
-            $C._tpl["nya::head"].call(new $ConkittyEnvClass(this), "Examples");
+            $C._tpl["nya::head"].call(new $ConkittyEnvClass(
+                this,
+                function() {
+                    return $C()
+                        .act(function() {
+                            $C._tpl["nya::head__nav"].call(new $ConkittyEnvClass(this), ([
+                                        {id: 'first', title: 'First', href: "javascript:alert('First');"},
+                                        {id: 'second', title: 'Second', href: "javascript:alert('Second');"},
+                                        {id: 'third', title: 'Third', href: "javascript:alert('Third');"}
+                                    ]), "second");
+                        })
+                    .end(); }
+            ), "Examples", "https://github.com/hoho/nyanoislands");
         })
         .div({"class": "container"})
             .div({"class": "row"})
@@ -1058,19 +1070,38 @@ $C.tpl["page"] = function() {
     .end(8);
 };
 
-$C._tpl["nya::head"] = function($title, $avatar, $avatarURL) {
+$C._tpl["nya::head"] = function($title, $href, $avatar, $avatarURL) {
+    ($href === undefined) && ($href = "/");
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .div({"class": "nya-head"})
-            .a({"class": "nya-head__title", "href": "/"})
+            .a(function $C_head_4_9(){return{"class":"nya-head__title",href:$href}})
                 .text(function $C_head_5_14() { return $title; })
             .end()
             .test(function $C_head_6_15() { return $avatar; })
                 .a(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$avatarURL}})
             .end(2)
-            .div({"class": "nya-head__nav"})
-                .act(function() { $ConkittyEnv.l(this); })
-    .end(3);
+            .act(function() { $ConkittyEnv.l(this); })
+    .end(2);
+};
+
+$C._tpl["nya::head__nav"] = function($items, $current) {
+    var $ConkittyEnv = $ConkittyGetEnv(this), $hasCurrent, $item;
+    return $C($ConkittyEnv.p)
+        .ul({"class": "nya-head__nav"})
+            .each(function $C_head__nav_18_21() { return $items; })
+                .act(function($C_) { $item = $C_; })
+                .li(function $C_head__nav_19_13(){return{"class":$ConkittyClasses("nya-head__nav-item",!$hasCurrent&&$item.id===$current&&($hasCurrent=true)?"nya-head__nav-item_current":undefined)}})
+                    .choose()
+                        .when(function $C_head__nav_21_26() { return ($item.template); })
+                            .act(function() {
+                                $C.tpl[($item.template)].call(new $ConkittyEnvClass(this), $item);
+                            })
+                        .end()
+                        .otherwise()
+                            .a(function $C_head__nav_24_25(){return{"class":"nya-head__nav-link",href:$item.href}})
+                                .text(function $C_head__nav_25_29() { return ($item.title); })
+    .end(7);
 };
 
 $C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $class, $disabled, $noAPI) {
