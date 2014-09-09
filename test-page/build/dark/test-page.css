@@ -3361,6 +3361,26 @@ fieldset[disabled] .btn-action.active {
 .form-horizontal .form-group-lg .form-control {
   border-radius: 0;
 }
+.caret {
+  border: none;
+  position: relative;
+  width: 12px;
+}
+.caret:after {
+  content: '';
+  display: block;
+  border-style: solid;
+  border-width: 2px;
+  border-top-width: 0;
+  border-left-width: 0;
+  height: 12px;
+  position: absolute;
+  top: -9px;
+  -webkit-transform: rotate(45deg) scale(0.6);
+      -ms-transform: rotate(45deg) scale(0.6);
+          transform: rotate(45deg) scale(0.6);
+  width: 12px;
+}
 
 .nya-head {
   background: #3a3f44;
