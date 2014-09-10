@@ -1070,7 +1070,7 @@ $C.tpl["page"] = function() {
     .end(8);
 };
 
-$C._tpl["nya::head"] = function($title, $href, $avatar, $avatarURL) {
+$C._tpl["nya::head"] = function($title, $href, $avatar, $ahref) {
     ($href === undefined) && ($href = "/");
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
@@ -1079,7 +1079,7 @@ $C._tpl["nya::head"] = function($title, $href, $avatar, $avatarURL) {
                 .text(function $C_head_5_14() { return $title; })
             .end()
             .test(function $C_head_6_15() { return $avatar; })
-                .a(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$avatarURL}})
+                .a(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$ahref}})
             .end(2)
             .act(function() { $ConkittyEnv.l(this); })
     .end(2);
