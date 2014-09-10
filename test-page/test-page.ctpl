@@ -51,38 +51,6 @@ page
                         nya::button title="Danger" theme="danger" disabled=(true)
                         " "
                         nya::button title="Link" theme="link" disabled=(true)
-
-                section[style="margin-bottom: 15px;"]
-                    div.btn-group
-                        nya::button title="Default"
-                        nya::button class="dropdown-toggle"
-                            span.nya-button__title
-                                span.caret
-                    " "
-                    div.btn-group
-                        nya::button title="Primary" theme="primary"
-                        nya::button class="dropdown-toggle" theme="primary"
-                            span.nya-button__title
-                                span.caret
-                    " "
-                    div.btn-group
-                        nya::button title="Success" theme="success"
-                        nya::button class="dropdown-toggle" theme="success"
-                            span.nya-button__title
-                                span.caret
-                    " "
-                    div.btn-group
-                        nya::button title="Info" theme="info"
-                        nya::button class="dropdown-toggle" theme="info"
-                            span.nya-button__title
-                                span.caret
-                    " "
-                    div.btn-group
-                        nya::button title="Warning" theme="warning"
-                        nya::button class="dropdown-toggle" theme="warning"
-                            span.nya-button__title
-                                span.caret
-
                 section
                     p
                         nya::button title="Large button" size="l"
@@ -118,11 +86,7 @@ page
                     " "
                     div.btn-group
                         nya::button title="8"
-                        div.btn-group
-                            nya::button title="Dropdown " class="dropdown-toggle"
-                                span.nya-button__title
-                                    span.caret
-
+                        nya::button title="9" theme="action"
                 section
                     div.btn-group-vertical
                         nya::button title="Button"
@@ -312,3 +276,56 @@ page
                             nya::input id="inputWithButtonSmall" value="Small input with button" size="s"
                             span.input-group-btn
                                 nya::button title="Button" theme="action" size="s"
+
+
+        div.row
+            div.col-lg-12
+                h1#dropdowns
+                    "Dropdowns"
+
+        div.row
+            div.col-lg-6
+                section
+                    p
+                        nya::dropdown title="Dropdown"
+                        " "
+                        nya::dropdown title="Dropdown" theme="action"
+                    p
+                        nya::dropdown title="Large" size="l"
+                        " "
+                        nya::dropdown title="Default"
+                        " "
+                        nya::dropdown title="Small" size="s"
+                        " "
+                        nya::dropdown title="Mini" size="xs"
+
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    div.btn-group
+                        nya::button title="Default"
+                        nya::dropdown
+                    " "
+                    div.btn-group
+                        nya::button title="Action" theme="action"
+                        nya::dropdown theme="action"
+                    " "
+                section[style="margin-bottom: 15px;"]
+                    div.btn-group
+                        nya::button title="Primary" theme="primary"
+                        nya::dropdown theme="primary"
+                    " "
+                    div.btn-group
+                        nya::button title="Success" theme="success"
+                        nya::dropdown theme="success"
+                    " "
+                    div.btn-group
+                        nya::button title="Info" theme="info"
+                        nya::dropdown theme="info"
+                    " "
+                    div.btn-group
+                        nya::button title="Warning" theme="warning"
+                        nya::dropdown theme="warning"
+                    " "
+                    div.btn-group
+                        nya::button title="Danger" theme="danger"
+                        nya::dropdown theme="danger"

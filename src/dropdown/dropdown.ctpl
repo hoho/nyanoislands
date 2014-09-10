@@ -1,0 +1,6 @@
+nya::dropdown $title $theme $size $class $disabled $noAPI
+    nya::button title=$title theme=$theme size=$size disabled=$disabled noAPI=$noAPI class=(($class ? $class + ' ' : '') + 'dropdown-toggle')
+        TEST $title
+            """&nbsp;&nbsp;"""
+        span.nya-button__title
+            span.caret

@@ -560,86 +560,6 @@ $C.tpl["page"] = function() {
                                 $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Link", "link", undefined, undefined, undefined, undefined, (true));
                             })
                     .end(2)
-                    .elem("section", {"style": "margin-bottom: 15px;"})
-                        .div({"class": "btn-group"})
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default");
-                            })
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                    this,
-                                    function() {
-                                        return $C()
-                                            .span({"class": "nya-button__title"})
-                                                .span({"class": "caret"})
-                                        .end(3); }
-                                ), undefined, undefined, undefined, undefined, undefined, "dropdown-toggle");
-                            })
-                        .end()
-                        .text(" ")
-                        .div({"class": "btn-group"})
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary");
-                            })
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                    this,
-                                    function() {
-                                        return $C()
-                                            .span({"class": "nya-button__title"})
-                                                .span({"class": "caret"})
-                                        .end(3); }
-                                ), undefined, "primary", undefined, undefined, undefined, "dropdown-toggle");
-                            })
-                        .end()
-                        .text(" ")
-                        .div({"class": "btn-group"})
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Success", "success");
-                            })
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                    this,
-                                    function() {
-                                        return $C()
-                                            .span({"class": "nya-button__title"})
-                                                .span({"class": "caret"})
-                                        .end(3); }
-                                ), undefined, "success", undefined, undefined, undefined, "dropdown-toggle");
-                            })
-                        .end()
-                        .text(" ")
-                        .div({"class": "btn-group"})
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Info", "info");
-                            })
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                    this,
-                                    function() {
-                                        return $C()
-                                            .span({"class": "nya-button__title"})
-                                                .span({"class": "caret"})
-                                        .end(3); }
-                                ), undefined, "info", undefined, undefined, undefined, "dropdown-toggle");
-                            })
-                        .end()
-                        .text(" ")
-                        .div({"class": "btn-group"})
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Warning", "warning");
-                            })
-                            .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                    this,
-                                    function() {
-                                        return $C()
-                                            .span({"class": "nya-button__title"})
-                                                .span({"class": "caret"})
-                                        .end(3); }
-                                ), undefined, "warning", undefined, undefined, undefined, "dropdown-toggle");
-                            })
-                    .end(2)
                     .elem("section")
                         .p()
                             .act(function() {
@@ -709,18 +629,10 @@ $C.tpl["page"] = function() {
                             .act(function() {
                                 $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "8");
                             })
-                            .div({"class": "btn-group"})
-                                .act(function() {
-                                    $C._tpl["nya::button"].call(new $ConkittyEnvClass(
-                                        this,
-                                        function() {
-                                            return $C()
-                                                .span({"class": "nya-button__title"})
-                                                    .span({"class": "caret"})
-                                            .end(3); }
-                                    ), "Dropdown ", undefined, undefined, undefined, undefined, "dropdown-toggle");
-                                })
-                    .end(3)
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "9", "action");
+                            })
+                    .end(2)
                     .elem("section")
                         .div({"class": "btn-group-vertical"})
                             .act(function() {
@@ -1067,7 +979,107 @@ $C.tpl["page"] = function() {
                                     .act(function() {
                                         $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Button", "action", "s");
                                     })
-    .end(8);
+            .end(6)
+            .div({"class": "row"})
+                .div({"class": "col-lg-12"})
+                    .elem("h1", {"id": "dropdowns"})
+                        .text("Dropdowns")
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-6"})
+                    .elem("section")
+                        .p()
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Dropdown");
+                            })
+                            .text(" ")
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Dropdown", "action");
+                            })
+                        .end()
+                        .p()
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Large", undefined, "l");
+                            })
+                            .text(" ")
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Default");
+                            })
+                            .text(" ")
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Small", undefined, "s");
+                            })
+                            .text(" ")
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), "Mini", undefined, "xs");
+                            })
+                .end(3)
+                .div({"class": "col-lg-6"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this));
+                            })
+                        .end()
+                        .text(" ")
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Action", "action");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "action");
+                            })
+                        .end()
+                        .text(" ")
+                    .end()
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "primary");
+                            })
+                        .end()
+                        .text(" ")
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Success", "success");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "success");
+                            })
+                        .end()
+                        .text(" ")
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Info", "info");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "info");
+                            })
+                        .end()
+                        .text(" ")
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Warning", "warning");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "warning");
+                            })
+                        .end()
+                        .text(" ")
+                        .div({"class": "btn-group"})
+                            .act(function() {
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Danger", "danger");
+                            })
+                            .act(function() {
+                                $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "danger");
+                            })
+    .end(6);
 };
 
 $C._tpl["nya::head"] = function($title, $href, $avatar, $ahref) {
@@ -1271,6 +1283,25 @@ $C._tpl["nya::textarea"] = function($name, $value, $size, $placeholder, $id, $re
         .act(function() { $ConkittyTemplateRet = $ret; })
     .end();
     return $ConkittyTemplateRet;
+};
+
+$C._tpl["nya::dropdown"] = function($title, $theme, $size, $class, $disabled, $noAPI) {
+    var $ConkittyEnv = $ConkittyGetEnv(this);
+    return $C($ConkittyEnv.p)
+        .act(function() {
+            $C._tpl["nya::button"].call(new $ConkittyEnvClass(
+                this,
+                function() {
+                    return $C()
+                        .test(function $C_dropdown_3_15() { return $title; })
+                            .text("&nbsp;&nbsp;", true)
+                        .end()
+                        .span({"class": "nya-button__title"})
+                            .span({"class": "caret"})
+                    .end(3); }
+            ), $title, $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, $noAPI);
+        })
+    .end();
 };
 
 }).apply(null, $C._$args);
