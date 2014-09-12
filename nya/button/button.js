@@ -5,6 +5,7 @@
 
     Nya.Button = Nya.extend({
         init: function(node, titleNode) {
+            node._nya = this;
             this._n = node;
             this._t = titleNode;
         },

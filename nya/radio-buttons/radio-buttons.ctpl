@@ -17,7 +17,6 @@ nya::radio-buttons $name $items $value=(null) $theme $size="m" $vertical $class 
     EXPOSE $ret
 
     JS
-        $node._nya = $ret;
         if ($ret) { $ret._val = $value; }
         $B($node).on('change', function(e) {
             var i,

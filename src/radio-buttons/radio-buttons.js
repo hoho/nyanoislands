@@ -5,6 +5,7 @@
 
     Nya.RadioButtons = Nya.extend({
         init: function (node, btns) {
+            node._nya = this;
             this._n = node;
             this._b = btns;
         },

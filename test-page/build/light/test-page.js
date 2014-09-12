@@ -1338,7 +1338,6 @@ $C._tpl["nya::radio-buttons"] = function($name, $items, $value, $theme, $size, $
         .act(function $C_radio_buttons_16_5() { $ret = ($noAPI ? undefined : new Nya.RadioButtons($node, $btns)); })
         .act(function() { $ConkittyTemplateRet = $ret; })
         .act(function() {
-            $node._nya = $ret;
             if ($ret) { $ret._val = $value; }
             $B($node).on('change', function(e) {
                 var i,
@@ -1913,6 +1912,7 @@ window.Nya = (function(nyaProto) {
 
     Nya.Button = Nya.extend({
         init: function(node, titleNode) {
+            node._nya = this;
             this._n = node;
             this._t = titleNode;
         },
@@ -1975,6 +1975,7 @@ window.Nya = (function(nyaProto) {
 
     Nya.Checkbox = Nya.extend({
         init: function (node, checkbox, label) {
+            node._nya = this;
             this._n = node;
             this._c = checkbox;
             this._l = label;
@@ -2031,6 +2032,7 @@ Nya.Radio.getClass = Nya.Checkbox.getClass;
 
     Nya.RadioButtons = Nya.extend({
         init: function (node, btns) {
+            node._nya = this;
             this._n = node;
             this._b = btns;
         },
@@ -2072,6 +2074,7 @@ Nya.Radio.getClass = Nya.Checkbox.getClass;
     Nya.Input = Nya.extend({
         init: function(node, inputNode) {
             this._n = node || inputNode;
+            this._n._nya = this;
             this._i = inputNode;
         },
 

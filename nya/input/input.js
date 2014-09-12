@@ -6,6 +6,7 @@
     Nya.Input = Nya.extend({
         init: function(node, inputNode) {
             this._n = node || inputNode;
+            this._n._nya = this;
             this._i = inputNode;
         },
 

@@ -5,6 +5,7 @@
 
     Nya.Checkbox = Nya.extend({
         init: function (node, checkbox, label) {
+            node._nya = this;
             this._n = node;
             this._c = checkbox;
             this._l = label;
