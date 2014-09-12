@@ -1,0 +1,27 @@
+.nya-radio-buttons {
+  input {
+    position: absolute !important;
+
+    clip: rect(1px, 1px, 1px, 1px) !important;
+  }
+}
+
+
+.nya-radio-buttons__focus {
+  bottom: 0;
+
+  display: block;
+
+  left: 0;
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+}
+
+
+.nya-radio-buttons input:focus + .nya-radio-buttons__focus {
+  .tab-focus();
+}

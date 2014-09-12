@@ -1,5 +1,5 @@
 /*!
- * babydom v0.0.4, https://github.com/hoho/babydom
+ * babydom v0.0.5, https://github.com/hoho/babydom
  * (c) 2014 Marat Abdullin, MIT license
  */
 var $B = (function(document, encodeURIComponent, undefined) {
@@ -66,7 +66,7 @@ var $B = (function(document, encodeURIComponent, undefined) {
 
         while (node) {
             if ((($b = node.$b)) && ((h = $b[e.type]))) {
-                for (i = h.length; i--;) {
+                for (i = 0; i < h.length; i++) {
                     h[i].call(node, e);
                     if (next & 2) { return; }
                 }

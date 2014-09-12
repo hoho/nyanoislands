@@ -1,0 +1,19 @@
+.nya-radio-buttons input {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+.nya-radio-buttons__focus {
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.nya-radio-buttons input:focus + .nya-radio-buttons__focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+  outline: 0;
+}

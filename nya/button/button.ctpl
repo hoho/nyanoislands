@@ -1,7 +1,7 @@
-nya::button $title $theme="default" $size="m" $type="button" $href $class $disabled $noAPI
+nya::button $title $theme="default" $size="m" $type="button" $href $class $disabled $active $noAPI
     &|(typeof theme === 'undefined' ? '"button.light.css"' : '"button.' + theme + '.css"')|
     &"button.js"
-    :elem(($type === 'span' ? 'span' : ($type === 'a' || $href ? 'a' : 'button'))).nya-button.btn:if($href, [href=$href], [type=($type === 'span' ? undefined : $type)]):if($disabled, .disabled[disabled]) AS $node
+    :elem(($type === 'span' || $type === 'label' ? $type : ($type === 'a' || $href ? 'a' : 'button'))).nya-button.btn:if($href, [href=$href], [type=($type === 'span' ? undefined : $type)]):if($disabled, .disabled[disabled]):if($active, .active) AS $node
         @class +(Nya.Button.getClass($theme, $size, $class))
         span.nya-button__title AS $titleNode
             $title

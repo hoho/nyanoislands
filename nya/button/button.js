@@ -34,6 +34,18 @@
             return ret;
         },
 
+        active: function(val) {
+            var n = $B(this._n),
+                ret;
+            if (val === undefined) {
+                ret = n.hasClass('active');
+            } else {
+                n.toggleClass('active', !!val);
+                ret = this;
+            }
+            return ret;
+        },
+
         focus: function() {
             $B(this._n).emit('focus');
             return this;

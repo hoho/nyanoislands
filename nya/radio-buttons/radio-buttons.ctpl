@@ -1,0 +1,33 @@
+nya::radio-buttons $name $items $value=(null) $theme $size="m" $vertical $class $disabled $noAPI
+    // $items is an array of objects like {value: ..., title: ..., theme: ..., disabled: ...}
+    &|(typeof theme === 'undefined' ? '"radio-buttons.light.css"' : '"radio-buttons.' + theme + '.css"')|
+    &"radio-buttons.js"
+
+    div.nya-radio-buttons:if($vertical, .btn-group-vertical, .btn-group) AS $node
+        SET $btns ([])
+        EACH $item $items
+            // TODO: Probably make a copy of $items and coerce all values strings.
+            nya::button title=($item.title) theme=($item.theme || $theme) size=$size type="label" active=($item.value === $value) disabled=($disabled || $item.disabled) AS $btn
+                input[type="radio"][name=$name][value=($item.value)]:if(($item.value === $value), [checked]):if(($disabled || $item.disabled), [disabled]) AS $input
+                span.nya-radio-buttons__focus
+            JS
+                $btns.push([$btn, $input, $item]);
+
+    SET $ret ($noAPI ? undefined : new Nya.RadioButtons($node, $btns))
+    EXPOSE $ret
+
+    JS
+        $node._nya = $ret;
+        if ($ret) { $ret._val = $value; }
+        $B($node).on('change', function(e) {
+            var i,
+                btn,
+                a;
+            for (i = $btns.length; i--;) {
+                btn = $btns[i];
+                if (((a = btn[1] === e.target)) && $ret) {
+                    $ret._val = e.target.value;
+                }
+                btn[0].active(a);
+            }
+        });

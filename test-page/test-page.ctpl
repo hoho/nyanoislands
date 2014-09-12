@@ -11,7 +11,6 @@ page
             div.col-lg-12
                 h1#buttons
                     "Buttons"
-
         div.row
             div.col-lg-6
                 section
@@ -98,7 +97,6 @@ page
             div.col-lg-12
                 h1#checkables
                     "Checkboxes and radios"
-
         div.row
             div.col-lg-6
                 section[style="margin-bottom: 15px;"]
@@ -153,9 +151,79 @@ page
 
         div.row
             div.col-lg-12
+                h1#checkables
+                    "Radio buttons"
+        div.row
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="rb" items=([
+                        {value: 'val1', title: 'Btn1'},
+                        {value: 'val2', title: 'Btn2'},
+                        {value: 'val3', title: 'Btn3'},
+                        {value: 'val4', title: 'Btn4', theme: 'action'},
+                        {value: 'val5', title: 'Btn5', disabled: true}
+                    ]) value="val2"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="lrb" size="l" items=([
+                        {value: 'val1', title: 'Large1'},
+                        {value: 'val2', title: 'Large2'},
+                        {value: 'val3', title: 'Large3'},
+                        {value: 'val4', title: 'Large4', theme: 'action'},
+                        {value: 'val5', title: 'Large5', disabled: true}
+                    ]) value="val2"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="srb" size="s" items=([
+                        {value: 'val1', title: 'Small1'},
+                        {value: 'val2', title: 'Small2'},
+                        {value: 'val3', title: 'Small3'},
+                        {value: 'val4', title: 'Small4', theme: 'action'},
+                        {value: 'val5', title: 'Small5', disabled: true}
+                    ]) value="val2"
+
+            div.col-lg-2
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="rbv" vertical=(true) items=([
+                        {value: 'val1', title: 'Btn1'},
+                        {value: 'val2', title: 'Btn2'},
+                        {value: 'val3', title: 'Btn3'},
+                        {value: 'val4', title: 'Btn4', theme: 'action'},
+                        {value: 'val5', title: 'Btn5', disabled: true}
+                    ]) value="val2"
+                    " "
+                    nya::radio-buttons name="rbv2" vertical=(true) items=([
+                        {value: 'val1', title: 'Btn1'},
+                        {value: 'val2', title: 'Btn2'},
+                        {value: 'val3', title: 'Btn3'},
+                        {value: 'val4', title: 'Btn4', theme: 'action'},
+                        {value: 'val5', title: 'Btn5', disabled: true}
+                    ]) value="val2"
+
+            div.col-lg-2
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="lrbv" vertical=(true) size="l" items=([
+                        {value: 'val1', title: 'Large1'},
+                        {value: 'val2', title: 'Large2'},
+                        {value: 'val3', title: 'Large3'},
+                        {value: 'val4', title: 'Large4', theme: 'action'},
+                        {value: 'val5', title: 'Large5', disabled: true}
+                    ]) value="val2"
+
+            div.col-lg-2
+                section[style="margin-bottom: 15px;"]
+                    nya::radio-buttons name="srbv" theme="success" vertical=(true) size="s" items=([
+                        {value: 'val1', title: 'Small1'},
+                        {value: 'val2', title: 'Small2'},
+                        {value: 'val3', title: 'Small3'},
+                        {value: 'val4', title: 'Small4', theme: 'default'},
+                        {value: 'val5', title: 'Small5', disabled: true}
+                    ]) value="val2"
+
+        div.row
+            div.col-lg-12
                 h1#Forms
                     "Forms"
-
         div.row
             div.col-lg-6
                 section[style="margin-bottom: 15px;"]
@@ -282,7 +350,6 @@ page
             div.col-lg-12
                 h1#dropdowns
                     "Dropdowns"
-
         div.row
             div.col-lg-6
                 section

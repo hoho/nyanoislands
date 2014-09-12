@@ -770,6 +770,92 @@ $C.tpl["page"] = function() {
             .end(3)
             .div({"class": "row"})
                 .div({"class": "col-lg-12"})
+                    .elem("h1", {"id": "checkables"})
+                        .text("Radio buttons")
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-6"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "rb", ([
+                                                    {value: 'val1', title: 'Btn1'},
+                                                    {value: 'val2', title: 'Btn2'},
+                                                    {value: 'val3', title: 'Btn3'},
+                                                    {value: 'val4', title: 'Btn4', theme: 'action'},
+                                                    {value: 'val5', title: 'Btn5', disabled: true}
+                                                ]), "val2");
+                        })
+                    .end()
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "lrb", ([
+                                                    {value: 'val1', title: 'Large1'},
+                                                    {value: 'val2', title: 'Large2'},
+                                                    {value: 'val3', title: 'Large3'},
+                                                    {value: 'val4', title: 'Large4', theme: 'action'},
+                                                    {value: 'val5', title: 'Large5', disabled: true}
+                                                ]), "val2", undefined, "l");
+                        })
+                    .end()
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "srb", ([
+                                                    {value: 'val1', title: 'Small1'},
+                                                    {value: 'val2', title: 'Small2'},
+                                                    {value: 'val3', title: 'Small3'},
+                                                    {value: 'val4', title: 'Small4', theme: 'action'},
+                                                    {value: 'val5', title: 'Small5', disabled: true}
+                                                ]), "val2", undefined, "s");
+                        })
+                .end(2)
+                .div({"class": "col-lg-2"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "rbv", ([
+                                                    {value: 'val1', title: 'Btn1'},
+                                                    {value: 'val2', title: 'Btn2'},
+                                                    {value: 'val3', title: 'Btn3'},
+                                                    {value: 'val4', title: 'Btn4', theme: 'action'},
+                                                    {value: 'val5', title: 'Btn5', disabled: true}
+                                                ]), "val2", undefined, undefined, (true));
+                        })
+                        .text(" ")
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "rbv2", ([
+                                                    {value: 'val1', title: 'Btn1'},
+                                                    {value: 'val2', title: 'Btn2'},
+                                                    {value: 'val3', title: 'Btn3'},
+                                                    {value: 'val4', title: 'Btn4', theme: 'action'},
+                                                    {value: 'val5', title: 'Btn5', disabled: true}
+                                                ]), "val2", undefined, undefined, (true));
+                        })
+                .end(2)
+                .div({"class": "col-lg-2"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "lrbv", ([
+                                                    {value: 'val1', title: 'Large1'},
+                                                    {value: 'val2', title: 'Large2'},
+                                                    {value: 'val3', title: 'Large3'},
+                                                    {value: 'val4', title: 'Large4', theme: 'action'},
+                                                    {value: 'val5', title: 'Large5', disabled: true}
+                                                ]), "val2", undefined, "l", (true));
+                        })
+                .end(2)
+                .div({"class": "col-lg-2"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::radio-buttons"].call(new $ConkittyEnvClass(this), "srbv", ([
+                                                    {value: 'val1', title: 'Small1'},
+                                                    {value: 'val2', title: 'Small2'},
+                                                    {value: 'val3', title: 'Small3'},
+                                                    {value: 'val4', title: 'Small4', theme: 'default'},
+                                                    {value: 'val5', title: 'Small5', disabled: true}
+                                                ]), "val2", "success", "s", (true));
+                        })
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-12"})
                     .elem("h1", {"id": "Forms"})
                         .text("Forms")
             .end(3)
@@ -1116,13 +1202,13 @@ $C._tpl["nya::head__nav"] = function($items, $current) {
     .end(7);
 };
 
-$C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $class, $disabled, $noAPI) {
+$C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $class, $disabled, $active, $noAPI) {
     ($theme === undefined) && ($theme = "default");
     ($size === undefined) && ($size = "m");
     ($type === undefined) && ($type = "button");
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node, $titleNode;
     $C($ConkittyEnv.p)
-        .elem(function $C_button_4_5(){return $type==="span"?"span":$type==="a"||$href?"a":"button"}, function $C_button_4_5(){return{"class":$ConkittyClasses("nya-button btn",$disabled?"disabled":undefined),href:$href?$href:undefined,type:$href?undefined:$type==="span"?undefined:$type,disabled:$disabled?"disabled":undefined}})
+        .elem(function $C_button_4_5(){return $type==="span"||$type==="label"?$type:$type==="a"||$href?"a":"button"}, function $C_button_4_5(){return{"class":$ConkittyClasses("nya-button btn",$disabled?"disabled":undefined,$active?"active":undefined),href:$href?$href:undefined,type:$href?undefined:$type==="span"?undefined:$type,disabled:$disabled?"disabled":undefined}})
             .act(function() { $node = this; })
             .attr("class", function() { return $ConkittyChange(this, (Nya.Button.getClass($theme, $size, $class))); })
             .span({"class": "nya-button__title"})
@@ -1222,6 +1308,56 @@ $C._tpl["nya::radio"] = function($label, $name, $value, $size, $checked, $id, $i
     return $ConkittyTemplateRet;
 };
 
+$C._tpl["nya::radio-buttons"] = function($name, $items, $value, $theme, $size, $vertical, $class, $disabled, $noAPI) {
+    ($value === undefined) && ($value = (null));
+    ($size === undefined) && ($size = "m");
+    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node, $btns, $item, $btn, $input, $ret;
+    $C($ConkittyEnv.p)
+        .div(function $C_radio_buttons_6_5(){return{"class":$ConkittyClasses("nya-radio-buttons",$vertical?"btn-group-vertical":"btn-group")}})
+            .act(function() { $node = this; })
+            .act(function $C_radio_buttons_7_9() { $btns = ([]); })
+            .each(function $C_radio_buttons_8_21() { return $items; })
+                .act(function($C_) { $item = $C_; })
+                .act(function() {
+                    $btn = $C._tpl["nya::button"].call(new $ConkittyEnvClass(
+                        this,
+                        function() {
+                            return $C()
+                                .elem("input", function $C_radio_buttons_11_17(){return{type:"radio",name:$name,value:$item.value,checked:$item.value===$value?"checked":undefined,disabled:$disabled||$item.disabled?"disabled":undefined}})
+                                    .act(function() { $input = this; })
+                                .end()
+                                .span({"class": "nya-radio-buttons__focus"})
+                            .end(2); }
+                    ), ($item.title), ($item.theme || $theme), $size, "label", undefined, undefined, ($disabled || $item.disabled), ($item.value === $value));
+                })
+                .act(function() {
+                    $btns.push([$btn, $input, $item]);
+
+                })
+        .end(2)
+        .act(function $C_radio_buttons_16_5() { $ret = ($noAPI ? undefined : new Nya.RadioButtons($node, $btns)); })
+        .act(function() { $ConkittyTemplateRet = $ret; })
+        .act(function() {
+            $node._nya = $ret;
+            if ($ret) { $ret._val = $value; }
+            $B($node).on('change', function(e) {
+                var i,
+                    btn,
+                    a;
+                for (i = $btns.length; i--;) {
+                    btn = $btns[i];
+                    if (((a = btn[1] === e.target)) && $ret) {
+                        $ret._val = e.target.value;
+                    }
+                    btn[0].active(a);
+                }
+            });
+
+        })
+    .end();
+    return $ConkittyTemplateRet;
+};
+
 $C._tpl["nya::input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $class, $disabled, $noAPI) {
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $ret;
     $C($ConkittyEnv.p)
@@ -1299,14 +1435,14 @@ $C._tpl["nya::dropdown"] = function($title, $theme, $size, $class, $disabled, $n
                         .span({"class": "nya-button__title"})
                             .span({"class": "caret"})
                     .end(3); }
-            ), $title, $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, $noAPI);
+            ), $title, $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
         })
     .end();
 };
 
 }).apply(null, $C._$args);
 /*!
- * babydom v0.0.4, https://github.com/hoho/babydom
+ * babydom v0.0.5, https://github.com/hoho/babydom
  * (c) 2014 Marat Abdullin, MIT license
  */
 var $B = (function(document, encodeURIComponent, undefined) {
@@ -1373,7 +1509,7 @@ var $B = (function(document, encodeURIComponent, undefined) {
 
         while (node) {
             if ((($b = node.$b)) && ((h = $b[e.type]))) {
-                for (i = h.length; i--;) {
+                for (i = 0; i < h.length; i++) {
                     h[i].call(node, e);
                     if (next & 2) { return; }
                 }
@@ -1806,6 +1942,18 @@ window.Nya = (function(nyaProto) {
             return ret;
         },
 
+        active: function(val) {
+            var n = $B(this._n),
+                ret;
+            if (val === undefined) {
+                ret = n.hasClass('active');
+            } else {
+                n.toggleClass('active', !!val);
+                ret = this;
+            }
+            return ret;
+        },
+
         focus: function() {
             $B(this._n).emit('focus');
             return this;
@@ -1875,6 +2023,46 @@ window.Nya = (function(nyaProto) {
 /* global Nya */
 Nya.Radio = Nya.Checkbox.extend();
 Nya.Radio.getClass = Nya.Checkbox.getClass;
+
+/* global Nya */
+/* global $B */
+(function(Nya) {
+    'use strict';
+
+    Nya.RadioButtons = Nya.extend({
+        init: function (node, btns) {
+            this._n = node;
+            this._b = btns;
+        },
+
+        on: function (event, handler) {
+            $B(this._n).on(event, handler);
+            return this;
+        },
+
+        val: function (val) {
+            var ret = this,
+                i,
+                btn,
+                a;
+            if (val === undefined) {
+                ret = ret._val;
+            } else {
+                val += '';
+                if (val !== ret._val) {
+                    for (i = ret._b.length; i--;) {
+                        btn = ret._b[i];
+                        a = val === btn[2].value;
+                        btn[0].active(a);
+                        btn[1].checked = a;
+                    }
+                    ret._val = val;
+                }
+            }
+            return ret;
+        }
+    });
+})(Nya);
 
 /* global Nya */
 /* global $B */
