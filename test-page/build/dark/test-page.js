@@ -1165,7 +1165,19 @@ $C.tpl["page"] = function() {
                             .act(function() {
                                 $C._tpl["nya::dropdown"].call(new $ConkittyEnvClass(this), undefined, "danger");
                             })
-    .end(6);
+            .end(4)
+            .div({"class": "row"})
+                .div({"class": "col-lg-12"})
+                    .elem("h1", {"id": "dropdowns"})
+                        .text("Paginations")
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-6"})
+                    .elem("section", {"style": "margin-bottom: 15px;"})
+                        .act(function() {
+                            $C._tpl["nya::pagination"].call(new $ConkittyEnvClass(this), (50), (100), undefined, undefined, "s");
+                        })
+    .end(5);
 };
 
 $C._tpl["nya::head"] = function($title, $href, $avatar, $ahref) {
@@ -1437,6 +1449,60 @@ $C._tpl["nya::dropdown"] = function($title, $theme, $size, $class, $disabled, $n
             ), $title, $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
         })
     .end();
+};
+
+$C._tpl["nya::pagination"] = function($current, $total, $url, $theme, $size, $class, $noAPI) {
+    var $ConkittyEnv = $ConkittyGetEnv(this), $pages, $prev, $page;
+    return $C($ConkittyEnv.p)
+        .div({"class": "nya-pagination btn-group"})
+            .attr("class", function() { return $ConkittyChange(this, $class); })
+            .act(function() {
+                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "«", $theme, $size, undefined, undefined, undefined, ($current < 2));
+            })
+            .act(function $C_pagination_6_9() { $pages = ([]); })
+            .act(function() {
+                var i,
+                    j,
+                    _pages = {};
+
+                j = Math.min(1, $total);
+                for (i = 1; i <= j; i++) {
+                    $pages.push(i);
+                    _pages[i] = true;
+                }
+
+                i = Math.max(1, $current - 2 - Math.max(0, 2 - $total + $current));
+                j = Math.min($current + 2 + Math.max(0, 3 - $current), $total);
+                for (; i <= j; i++) {
+                    if (!(i in _pages)) {
+                        $pages.push(i);
+                        _pages[i] = true;
+                    }
+                }
+
+                for (i = Math.max(1, $total); i <= $total; i++) {
+                    if (!(i in _pages)) {
+                        $pages.push(i);
+                        _pages[i] = true;
+                    }
+                }
+            })
+            .act(function $C_pagination_33_9() { $prev = (0); })
+            .each(function $C_pagination_34_21() { return $pages; })
+                .act(function($C_) { $page = $C_; })
+                .test(function $C_pagination_35_18() { return ($page - $prev > 1); })
+                    .span({"class": "nya-pagination__sep"})
+                        .text("&nbsp;", true)
+                .end(2)
+                .act(function() {
+                    $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), $page, $theme, $size, undefined, undefined, undefined, undefined, ($page === $current));
+                })
+                .act(function $C_pagination_39_13() { $prev = $page; })
+            .end()
+            .act(function() {
+                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "»", $theme, $size, undefined, undefined, undefined, ($current >= $total));
+            })
+    .end(2);
 };
 
 }).apply(null, $C._$args);

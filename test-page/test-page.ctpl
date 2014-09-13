@@ -396,3 +396,13 @@ page
                     div.btn-group
                         nya::button title="Danger" theme="danger"
                         nya::dropdown theme="danger"
+
+
+        div.row
+            div.col-lg-12
+                h1#dropdowns
+                    "Paginations"
+        div.row
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(50) total=(100) size="s"

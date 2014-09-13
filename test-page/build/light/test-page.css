@@ -3680,3 +3680,8 @@ label.nya-radio,
   right: 5px;
   top: 3px;
 }
+
+.nya-pagination__sep {
+  float: left;
+  margin-left: 10px;
+}
