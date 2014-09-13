@@ -3681,7 +3681,26 @@ label.nya-radio,
   top: 3px;
 }
 
+.nya-pagination .nya-button .caret::after {
+  top: -7px;
+}
+.nya-pagination .nya-button:first-child .caret {
+  margin-right: -4px;
+}
+.nya-pagination .nya-button:first-child .caret::after {
+  -webkit-transform: rotate(135deg) scale(0.6);
+      -ms-transform: rotate(135deg) scale(0.6);
+          transform: rotate(135deg) scale(0.6);
+}
+.nya-pagination .nya-button:last-child .caret {
+  margin-left: -4px;
+}
+.nya-pagination .nya-button:last-child .caret::after {
+  -webkit-transform: rotate(-45deg) scale(0.6);
+      -ms-transform: rotate(-45deg) scale(0.6);
+          transform: rotate(-45deg) scale(0.6);
+}
 .nya-pagination__sep {
   float: left;
-  margin-left: 10px;
+  margin-left: 16px;
 }

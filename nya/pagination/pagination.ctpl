@@ -2,7 +2,6 @@ nya::pagination $current $total $url $theme $size $class $noAPI
     &|(typeof theme === 'undefined' ? '"pagination.light.css"' : '"pagination.' + theme + '.css"')|
     div.nya-pagination.btn-group
         @class +$class
-        nya::button title="«" theme=$theme size=$size disabled=($current < 2)
         SET $pages ([])
         JS
             var i,
@@ -30,11 +29,16 @@ nya::pagination $current $total $url $theme $size $class $noAPI
                     _pages[i] = true;
                 }
             }
+        nya::button title=(null) href=($url && $url(Math.max(1, $current - 5))) theme=$theme size=$size disabled=($current - 5 < 0)
+            span.nya-button__title
+                span.caret
         SET $prev (0)
         EACH $page $pages
             TEST ($page - $prev > 1)
                 span.nya-pagination__sep
                     """&nbsp;"""
-            nya::button title=$page theme=$theme size=$size active=($page === $current)
+            nya::button title=$page href=($url && $url($page)) theme=$theme size=$size active=($page === $current)
             SET $prev $page
-        nya::button title="»" theme=$theme size=$size disabled=($current >= $total)
+        nya::button title=(null) href=($url && $url(Math.min($total, $current + 5))) theme=$theme size=$size disabled=($current + 4 > $total)
+            span.nya-button__title
+                span.caret

@@ -1,5 +1,26 @@
+.nya-pagination .nya-button {
+  .caret::after {
+    top: -7px;
+  }
+  &:first-child .caret {
+    margin-right: -4px;
+
+    &::after {
+      transform: rotate(135deg) scale(.6);
+    }
+  }
+  &:last-child .caret {
+    margin-left: -4px;
+
+    &::after {
+      transform: rotate(-45deg) scale(.6);
+    }
+  }
+}
+
+
 .nya-pagination__sep {
   float: left;
 
-  margin-left: 10px;
+  margin-left: 16px;
 }

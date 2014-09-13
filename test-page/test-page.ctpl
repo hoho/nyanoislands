@@ -405,4 +405,26 @@ page
         div.row
             div.col-lg-6
                 section[style="margin-bottom: 15px;"]
-                    nya::pagination current=(50) total=(100) size="s"
+                    nya::pagination current=(5) total=(10)
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(2) total=(10) size="l"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(8) total=(10) size="s"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(3) total=(5) size="xs"
+
+            div.col-lg-6
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(5) total=(10) theme="action"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(2) total=(10) theme="success" size="l"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(8) total=(10) theme="warning" size="s"
+
+                section[style="margin-bottom: 15px;"]
+                    nya::pagination current=(3) total=(5) theme="info" size="xs"
