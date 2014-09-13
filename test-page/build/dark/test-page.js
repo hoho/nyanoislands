@@ -1483,7 +1483,7 @@ $C._tpl["nya::dropdown"] = function($title, $theme, $size, $class, $disabled, $n
                         .span({"class": "nya-button__title"})
                             .span({"class": "caret"})
                     .end(3); }
-            ), $title, $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
+            ), ($title || null), $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
         })
     .end();
 };
