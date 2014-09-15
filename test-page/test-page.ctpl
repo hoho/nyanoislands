@@ -1,5 +1,6 @@
 page
-    nya::head title="Examples" href="https://github.com/hoho/nyanoislands"
+    nya::head
+        nya::head__title title="Examples" href="https://github.com/hoho/nyanoislands"
         nya::head__nav ([
             {id: 'first', title: 'First', href: "javascript:alert('First');"},
             {id: 'second', title: 'Second', href: "javascript:alert('Second');"},
