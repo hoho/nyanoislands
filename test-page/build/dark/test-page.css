@@ -267,7 +267,7 @@ body {
   font-size: 15px;
   line-height: 1.42857143;
   color: #c8c8c8;
-  background-color: #272b30;
+  background-color: #3a3f44;
 }
 input,
 button,
@@ -311,7 +311,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #272b30;
+  background-color: #3a3f44;
   border: 1px solid #dddddd;
   border-radius: 3px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1458,7 +1458,7 @@ th {
   border-top: 2px solid #1c1e22;
 }
 .table .table {
-  background-color: #272b30;
+  background-color: #3a3f44;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3436,35 +3436,47 @@ fieldset[disabled] .btn-action.active {
   height: 50px;
   width: 50px;
 }
-.nya-head__nav {
-  display: inline-block;
-  font-size: 15px;
+.nya-head .nya-nav {
   font-weight: 500;
   height: 50px;
   line-height: 44px;
   padding: 0 20px;
-  vertical-align: top;
 }
-.nya-head__nav-item {
-  display: inline-block;
+.nya-head .nya-nav__item {
   padding-right: 30px;
 }
-.nya-head__nav-link {
-  border-top: 3px solid transparent;
+.nya-head .nya-nav__link {
   color: #c8c8c8;
+}
+
+.nya-nav {
+  display: inline-block;
+  font-size: 15px;
+  height: 36px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.nya-nav__item {
+  display: inline-block;
+  padding-right: 20px;
+}
+.nya-nav__link {
+  border-top: 3px solid transparent;
   display: inline-block;
   -webkit-transition: border-color 0.3s ease, color 0.3s ease;
           transition: border-color 0.3s ease, color 0.3s ease;
 }
-.nya-head__nav-link:hover {
+.nya-nav__link:hover {
   border-color: #ffffff;
   color: #ffffff;
   text-decoration: none;
 }
-.nya-head__nav-link:focus {
+.nya-nav__link:focus {
   box-shadow: none;
 }
-.nya-head__nav-item_current .nya-head__nav-link {
+.nya-nav__item_current .nya-nav__link {
   border-color: #c8c8c8;
   color: #c8c8c8;
 }

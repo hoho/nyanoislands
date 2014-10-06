@@ -13,17 +13,4 @@ nya::head__title $title $href="/"
 
 
 nya::head__nav $items $current
-    // `$items` is an array of objects like:
-    //     {id: '...', title: '...', href: '...'}
-    //     or
-    //     {id: '...', template: '...'}
-    ul.nya-head__nav
-        SET $hasCurrent
-        EACH $item $items
-            li.nya-head__nav-item:if((!$hasCurrent && $item.id === $current && (($hasCurrent = true))), .nya-head__nav-item_current)
-                CHOOSE
-                    WHEN ($item.template)
-                        CALL ($item.template) $item
-                    OTHERWISE
-                        a.nya-head__nav-link[href=($item.href)]
-                            ($item.title)
+    nya::nav $items $current

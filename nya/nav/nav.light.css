@@ -1,0 +1,31 @@
+.nya-nav {
+  display: inline-block;
+  font-size: 15px;
+  height: 36px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.nya-nav__item {
+  display: inline-block;
+  padding-right: 20px;
+}
+.nya-nav__link {
+  border-top: 3px solid transparent;
+  display: inline-block;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease;
+          transition: border-color 0.3s ease, color 0.3s ease;
+}
+.nya-nav__link:hover {
+  border-color: #2a6496;
+  color: #2a6496;
+  text-decoration: none;
+}
+.nya-nav__link:focus {
+  box-shadow: none;
+}
+.nya-nav__item_current .nya-nav__link {
+  border-color: #333333;
+  color: #333333;
+}

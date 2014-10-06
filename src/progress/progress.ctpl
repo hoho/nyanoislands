@@ -1,0 +1,10 @@
+nya::progress $value $title $theme="success" $striped $active
+    &|(typeof theme === 'undefined' ? '"progress.light.css"' : '"progress.' + theme + '.css"')|
+    div.nya-progress.progress
+        div[class=('progress-bar progress-bar-' + $theme + ($striped || $active ? ' progress-bar-striped' : '') + ($active ? ' active' : ''))]\
+                [role="progressbar"]\
+                [aria-valuenow=$value]\
+                [aria-valuemin="0"]\
+                [aria-valuemax="100"]\
+                [style=('width: ' + $value + '%')]
+            $title

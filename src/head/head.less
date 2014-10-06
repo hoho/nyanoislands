@@ -78,11 +78,7 @@
     width: @nya-head-height;
   }
 
-  &__nav {
-    display: inline-block;
-
-    font-size: 15px;
-
+  .nya-nav {
     font-weight: 500;
 
     height: @nya-head-height;
@@ -90,41 +86,13 @@
     line-height: @nya-head-height - 6;
 
     padding: 0 20px;
-
-    vertical-align: top;
   }
 
-  &__nav-item {
-    display: inline-block;
-
+  .nya-nav__item {
     padding-right: 30px;
   }
 
-  &__nav-link {
-    border-top: 3px solid transparent;
-
-    color: @text-color;
-
-    display: inline-block;
-
-    transition: border-color .3s ease, color .3s ease;
-  }
-
-  &__nav-link:hover {
-    border-color: @link-hover-color;
-
-    color: @link-hover-color;
-
-    text-decoration: none;
-  }
-
-  &__nav-link:focus {
-    box-shadow: none;
-  }
-
-  &__nav-item_current &__nav-link {
-    border-color: @text-color;
-
+  .nya-nav__link {
     color: @text-color;
   }
 }

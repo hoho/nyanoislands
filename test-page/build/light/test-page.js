@@ -1241,21 +1241,30 @@ $C._tpl["nya::head__title"] = function($title, $href) {
 };
 
 $C._tpl["nya::head__nav"] = function($items, $current) {
+    var $ConkittyEnv = $ConkittyGetEnv(this);
+    return $C($ConkittyEnv.p)
+        .act(function() {
+            $C._tpl["nya::nav"].call(new $ConkittyEnvClass(this), $items, $current);
+        })
+    .end();
+};
+
+$C._tpl["nya::nav"] = function($items, $current) {
     var $ConkittyEnv = $ConkittyGetEnv(this), $hasCurrent, $item;
     return $C($ConkittyEnv.p)
-        .ul({"class": "nya-head__nav"})
-            .each(function $C_head__nav_22_21() { return $items; })
+        .ul({"class": "nya-nav", "role": "tablist"})
+            .each(function $C_nav_9_21() { return $items; })
                 .act(function($C_) { $item = $C_; })
-                .li(function $C_head__nav_23_13(){return{"class":$ConkittyClasses("nya-head__nav-item",!$hasCurrent&&$item.id===$current&&($hasCurrent=true)?"nya-head__nav-item_current":undefined)}})
+                .li(function $C_nav_10_13(){return{"class":$ConkittyClasses("nya-nav__item",!$hasCurrent&&$item.id===$current&&($hasCurrent=true)?"nya-nav__item_current":undefined)}})
                     .choose()
-                        .when(function $C_head__nav_25_26() { return ($item.template); })
+                        .when(function $C_nav_12_26() { return ($item.template); })
                             .act(function() {
                                 $C.tpl[($item.template)].call(new $ConkittyEnvClass(this), $item);
                             })
                         .end()
                         .otherwise()
-                            .a(function $C_head__nav_28_25(){return{"class":"nya-head__nav-link",href:$item.href}})
-                                .text(function $C_head__nav_29_29() { return ($item.title); })
+                            .a(function $C_nav_15_25(){return{"class":"nya-nav__link",href:$item.href}})
+                                .text(function $C_nav_16_29() { return ($item.title); })
     .end(7);
 };
 

@@ -1,0 +1,16 @@
+nya::nav $items $current
+    &|(typeof theme === 'undefined' ? '"nav.light.css"' : '"nav.' + theme + '.css"')|
+    // `$items` is an array of objects like:
+    //     {id: '...', title: '...', href: '...'}
+    //     or
+    //     {id: '...', template: '...'}
+    ul.nya-nav[role="tablist"]
+        SET $hasCurrent
+        EACH $item $items
+            li.nya-nav__item:if((!$hasCurrent && $item.id === $current && (($hasCurrent = true))), .nya-nav__item_current)
+                CHOOSE
+                    WHEN ($item.template)
+                        CALL ($item.template) $item
+                    OTHERWISE
+                        a.nya-nav__link[href=($item.href)]
+                            ($item.title)

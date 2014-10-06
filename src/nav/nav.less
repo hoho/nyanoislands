@@ -1,0 +1,50 @@
+@nya-head-height: 50px;
+@_nya-head-arrow: 500px;
+
+.nya-nav {
+  display: inline-block;
+
+  font-size: 15px;
+
+  height: 36px;
+
+  line-height: 30px;
+
+  margin: 0;
+
+  padding: 0;
+
+  vertical-align: top;
+
+  &__item {
+    display: inline-block;
+
+    padding-right: 20px;
+  }
+
+  &__link {
+    border-top: 3px solid transparent;
+
+    display: inline-block;
+
+    transition: border-color .3s ease, color .3s ease;
+  }
+
+  &__link:hover {
+    border-color: @link-hover-color;
+
+    color: @link-hover-color;
+
+    text-decoration: none;
+  }
+
+  &__link:focus {
+    box-shadow: none;
+  }
+
+  &__item_current &__link {
+    border-color: @text-color;
+
+    color: @text-color;
+  }
+}

@@ -1,0 +1,5 @@
+nya::island $fly $border $class
+    &|(typeof theme === 'undefined' ? '"island.light.css"' : '"island.' + theme + '.css"')|
+    div.nya-island:if($fly, .nya-island_fly):if($border, .nya-island_border)
+        @class +$class
+        PAYLOAD
