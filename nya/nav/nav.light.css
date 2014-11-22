@@ -18,8 +18,8 @@
           transition: border-color 0.3s ease, color 0.3s ease;
 }
 .nya-nav__link:hover {
-  border-color: #2a6496;
-  color: #2a6496;
+  border-color: #23527c;
+  color: #23527c;
   text-decoration: none;
 }
 .nya-nav__link:focus {

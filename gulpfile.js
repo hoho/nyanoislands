@@ -14,8 +14,7 @@ var fs = require('fs');
 var path = require('path');
 var del = require('del');
 
-// TODO: Replace with require.resolve() as soon as Bootstrap will release a fix.
-var BOOTSTRAP_PATH = '.';
+var BOOTSTRAP_PATH = path.normalize(path.join(require.resolve('bootstrap'), '..', '..', '..'));
 var DEST = 'nya';
 
 
@@ -45,9 +44,9 @@ gulp.task('eslint', function() {
 gulp.task('copy-bootstrap', function() {
     return gulp
         .src([
-            path.join(BOOTSTRAP_PATH, 'node_modules/bootstrap/less/variables.less'),
-            path.join(BOOTSTRAP_PATH, 'node_modules/bootstrap/less/mixins.less'),
-            path.join(BOOTSTRAP_PATH, 'node_modules/bootstrap/less/**/mixins/*.less')
+            path.join(BOOTSTRAP_PATH, 'less/variables.less'),
+            path.join(BOOTSTRAP_PATH, 'less/mixins.less'),
+            path.join(BOOTSTRAP_PATH, 'less/**/mixins/*.less')
         ])
         .pipe(gulp.dest(path.join(DEST, '_bootstrap')));
 });
