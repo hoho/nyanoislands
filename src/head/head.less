@@ -10,26 +10,18 @@
 
   z-index: -1;
 
-  &__title {
-    color: @nya-head-arrow-text;
+  &__title-arrow {
+    bottom: 0;
 
-    display: inline-block;
-
-    font-size: 21px;
-
-    height: @nya-head-height;
-
-    line-height: @nya-head-height - 1;
+    left: 0;
 
     overflow: hidden;
 
-    padding: 0 30px 0 20px;
+    position: absolute;
 
-    position: relative;
+    right: 0;
 
-    text-shadow: 1px 1px rgba(0, 0, 0, .1);
-
-    z-index: 1;
+    top: 0;
 
     &:before {
       background-color: @nya-head-arrow-background;
@@ -55,6 +47,26 @@
 
       z-index: -1;
     }
+  }
+
+  &__title {
+    color: @nya-head-arrow-text;
+
+    display: inline-block;
+
+    font-size: 21px;
+
+    height: @nya-head-height;
+
+    line-height: @nya-head-height - 1;
+
+    padding: 0 30px 0 20px;
+
+    position: relative;
+
+    text-shadow: 1px 1px rgba(0, 0, 0, .1);
+
+    z-index: 1;
   }
 
   &__title:hover,

@@ -8,6 +8,7 @@ nya::head $avatar $ahref
 
 nya::head__title $title $href="/"
     a.nya-head__title[href=$href]
+        div.nya-head__title-arrow
         $title
         PAYLOAD
 

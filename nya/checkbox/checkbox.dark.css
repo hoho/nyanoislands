@@ -45,8 +45,7 @@ label.nya-checkbox,
 .nya-checkbox__flag-icon {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity .2s ease;
-          transition: opacity .2s ease;
+  transition: opacity .2s ease;
 }
 .nya-checkbox__input:checked + .nya-checkbox__flag > .nya-checkbox__flag-icon {
   opacity: 1;

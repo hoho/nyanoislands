@@ -1235,7 +1235,9 @@ $C._tpl["nya::head__title"] = function($title, $href) {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .a(function $C_head__title_10_5(){return{"class":"nya-head__title",href:$href}})
-            .text(function $C_head__title_11_10() { return $title; })
+            .div({"class": "nya-head__title-arrow"})
+            .end()
+            .text(function $C_head__title_12_10() { return $title; })
             .act(function() { $ConkittyEnv.l(this); })
     .end(2);
 };
