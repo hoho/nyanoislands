@@ -474,6 +474,37 @@ $C.tpl["page"] = function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Examples", "https://github.com/hoho/nyanoislands");
                         })
                         .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
+                                this,
+                                function() {
+                                    return $C()
+                                        .act(function() {
+                                            $C._tpl["nya::head__title-dropdown"].call(new $ConkittyEnvClass(this));
+                                        })
+                                    .end(); }
+                            ), "Test", "https://github.com/hoho/nyanoislands");
+                        })
+                        .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
+                                this,
+                                function() {
+                                    return $C()
+                                        .act(function() {
+                                            $C._tpl["nya::head__title-dropdown"].call(new $ConkittyEnvClass(this));
+                                        })
+                                    .end(); }
+                            ), "Test2", "https://github.com/hoho/nyanoislands");
+                        })
+                        .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test3", "https://github.com/hoho/nyanoislands");
+                        })
+                        .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test4", "https://github.com/hoho/nyanoislands");
+                        })
+                        .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test5", "https://github.com/hoho/nyanoislands");
+                        })
+                        .act(function() {
                             $C._tpl["nya::head__nav"].call(new $ConkittyEnvClass(this), ([
                                         {id: 'first', title: 'First', href: "javascript:alert('First');"},
                                         {id: 'second', title: 'Second', href: "javascript:alert('Second');"},
@@ -1239,6 +1270,13 @@ $C._tpl["nya::head__title"] = function($title, $href) {
             .end()
             .text(function $C_head__title_12_10() { return $title; })
             .act(function() { $ConkittyEnv.l(this); })
+    .end(2);
+};
+
+$C._tpl["nya::head__title-dropdown"] = function($items) {
+    var $ConkittyEnv = $ConkittyGetEnv(this);
+    return $C($ConkittyEnv.p)
+        .span({"class": "nya-head__title-dropdown-caret caret"})
     .end(2);
 };
 

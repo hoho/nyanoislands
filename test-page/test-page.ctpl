@@ -1,6 +1,13 @@
 page
     nya::head
         nya::head__title title="Examples" href="https://github.com/hoho/nyanoislands"
+        nya::head__title title="Test" href="https://github.com/hoho/nyanoislands"
+            nya::head__title-dropdown
+        nya::head__title title="Test2" href="https://github.com/hoho/nyanoislands"
+            nya::head__title-dropdown
+        nya::head__title title="Test3" href="https://github.com/hoho/nyanoislands"
+        nya::head__title title="Test4" href="https://github.com/hoho/nyanoislands"
+        nya::head__title title="Test5" href="https://github.com/hoho/nyanoislands"
         nya::head__nav ([
             {id: 'first', title: 'First', href: "javascript:alert('First');"},
             {id: 'second', title: 'Second', href: "javascript:alert('Second');"},
