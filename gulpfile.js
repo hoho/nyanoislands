@@ -28,7 +28,8 @@ gulp.task('eslint', function() {
         'quotes': [2, 'single'],
         'no-shadow-restricted-names': 0,
         'no-underscore-dangle': 0,
-        'key-spacing': 0
+        'key-spacing': 0,
+        'no-use-before-define': 0
     };
 
     gulp.src('src/**/*.js')

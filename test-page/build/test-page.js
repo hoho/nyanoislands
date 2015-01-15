@@ -478,22 +478,23 @@ $C.tpl["page"] = function() {
                                 this,
                                 function() {
                                     return $C()
-                                        .act(function() {
-                                            $C._tpl["nya::head__title-dropdown"].call(new $ConkittyEnvClass(this));
-                                        })
+                                        .text("Afsfsd")
+                                        .br()
+                                        .end()
+                                        .br()
+                                        .end()
+                                        .text("afsss")
                                     .end(); }
-                            ), "Test", "https://github.com/hoho/nyanoislands");
+                            ), "Test", "https://github.com/hoho/nyanoislands", ([]));
                         })
                         .act(function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
                                 this,
                                 function() {
                                     return $C()
-                                        .act(function() {
-                                            $C._tpl["nya::head__title-dropdown"].call(new $ConkittyEnvClass(this));
-                                        })
+                                        .text("OLOLO")
                                     .end(); }
-                            ), "Test2", "https://github.com/hoho/nyanoislands");
+                            ), "Test2", "https://github.com/hoho/nyanoislands", (true));
                         })
                         .act(function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test3", "https://github.com/hoho/nyanoislands");
@@ -1254,30 +1255,37 @@ $C._tpl["nya::head"] = function($avatar, $ahref) {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .div({"class": "nya-head"})
-            .test(function $C_head_4_15() { return $avatar; })
-                .a(function $C_head_5_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$ahref}})
+            .test(function $C_head_5_15() { return $avatar; })
+                .a(function $C_head_6_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$ahref}})
             .end(2)
             .act(function() { $ConkittyEnv.l(this); })
     .end(2);
 };
 
-$C._tpl["nya::head__title"] = function($title, $href) {
+$C._tpl["nya::head__title"] = function($title, $href, $dropdown) {
     ($href === undefined) && ($href = "/");
-    var $ConkittyEnv = $ConkittyGetEnv(this);
+    var $ConkittyEnv = $ConkittyGetEnv(this), $link, $elem;
     return $C($ConkittyEnv.p)
-        .a(function $C_head__title_10_5(){return{"class":"nya-head__title",href:$href}})
+        .a(function $C_head__title_11_5(){return{"class":"nya-head__title",href:$href}})
+            .act(function() { $link = this; })
             .div({"class": "nya-head__title-arrow"})
             .end()
-            .text(function $C_head__title_12_10() { return $title; })
-            .act(function() { $ConkittyEnv.l(this); })
-    .end(2);
-};
-
-$C._tpl["nya::head__title-dropdown"] = function($items) {
-    var $ConkittyEnv = $ConkittyGetEnv(this);
-    return $C($ConkittyEnv.p)
-        .span({"class": "nya-head__title-dropdown-caret caret"})
-    .end(2);
+            .text(function $C_head__title_13_10() { return $title; })
+            .choose()
+                .when(function $C_head__title_15_19() { return $dropdown; })
+                    .span({"class": "nya-head__title-dropdown-caret caret"})
+                    .end()
+                    .div({"class": "nya-head__title-dropdown"})
+                        .act(function() { $elem = this; })
+                        .act(function() { $ConkittyEnv.l(this); })
+                    .end()
+                    .act(function() {
+                        Nya.Head.dropdown($link, $elem);
+                    })
+                .end()
+                .otherwise()
+                    .act(function() { $ConkittyEnv.l(this); })
+    .end(4);
 };
 
 $C._tpl["nya::head__nav"] = function($items, $current) {
@@ -2078,6 +2086,92 @@ window.Nya = (function(nyaProto) {
     };
 
     return Nya;
+})();
+
+/* global $B */
+/* global Nya */
+(function() {
+    'use strict';
+
+    var initialized;
+    var DROPDOWN_OPEN_CLASS = 'nya-head__title_open';
+    var KEY_ESC = 27;
+
+    var dropdownLink,
+        dropdownElem;
+
+    Nya.Head = {
+        dropdown: function(link, elem) {
+            if (!initialized) {
+                // Update max height on resize.
+                window.addEventListener('resize', setMaxHeight, false);
+
+                var doc = $B(document);
+                doc.on('click', function() { hideDropdown(); });
+                // Handle keyboard events.
+                doc.on('keydown', function(e) {
+                    if (!dropdownLink || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+                        return;
+                    }
+
+                    if (e.which === KEY_ESC) {
+                        hideDropdown();
+                    }
+                });
+
+                initialized = true;
+            }
+
+            elem = $B(elem);
+
+            link = $B(link);
+            link.on('click', function(e) {
+                if (link.hasClass(DROPDOWN_OPEN_CLASS)) {
+                    hideDropdown();
+                } else {
+                    showDropdown(link, elem);
+                }
+                e.stopImmediatePropagation();
+                e.preventDefault();
+            });
+        }
+    };
+
+
+    function showDropdown(link, elem) {
+        hideDropdown();
+
+        link.addClass(DROPDOWN_OPEN_CLASS);
+
+        dropdownLink = link;
+        dropdownElem = elem;
+
+        setMaxHeight();
+
+        elem.emit('nya-dropdown');
+    }
+
+
+    function hideDropdown() {
+        if (dropdownLink) {
+            dropdownLink.removeClass(DROPDOWN_OPEN_CLASS);
+            dropdownLink = dropdownElem = undefined;
+        }
+    }
+
+
+    function setMaxHeight() {
+        if (!dropdownElem) { return; }
+
+        var MIN_MAX_HEIGHT = 100,
+            maxHeight = Math.round((window.innerHeight - 50) * 0.8);
+
+        if (maxHeight < MIN_MAX_HEIGHT) {
+            maxHeight = MIN_MAX_HEIGHT;
+        }
+
+        dropdownElem[0].style.maxHeight = maxHeight + 'px';
+    }
 })();
 
 /* global Nya */

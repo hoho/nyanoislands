@@ -148,4 +148,42 @@
   &__title-dropdown-caret {
     margin-left: 8px;
   }
+
+  &__title-dropdown {
+    background: @nya-island-background;
+
+    border: 1px solid @nya-island-border;
+
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+
+    color: @text-color;
+
+    cursor: default;
+
+    display: none;
+
+    font-size: 16px;
+
+    left: 0;
+
+    line-height: 20px;
+
+    position: absolute;
+
+    text-shadow: none;
+
+    top: 50px;
+  }
+
+  &__title_open {
+    .nya-head__title-dropdown {
+      display: block;
+    }
+
+    .nya-head__title-dropdown-caret:after {
+      top: -5px;
+
+      transform: rotate(225deg) scale(.6);
+    }
+  }
 }

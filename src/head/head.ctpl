@@ -1,20 +1,25 @@
 nya::head $avatar $ahref
     &|(typeof theme === 'undefined' ? '"head.light.css"' : '"head.' + theme + '.css"')|
+    &"head.js"
     div.nya-head
         TEST $avatar
             a.nya-head__avatar[style=('background-image: url(' + $avatar + ');')][href=$ahref]
         PAYLOAD
 
 
-nya::head__title $title $href="/"
-    a.nya-head__title[href=$href]
+nya::head__title $title $href="/" $dropdown
+    a.nya-head__title[href=$href] AS $link
         div.nya-head__title-arrow
         $title
-        PAYLOAD
-
-
-nya::head__title-dropdown $items
-    span.nya-head__title-dropdown-caret.caret
+        CHOOSE
+            WHEN $dropdown
+                span.nya-head__title-dropdown-caret.caret
+                div.nya-head__title-dropdown AS $elem
+                    PAYLOAD
+                JS
+                    Nya.Head.dropdown($link, $elem);
+            OTHERWISE
+                PAYLOAD
 
 
 nya::head__nav $items $current
