@@ -1265,7 +1265,7 @@ $C._tpl["nya::head__title"] = function($title, $href, $dropdown) {
     ($href === undefined) && ($href = "/");
     var $ConkittyEnv = $ConkittyGetEnv(this), $link, $elem;
     return $C($ConkittyEnv.p)
-        .a(function $C_head__title_11_5(){return{"class":"nya-head__title",href:$href}})
+        .a(function $C_head__title_11_5(){return{"class":"nya-head__title",href:$href,target:$dropdown?"_self":undefined}})
             .act(function() { $link = this; })
             .div({"class": "nya-head__title-arrow"})
             .end()

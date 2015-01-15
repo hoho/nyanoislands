@@ -8,7 +8,7 @@ nya::head $avatar $ahref
 
 
 nya::head__title $title $href="/" $dropdown
-    a.nya-head__title[href=$href] AS $link
+    a.nya-head__title[href=$href]:if($dropdown, [target="_self"]) AS $link
         div.nya-head__title-arrow
         $title
         CHOOSE
