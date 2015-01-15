@@ -1,7 +1,7 @@
 page
-    nya::head
+    nya::head avatar="sfsd"
         nya::head__title title="Examples" href="https://github.com/hoho/nyanoislands"
-        nya::head__title title="Test" href="https://github.com/hoho/nyanoislands" dropdown=([])
+        nya::head__title title="Test" href="https://github.com/hoho/nyanoislands" dropdown=(true)
             "Afsfsd"
             br
             br

@@ -485,7 +485,7 @@ $C.tpl["page"] = function() {
                                         .end()
                                         .text("afsss")
                                     .end(); }
-                            ), "Test", "https://github.com/hoho/nyanoislands", ([]));
+                            ), "Test", "https://github.com/hoho/nyanoislands", (true));
                         })
                         .act(function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
@@ -513,7 +513,7 @@ $C.tpl["page"] = function() {
                                     ]), "second");
                         })
                     .end(); }
-            ));
+            ), "sfsd");
         })
         .div({"class": "container"})
             .div({"class": "row"})
@@ -1255,11 +1255,10 @@ $C._tpl["nya::head"] = function($avatar, $ahref) {
     var $ConkittyEnv = $ConkittyGetEnv(this);
     return $C($ConkittyEnv.p)
         .div({"class": "nya-head"})
-            .test(function $C_head_5_15() { return $avatar; })
-                .a(function $C_head_6_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$ahref}})
-            .end(2)
             .act(function() { $ConkittyEnv.l(this); })
-    .end(2);
+            .test(function $C_head_6_15() { return $avatar; })
+                .a(function $C_head_7_13(){return{"class":"nya-head__avatar",style:"background-image: url("+$avatar+");",href:$ahref}})
+    .end(4);
 };
 
 $C._tpl["nya::head__title"] = function($title, $href, $dropdown) {
