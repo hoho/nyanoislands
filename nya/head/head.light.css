@@ -2,7 +2,8 @@
   background: #f6f5f3;
   border-bottom: 1px solid #dddddd;
   height: 51px;
-  z-index: -1;
+  padding-right: 50px;
+  position: relative;
 }
 .nya-head__title {
   color: #ffffff;
@@ -95,8 +96,10 @@
   background: #eeeeee no-repeat;
   background-size: cover;
   display: block;
-  float: right;
   height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 50px;
 }
 .nya-head .nya-nav {

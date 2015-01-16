@@ -8,7 +8,9 @@
 
   height: @nya-head-height + 1;
 
-  z-index: -1;
+  padding-right: @nya-head-height;
+
+  position: relative;
 
   &__title {
     color: @nya-head-arrow-text;
@@ -120,9 +122,13 @@
 
     display: block;
 
-    float: right;
-
     height: @nya-head-height;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
 
     width: @nya-head-height;
   }
