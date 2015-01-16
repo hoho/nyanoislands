@@ -7,9 +7,11 @@ nya::head $avatar $ahref
             a.nya-head__avatar[style=('background-image: url(' + $avatar + ');')][href=$ahref]
 
 
-nya::head__title $title $href="/" $dropdown
+nya::head__title $title $href="/" $dropdown $arrow=(true)
     a.nya-head__title[href=$href]:if($dropdown, [target="_self"]) AS $link
-        div.nya-head__title-arrow
+        TEST $arrow
+            @class +"nya-head__title_arrow"
+            div.nya-head__title-arrow
         $title
         CHOOSE
             WHEN $dropdown

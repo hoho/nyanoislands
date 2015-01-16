@@ -2,15 +2,22 @@ page
     nya::head avatar="sfsd"
         nya::head__title title="Examples" href="https://github.com/hoho/nyanoislands"
         nya::head__title title="Test" href="https://github.com/hoho/nyanoislands" dropdown=(true)
-            "Afsfsd"
+            "Some"
             br
+            "fancy"
             br
-            "afsss"
-        nya::head__title title="Test2" href="https://github.com/hoho/nyanoislands" dropdown=(true)
-            "OLOLO"
+            "dropdown"
+        nya::head__title title="Test2" href="https://github.com/hoho/nyanoislands"
         nya::head__title title="Test3" href="https://github.com/hoho/nyanoislands"
         nya::head__title title="Test4" href="https://github.com/hoho/nyanoislands"
-        nya::head__title title="Test5" href="https://github.com/hoho/nyanoislands"
+        nya::head__title title="Test5" href="https://github.com/hoho/nyanoislands" dropdown=(true)
+            "Another"
+            br
+            "fancy"
+            br
+            "dropdown (as fancy as the previous one)"
+        nya::head__title title="Test6" href="https://github.com/hoho/nyanoislands" dropdown=(true) arrow=(false)
+            "Hello"
         nya::head__nav ([
             {id: 'first', title: 'First', href: "javascript:alert('First');"},
             {id: 'second', title: 'Second', href: "javascript:alert('Second');"},

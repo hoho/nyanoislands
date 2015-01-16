@@ -478,23 +478,18 @@ $C.tpl["page"] = function() {
                                 this,
                                 function() {
                                     return $C()
-                                        .text("Afsfsd")
+                                        .text("Some")
                                         .br()
                                         .end()
+                                        .text("fancy")
                                         .br()
                                         .end()
-                                        .text("afsss")
+                                        .text("dropdown")
                                     .end(); }
                             ), "Test", "https://github.com/hoho/nyanoislands", (true));
                         })
                         .act(function() {
-                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
-                                this,
-                                function() {
-                                    return $C()
-                                        .text("OLOLO")
-                                    .end(); }
-                            ), "Test2", "https://github.com/hoho/nyanoislands", (true));
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test2", "https://github.com/hoho/nyanoislands");
                         })
                         .act(function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test3", "https://github.com/hoho/nyanoislands");
@@ -503,7 +498,28 @@ $C.tpl["page"] = function() {
                             $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test4", "https://github.com/hoho/nyanoislands");
                         })
                         .act(function() {
-                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(this), "Test5", "https://github.com/hoho/nyanoislands");
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
+                                this,
+                                function() {
+                                    return $C()
+                                        .text("Another")
+                                        .br()
+                                        .end()
+                                        .text("fancy")
+                                        .br()
+                                        .end()
+                                        .text("dropdown (as fancy as the previous one)")
+                                    .end(); }
+                            ), "Test5", "https://github.com/hoho/nyanoislands", (true));
+                        })
+                        .act(function() {
+                            $C._tpl["nya::head__title"].call(new $ConkittyEnvClass(
+                                this,
+                                function() {
+                                    return $C()
+                                        .text("Hello")
+                                    .end(); }
+                            ), "Test6", "https://github.com/hoho/nyanoislands", (true), (false));
                         })
                         .act(function() {
                             $C._tpl["nya::head__nav"].call(new $ConkittyEnvClass(this), ([
@@ -1261,17 +1277,20 @@ $C._tpl["nya::head"] = function($avatar, $ahref) {
     .end(4);
 };
 
-$C._tpl["nya::head__title"] = function($title, $href, $dropdown) {
+$C._tpl["nya::head__title"] = function($title, $href, $dropdown, $arrow) {
     ($href === undefined) && ($href = "/");
+    ($arrow === undefined) && ($arrow = (true));
     var $ConkittyEnv = $ConkittyGetEnv(this), $link, $elem;
     return $C($ConkittyEnv.p)
         .a(function $C_head__title_11_5(){return{"class":"nya-head__title",href:$href,target:$dropdown?"_self":undefined}})
             .act(function() { $link = this; })
-            .div({"class": "nya-head__title-arrow"})
-            .end()
-            .text(function $C_head__title_13_10() { return $title; })
+            .test(function $C_head__title_12_15() { return $arrow; })
+                .attr("class", function() { return $ConkittyChange(this, "nya-head__title_arrow"); })
+                .div({"class": "nya-head__title-arrow"})
+            .end(2)
+            .text(function $C_head__title_15_10() { return $title; })
             .choose()
-                .when(function $C_head__title_15_19() { return $dropdown; })
+                .when(function $C_head__title_17_19() { return $dropdown; })
                     .span({"class": "nya-head__title-dropdown-caret caret"})
                     .end()
                     .div({"class": "nya-head__title-dropdown"})

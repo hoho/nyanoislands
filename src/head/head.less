@@ -13,15 +13,15 @@
   position: relative;
 
   &__title {
-    color: @nya-head-arrow-text;
+    color: @text-color;
 
     display: inline-block;
 
-    font-size: 21px;
+    font-weight: 500;
 
     height: @nya-head-height;
 
-    line-height: @nya-head-height - 1;
+    line-height: @nya-head-height;
 
     margin-left: -15px;
 
@@ -29,9 +29,21 @@
 
     position: relative;
 
-    text-shadow: 1px 1px rgba(0, 0, 0, .1);
+    vertical-align: middle;
 
     z-index: 10;
+  }
+
+  &__title_arrow {
+    color: @nya-head-arrow-text;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: @nya-head-height - 1;
+
+    text-shadow: 1px 1px rgba(0, 0, 0, .1);
 
     &:first-child {
       margin-left: 0;
@@ -39,7 +51,7 @@
       padding-left: 20px;
     }
 
-    &-arrow {
+    .nya-head__title-arrow {
       bottom: 0;
 
       left: 0;
@@ -110,9 +122,12 @@
 
   &__title:hover,
   &__title:focus {
-    color: @nya-head-arrow-text;
-
     text-decoration: none;
+  }
+
+  &__title_arrow:hover,
+  &__title_arrow:focus {
+    color: @nya-head-arrow-text;
   }
 
   &__avatar {
@@ -170,7 +185,7 @@
 
     font-size: 16px;
 
-    left: 0;
+    left: 15px;
 
     line-height: 20px;
 
@@ -178,7 +193,7 @@
 
     text-shadow: none;
 
-    top: 50px;
+    top: @nya-head-height - 2;
   }
 
   &__title_open {
