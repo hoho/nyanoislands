@@ -1,7 +1,6 @@
 .nya-head {
   background: #3a3f44;
   border-bottom: 1px solid #232528;
-  height: 51px;
   padding-right: 50px;
   position: relative;
 }
@@ -137,6 +136,7 @@
   font-size: 16px;
   left: 15px;
   line-height: 20px;
+  overflow: auto;
   position: absolute;
   text-shadow: none;
   top: 48px;
