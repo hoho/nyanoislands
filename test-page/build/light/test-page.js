@@ -2182,7 +2182,7 @@ window.Nya = (function(nyaProto) {
         if (!dropdownElem) { return; }
 
         var MIN_MAX_HEIGHT = 100,
-            maxHeight = Math.round((window.innerHeight - 50) * 0.8);
+            maxHeight = Math.round((window.innerHeight - 50) * 0.9);
 
         if (maxHeight < MIN_MAX_HEIGHT) {
             maxHeight = MIN_MAX_HEIGHT;
