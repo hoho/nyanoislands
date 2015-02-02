@@ -578,37 +578,37 @@ $C.tpl["page"] = function() {
                     .elem("section")
                         .p()
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default", undefined, undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Default", undefined, undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Action", "action", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Action", "action", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                     .end(2)
                     .elem("section")
                         .p()
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Primary", "primary", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Success", "success", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Success", "success", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Info", "info", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Info", "info", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Warning", "warning", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Warning", "warning", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Danger", "danger", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Danger", "danger", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                             .text(" ")
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Link", "link", undefined, undefined, undefined, undefined, (true));
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Link", "link", undefined, undefined, undefined, undefined, undefined, (true));
                             })
                     .end(2)
                     .elem("section")
@@ -633,7 +633,7 @@ $C.tpl["page"] = function() {
                     .elem("section")
                         .p()
                             .act(function() {
-                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Block level button", undefined, "l", undefined, undefined, "btn-block");
+                                $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), "Block level button", undefined, "l", undefined, undefined, undefined, "btn-block");
                             })
                     .end(2)
                     .elem("section", {"style": "margin-bottom: 15px;"})
@@ -1334,13 +1334,13 @@ $C._tpl["nya::nav"] = function($items, $current) {
     .end(7);
 };
 
-$C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $class, $disabled, $active, $noAPI) {
+$C._tpl["nya::button"] = function($title, $theme, $size, $type, $href, $target, $class, $disabled, $active, $noAPI) {
     ($theme === undefined) && ($theme = "default");
     ($size === undefined) && ($size = "m");
     ($type === undefined) && ($type = "button");
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node, $titleNode;
     $C($ConkittyEnv.p)
-        .elem(function $C_button_4_5(){return $type==="span"||$type==="label"?$type:$type==="a"||$href?"a":"button"}, function $C_button_4_5(){return{"class":$ConkittyClasses("nya-button btn",$disabled?"disabled":undefined,$active?"active":undefined),href:$href?$href:undefined,type:$href?undefined:$type==="span"?undefined:$type,disabled:$disabled?"disabled":undefined}})
+        .elem(function $C_button_4_5(){return $type==="span"||$type==="label"?$type:$type==="a"||$href?"a":"button"}, function $C_button_4_5(){return{"class":$ConkittyClasses("nya-button btn",$disabled?"disabled":undefined,$active?"active":undefined),href:$href?$href:undefined,target:$href?$target:undefined,type:$href?undefined:$type==="span"?undefined:$type,disabled:$disabled?"disabled":undefined}})
             .act(function() { $node = this; })
             .attr("class", function() { return $ConkittyChange(this, (Nya.Button.getClass($theme, $size, $class))); })
             .test(function $C_button_6_14() { return ($title !== null); })
@@ -1461,7 +1461,7 @@ $C._tpl["nya::radio-buttons"] = function($name, $items, $value, $theme, $size, $
                                 .end()
                                 .span({"class": "nya-radio-buttons__focus"})
                             .end(2); }
-                    ), ($item.title), ($item.theme || $theme), $size, "label", undefined, undefined, ($disabled || $item.disabled), ($item.value === $value));
+                    ), ($item.title), ($item.theme || $theme), $size, "label", undefined, undefined, undefined, ($disabled || $item.disabled), ($item.value === $value));
                 })
                 .act(function() {
                     $btns.push([$btn, $input, $item]);
@@ -1567,7 +1567,7 @@ $C._tpl["nya::dropdown"] = function($title, $theme, $size, $class, $disabled, $n
                         .span({"class": "nya-button__title"})
                             .span({"class": "caret"})
                     .end(3); }
-            ), ($title || null), $theme, $size, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
+            ), ($title || null), $theme, $size, undefined, undefined, undefined, (($class ? $class + ' ' : '') + 'dropdown-toggle'), $disabled, undefined, $noAPI);
         })
     .end();
 };
@@ -1613,7 +1613,7 @@ $C._tpl["nya::pagination"] = function($current, $total, $url, $theme, $size, $cl
                             .span({"class": "nya-button__title"})
                                 .span({"class": "caret"})
                         .end(3); }
-                ), (null), $theme, $size, undefined, ($url && $url(Math.max(1, $current - 5))), undefined, ($current - 5 < 0));
+                ), (null), $theme, $size, undefined, ($url && $url(Math.max(1, $current - 5))), undefined, undefined, ($current - 5 < 0));
             })
             .act(function $C_pagination_35_9() { $prev = (0); })
             .each(function $C_pagination_36_21() { return $pages; })
@@ -1623,7 +1623,7 @@ $C._tpl["nya::pagination"] = function($current, $total, $url, $theme, $size, $cl
                         .text("&nbsp;", true)
                 .end(2)
                 .act(function() {
-                    $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), $page, $theme, $size, undefined, ($url && $url($page)), undefined, undefined, ($page === $current));
+                    $C._tpl["nya::button"].call(new $ConkittyEnvClass(this), $page, $theme, $size, undefined, ($url && $url($page)), undefined, undefined, undefined, ($page === $current));
                 })
                 .act(function $C_pagination_41_13() { $prev = $page; })
             .end()
@@ -1635,7 +1635,7 @@ $C._tpl["nya::pagination"] = function($current, $total, $url, $theme, $size, $cl
                             .span({"class": "nya-button__title"})
                                 .span({"class": "caret"})
                         .end(3); }
-                ), (null), $theme, $size, undefined, ($url && $url(Math.min($total, $current + 5))), undefined, ($current + 4 > $total));
+                ), (null), $theme, $size, undefined, ($url && $url(Math.min($total, $current + 5))), undefined, undefined, ($current + 4 > $total));
             })
     .end(2);
 };

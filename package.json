@@ -1,6 +1,6 @@
 {
     "name": "nyanoislands",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Here be dragons",
     "main": "./index.js",
     "directories": {
