@@ -1,6 +1,6 @@
 {
     "name": "nyanoislands",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "Here be dragons",
     "main": "./index.js",
     "directories": {
@@ -21,7 +21,7 @@
         "url": "https://github.com/hoho/nyanoislands/issues"
     },
     "dependencies": {
-        "babydom": "~0.0.5",
+        "babydom": "~0.0.6",
         "glob": "~4.3.4"
     },
     "devDependencies": {
