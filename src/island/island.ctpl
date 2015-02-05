@@ -1,5 +1,6 @@
 nya::island $fly $border $class
     &|(typeof theme === 'undefined' ? '"island.light.css"' : '"island.' + theme + '.css"')|
-    div.nya-island:if($fly, .nya-island_fly):if($border, .nya-island_border)
+    div.nya-island:if($fly, .nya-island_fly):if($border, .nya-island_border) AS $node
         @class +$class
         PAYLOAD
+    EXPOSE $node
