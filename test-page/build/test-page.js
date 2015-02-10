@@ -821,7 +821,7 @@ $C.tpl["page"] = function() {
             .end(3)
             .div({"class": "row"})
                 .div({"class": "col-lg-12"})
-                    .elem("h1", {"id": "checkables"})
+                    .elem("h1", {"id": "radios"})
                         .text("Radio buttons")
             .end(3)
             .div({"class": "row"})
@@ -907,7 +907,7 @@ $C.tpl["page"] = function() {
             .end(3)
             .div({"class": "row"})
                 .div({"class": "col-lg-12"})
-                    .elem("h1", {"id": "Forms"})
+                    .elem("h1", {"id": "forms"})
                         .text("Forms")
             .end(3)
             .div({"class": "row"})
@@ -1219,7 +1219,7 @@ $C.tpl["page"] = function() {
             .end(4)
             .div({"class": "row"})
                 .div({"class": "col-lg-12"})
-                    .elem("h1", {"id": "dropdowns"})
+                    .elem("h1", {"id": "pagination"})
                         .text("Paginations")
             .end(3)
             .div({"class": "row"})
@@ -1264,7 +1264,21 @@ $C.tpl["page"] = function() {
                         .act(function() {
                             $C._tpl["nya::pagination"].call(new $ConkittyEnvClass(this), (3), (5), undefined, "info", "xs");
                         })
-    .end(5);
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-12"})
+                    .elem("h1", {"id": "suggest"})
+                        .text("Suggestions")
+            .end(3)
+            .div({"class": "row"})
+                .div({"class": "col-lg-6"})
+                    .elem("section", {"style": "margin-bottom: 150px;"})
+                        .act(function() {
+                            $C._tpl["nya::suggested-input"].call(new $ConkittyEnvClass(this), undefined, undefined, undefined, undefined, undefined, undefined, undefined, (function() { return function(val) { return [val + ' ' + Math.random(), val + ' ' + Math.random(), val + ' ' + Math.random()]; }; }).apply(this, arguments));
+                        })
+                .end(2)
+                .div({"class": "col-lg-6"})
+    .end(4);
 };
 
 $C._tpl["nya::head"] = function($avatar, $ahref) {
@@ -1638,6 +1652,141 @@ $C._tpl["nya::pagination"] = function($current, $total, $url, $theme, $size, $cl
                 ), (null), $theme, $size, undefined, ($url && $url(Math.min($total, $current + 5))), undefined, undefined, ($current + 4 > $total));
             })
     .end(2);
+};
+
+$C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $suggest, $class, $disabled, $noAPI) {
+    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node, $input, $suggestNode;
+    $C($ConkittyEnv.p)
+        .div({"class": "nya-suggested-input"})
+            .act(function() { $node = this; })
+            .attr("class", function() { return $ConkittyChange(this, $class); })
+            .act(function() {
+                $input = $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), $name, $value, $size, $type, $placeholder, $id, $reset, "nya-suggested-input__input", $disabled, $noAPI);
+            })
+            .act(function() {
+                $suggestNode = $C._tpl["nya::island"].call(new $ConkittyEnvClass(
+                    this,
+                    function() {
+                        return $C()
+                            .act(function() {
+                                $C._tpl["nya::suggested-input__suggest"].call(new $ConkittyEnvClass(this));
+                            })
+                        .end(); }
+                ), (true), (true), "nya-suggested-input__suggest");
+            })
+        .end()
+        .act(function() {
+            if ($suggest) {
+                var value,
+                    timer,
+                    req,
+                    curData,
+                    curItem;
+
+                $B($suggestNode).on('mousedown', function(e) {
+                    e.preventDefault();
+                    var index = e.target._nyaIndex;
+                    if (curData && typeof index === 'number') {
+                        $input.val(curData[index]);
+                        renderSuggest();
+                    }
+                });
+
+                $input.on('focus blur keydown input', function(e) {
+                    var code = e.which;
+                    switch(true) {
+                        case e.type === 'blur' || code === 27:
+                            renderSuggest();
+                            break;
+                        case e.type === 'focus' || e.type === 'input':
+                            renderSuggest(null, $input.val());
+                            break;
+                        case e.type === 'keydown':
+                            if ((code === 38 || code === 40 || code === 13) && curData && curData.length) {
+                                if (code === 13) {
+                                    if (curItem !== undefined) {
+                                        e.preventDefault();
+                                        $input.val(curData[curItem]);
+                                        renderSuggest();
+                                    }
+                                } else {
+                                    e.preventDefault();
+                                    if (curItem === undefined) {
+                                        curItem = code === 38 ? curData.length - 1 : 0;
+                                    } else {
+                                        curItem += code === 38 ? -1 : 1;
+                                        if (curItem < 0) { curItem = curData.length - 1; }
+                                        if (curItem >= curData.length) { curItem = 0; }
+                                    }
+                                    renderSuggest(curData, value);
+                                }
+                            }
+                            break;
+                    }
+                });
+            }
+
+            function renderSuggest(data, val) {
+                if (timer) { clearTimeout(timer); timer = null; }
+                if (req && (typeof req.reject === 'function')) { req.reject(); }
+                req = null;
+
+                if (!data || !data.length || !val) {
+                    $B($node).removeClass('nya-suggested-input_suggested');
+                    curData = null;
+                }
+
+                if (!data && val) {
+                    curItem = undefined;
+                    timer = setTimeout(function() {
+                        timer = null;
+                        value = val;
+                        req = $suggest(val);
+                        if (req) {
+                            if (typeof req.then === 'function') {
+                                req.then(function(d) {
+                                    req = null;
+                                    if (val === value) { renderSuggest(d, val); }
+                                });
+                            } else {
+                                renderSuggest(req, val);
+                            }
+                        }
+                    }, 200);
+                } else if (data && data.length) {
+                    $B($node).addClass('nya-suggested-input_suggested');
+                    $suggestNode.innerHTML = '';
+                    curData = data;
+                    $C._tpl['nya::suggested-input__suggest'].call($suggestNode, val, data, curItem);
+                }
+            }
+        })
+        .act(function() { $ConkittyTemplateRet = $input; })
+    .end();
+    return $ConkittyTemplateRet;
+};
+
+$C._tpl["nya::island"] = function($fly, $border, $class) {
+    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node;
+    $C($ConkittyEnv.p)
+        .div(function $C_island_3_5(){return{"class":$ConkittyClasses("nya-island",$fly?"nya-island_fly":undefined,$border?"nya-island_border":undefined)}})
+            .act(function() { $node = this; })
+            .attr("class", function() { return $ConkittyChange(this, $class); })
+            .act(function() { $ConkittyEnv.l(this); })
+        .end()
+        .act(function() { $ConkittyTemplateRet = $node; })
+    .end();
+    return $ConkittyTemplateRet;
+};
+
+$C._tpl["nya::suggested-input__suggest"] = function($value, $data, $cur) {
+    var $ConkittyEnv = $ConkittyGetEnv(this), $index, $item;
+    return $C($ConkittyEnv.p)
+        .each(function $C_suggested_input__suggest_98_24() { return $data; })
+            .act(function($C_, $C__) { $item = $C_; $index = $C__; })
+            .div(function $C_suggested_input__suggest_99_9(){return{"class":$cur===(this._nyaIndex=$index)?"current":undefined}})
+                .text(function $C_suggested_input__suggest_100_14() { return $item; })
+    .end(3);
 };
 
 }).apply(null, $C._$args);
@@ -2398,3 +2547,4 @@ Nya.Radio.getClass = Nya.Checkbox.getClass;
         return (size ? ' input-' + size : '') + (extra ? ' ' + extra : '');
     };
 })();
+

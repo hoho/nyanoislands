@@ -169,7 +169,7 @@ page
 
         div.row
             div.col-lg-12
-                h1#checkables
+                h1#radios
                     "Radio buttons"
         div.row
             div.col-lg-6
@@ -240,7 +240,7 @@ page
 
         div.row
             div.col-lg-12
-                h1#Forms
+                h1#forms
                     "Forms"
         div.row
             div.col-lg-6
@@ -418,7 +418,7 @@ page
 
         div.row
             div.col-lg-12
-                h1#dropdowns
+                h1#pagination
                     "Paginations"
         div.row
             div.col-lg-6
@@ -446,3 +446,15 @@ page
 
                 section[style="margin-bottom: 15px;"]
                     nya::pagination current=(3) total=(5) theme="info" size="xs"
+
+
+        div.row
+            div.col-lg-12
+                h1#suggest
+                    "Suggestions"
+        div.row
+            div.col-lg-6
+                section[style="margin-bottom: 150px;"]
+                    nya::suggested-input suggest=(function() { return function(val) { return [val + ' ' + Math.random(), val + ' ' + Math.random(), val + ' ' + Math.random()]; }; })
+
+            div.col-lg-6

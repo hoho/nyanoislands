@@ -6138,3 +6138,36 @@ label.nya-radio,
   float: left;
   margin-left: 16px;
 }
+
+.nya-island {
+  background: #272b30;
+}
+.nya-island_border {
+  border: 1px solid #232528;
+}
+.nya-island_fly {
+  box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
+}
+
+.nya-suggested-input {
+  position: relative;
+}
+.nya-suggested-input__suggest {
+  display: none;
+  margin-top: -1px;
+  position: absolute;
+}
+.nya-suggested-input_suggested .nya-suggested-input__suggest {
+  display: block;
+}
+.nya-suggested-input__suggest .current,
+.nya-suggested-input__suggest .current:hover {
+  background: #52575c;
+}
+.nya-suggested-input__suggest div {
+  cursor: pointer;
+  padding: 5px 14px;
+}
+.nya-suggested-input__suggest div:hover {
+  background: #999999;
+}

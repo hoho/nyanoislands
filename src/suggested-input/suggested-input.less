@@ -1,0 +1,34 @@
+.nya-suggested-input {
+    position: relative;
+}
+
+
+.nya-suggested-input__suggest {
+    display: none;
+
+    margin-top: -1px;
+
+    position: absolute;
+}
+
+
+.nya-suggested-input_suggested .nya-suggested-input__suggest {
+    display: block;
+}
+
+
+.nya-suggested-input__suggest .current,
+.nya-suggested-input__suggest .current:hover
+{
+    background: @checkable-checked-background;
+}
+
+
+.nya-suggested-input__suggest div {
+    cursor: pointer;
+
+    padding: 5px 14px;
+}
+.nya-suggested-input__suggest div:hover {
+    background: @gray-lighter;
+}

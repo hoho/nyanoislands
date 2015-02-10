@@ -1,0 +1,100 @@
+nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $class $disabled $noAPI
+    &|(typeof theme === 'undefined' ? '"suggested-input.light.css"' : '"suggested-input.' + theme + '.css"')|
+    &"suggested-input.js"
+    div.nya-suggested-input AS $node
+        @class +$class
+        nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input__input" disabled=$disabled noAPI=$noAPI AS $input
+        nya::island fly=(true) border=(true) class="nya-suggested-input__suggest" AS $suggestNode
+            nya::suggested-input__suggest
+    JS
+        if ($suggest) {
+            var value,
+                timer,
+                req,
+                curData,
+                curItem;
+
+            $B($suggestNode).on('mousedown', function(e) {
+                e.preventDefault();
+                var index = e.target._nyaIndex;
+                if (curData && typeof index === 'number') {
+                    $input.val(curData[index]);
+                    renderSuggest();
+                }
+            });
+
+            $input.on('focus blur keydown input', function(e) {
+                var code = e.which;
+                switch(true) {
+                    case e.type === 'blur' || code === 27:
+                        renderSuggest();
+                        break;
+                    case e.type === 'focus' || e.type === 'input':
+                        renderSuggest(null, $input.val());
+                        break;
+                    case e.type === 'keydown':
+                        if ((code === 38 || code === 40 || code === 13) && curData && curData.length) {
+                            if (code === 13) {
+                                if (curItem !== undefined) {
+                                    e.preventDefault();
+                                    $input.val(curData[curItem]);
+                                    renderSuggest();
+                                }
+                            } else {
+                                e.preventDefault();
+                                if (curItem === undefined) {
+                                    curItem = code === 38 ? curData.length - 1 : 0;
+                                } else {
+                                    curItem += code === 38 ? -1 : 1;
+                                    if (curItem < 0) { curItem = curData.length - 1; }
+                                    if (curItem >= curData.length) { curItem = 0; }
+                                }
+                                renderSuggest(curData, value);
+                            }
+                        }
+                        break;
+                }
+            });
+        }
+
+        function renderSuggest(data, val) {
+            if (timer) { clearTimeout(timer); timer = null; }
+            if (req && (typeof req.reject === 'function')) { req.reject(); }
+            req = null;
+            
+            if (!data || !data.length || !val) {
+                $B($node).removeClass('nya-suggested-input_suggested');
+                curData = null;
+            }
+            
+            if (!data && val) { // Request the data.
+                curItem = undefined;
+                timer = setTimeout(function() {
+                    timer = null;
+                    value = val;
+                    req = $suggest(val);
+                    if (req) {
+                        if (typeof req.then === 'function') {
+                            req.then(function(d) {
+                                req = null;
+                                if (val === value) { renderSuggest(d, val); }
+                            });
+                        } else {
+                            renderSuggest(req, val);
+                        }
+                    }
+                }, 200);
+            } else if (data && data.length) { // Actually render.
+                $B($node).addClass('nya-suggested-input_suggested');
+                $suggestNode.innerHTML = '';
+                curData = data;
+                $C._tpl['nya::suggested-input__suggest'].call($suggestNode, val, data, curItem);
+            }
+        }
+    EXPOSE $input
+
+
+nya::suggested-input__suggest $value $data $cur
+    EACH $index $item $data
+        div:if(($cur === ((this._nyaIndex = $index))), .current)
+            $item
