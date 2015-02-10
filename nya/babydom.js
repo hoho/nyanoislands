@@ -1,5 +1,5 @@
 /*!
- * babydom v0.0.6, https://github.com/hoho/babydom
+ * babydom v0.0.7, https://github.com/hoho/babydom
  * (c) 2014 Marat Abdullin, MIT license
  */
 var $B = (function(document, encodeURIComponent, undefined) {
@@ -20,7 +20,7 @@ var $B = (function(document, encodeURIComponent, undefined) {
 
     function BabyDOM(nodeOrSelector, context) {
         var i,
-            nodes = nodeOrSelector instanceof Node ?
+            nodes = (nodeOrSelector instanceof Node) || (nodeOrSelector === window) ?
                 [nodeOrSelector]
                 :
                 (nodeOrSelector ? select(nodeOrSelector, context) : []);

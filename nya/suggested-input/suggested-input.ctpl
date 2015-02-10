@@ -1,35 +1,30 @@
 nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $class $disabled $noAPI
     &|(typeof theme === 'undefined' ? '"suggested-input.light.css"' : '"suggested-input.' + theme + '.css"')|
     &"suggested-input.js"
-    div.nya-suggested-input AS $node
-        @class +$class
-        nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input__input" disabled=$disabled noAPI=$noAPI AS $input
-        nya::island fly=(true) border=(true) class="nya-suggested-input__suggest" AS $suggestNode
-            nya::suggested-input__suggest
+    nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input" disabled=$disabled noAPI=$noAPI AS $input
+    nya::suggested-input__suggest
     JS
         if ($suggest) {
+            if (!Nya._suggestReady) {
+                Nya._suggestReady = true;
+                window.addEventListener('resize', setSuggestPosition);
+                window.addEventListener('mousemove', setSuggestPosition);
+            }
+
             var value,
                 timer,
                 req,
                 curData,
-                curItem;
+                curItem,
+                suggestNode;
 
-            $B($suggestNode).on('mousedown', function(e) {
-                e.preventDefault();
-                var index = e.target._nyaIndex;
-                if (curData && typeof index === 'number') {
-                    $input.val(curData[index]);
-                    renderSuggest();
-                }
-            });
-
-            $input.on('focus blur keydown input', function(e) {
+            $input.on('focus blur keydown input click', function(e) {
                 var code = e.which;
                 switch(true) {
                     case e.type === 'blur' || code === 27:
                         renderSuggest();
                         break;
-                    case e.type === 'focus' || e.type === 'input':
+                    case e.type === 'focus' || e.type === 'input' || (e.type === 'click' && !req && !timer && !curData):
                         renderSuggest(null, $input.val());
                         break;
                     case e.type === 'keydown':
@@ -63,7 +58,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
             req = null;
             
             if (!data || !data.length || !val) {
-                $B($node).removeClass('nya-suggested-input_suggested');
+                removeSuggest();
                 curData = null;
             }
             
@@ -85,16 +80,46 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                     }
                 }, 200);
             } else if (data && data.length) { // Actually render.
-                $B($node).addClass('nya-suggested-input_suggested');
-                $suggestNode.innerHTML = '';
                 curData = data;
-                $C._tpl['nya::suggested-input__suggest'].call($suggestNode, val, data, curItem);
+                removeSuggest();
+                suggestNode = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem);
+                $B(suggestNode).on('mousedown', function(e) {
+                    e.preventDefault();
+                    var index = e.target._nyaIndex;
+                    if (curData && typeof index === 'number') {
+                        $input.val(curData[index]);
+                        renderSuggest();
+                    }
+                });
+                Nya._curSuggest = [$input._n, suggestNode];
+                setSuggestPosition();
+            }
+        }
+
+        function removeSuggest() {
+            if (suggestNode && suggestNode.parentNode) {
+                suggestNode.parentNode.removeChild(suggestNode);
+                suggestNode = null;
+            }
+            Nya._curSuggest = null;
+        }
+
+        function setSuggestPosition() {
+            var suggest = Nya._curSuggest;
+            if (suggest) {
+                var pos = suggest[0].getBoundingClientRect();
+                suggest = suggest[1].style;
+                suggest.left = Math.round(pos.left) + window.pageXOffset + 'px';
+                suggest.top = Math.round(pos.bottom) + window.pageYOffset + 'px';
             }
         }
     EXPOSE $input
 
 
 nya::suggested-input__suggest $value $data $cur
-    EACH $index $item $data
-        div:if(($cur === ((this._nyaIndex = $index))), .current)
-            $item
+    TEST ($data && $data.length)
+        nya::island fly=(true) border=(true) class="nya-suggested-input__suggest" AS $suggestNode
+            EACH $index $item $data
+                div:if(($cur === ((this._nyaIndex = $index))), .current)
+                    $item
+    EXPOSE $suggestNode

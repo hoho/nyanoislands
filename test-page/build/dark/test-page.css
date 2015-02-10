@@ -6153,12 +6153,9 @@ label.nya-radio,
   position: relative;
 }
 .nya-suggested-input__suggest {
-  display: none;
   margin-top: -1px;
   position: absolute;
-}
-.nya-suggested-input_suggested .nya-suggested-input__suggest {
-  display: block;
+  z-index: 1000;
 }
 .nya-suggested-input__suggest .current,
 .nya-suggested-input__suggest .current:hover {
