@@ -1,4 +1,4 @@
-nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $disabled $noAPI
+nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $disabled $autocomplete $noAPI
     &|(typeof theme === 'undefined' ? '"input.light.css"' : '"input.' + theme + '.css"')|
     &"input.js"
 
@@ -7,7 +7,11 @@ nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $d
             div.nya-input.nya-input_reset AS $node
                 @class +(Nya.Input.getClass($size, $class))
 
-                .nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
+                .nya-input__input.form-control[name=$name][id=$id]\
+                    :if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])\
+                    [placeholder=$placeholder]\
+                    :if($disabled, .disabled[disabled])\
+                    :if($autocomplete, [autocomplete=$autocomplete]) AS $inputNode
                     TEST $rows
                         $value
                 span.close AS $resetNode
@@ -15,7 +19,11 @@ nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $d
                         """&times;"""
 
         OTHERWISE
-            .nya-input.nya-input__input.form-control[name=$name][id=$id]:if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])[placeholder=$placeholder]:if($disabled, .disabled[disabled]) AS $inputNode
+            .nya-input.nya-input__input.form-control[name=$name][id=$id]\
+                :if($rows, textarea:if(($rows !== true), [rows=$rows]), input[value=$value][type=$type])\
+                [placeholder=$placeholder]\
+                :if($disabled, .disabled[disabled])\
+                :if($autocomplete, [autocomplete=$autocomplete]) AS $inputNode
                 @class +(Nya.Input.getClass($size, $class))
 
                 TEST $rows
@@ -31,6 +39,6 @@ nya::_input $name $value $size="m" $type $placeholder $id $reset $rows $class $d
         return $noAPI ? undefined : new Nya.Input($node, $inputNode);
 
 
-nya::input $name $value $size $type $placeholder $id $reset $class $disabled $noAPI
-    nya::_input $name $value $size $type $placeholder $id $reset (false) $class $disabled $noAPI AS $ret
+nya::input $name $value $size $type $placeholder $id $reset $class $disabled $autocomplete $noAPI
+    nya::_input $name $value $size $type $placeholder $id $reset (false) $class $disabled $autocomplete $noAPI AS $ret
     EXPOSE $ret

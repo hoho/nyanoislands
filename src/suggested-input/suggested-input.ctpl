@@ -1,7 +1,7 @@
 nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $itemTemplate $class $disabled $noAPI
     &|(typeof theme === 'undefined' ? '"suggested-input.light.css"' : '"suggested-input.' + theme + '.css"')|
     &"suggested-input.js"
-    nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input" disabled=$disabled noAPI=$noAPI AS $input
+    nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input" disabled=$disabled autocomplete="off" noAPI=$noAPI AS $input
     nya::suggested-input__suggest
     JS
         if ($suggest) {
@@ -16,6 +16,8 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                 req,
                 curData,
                 curItem,
+                curValue,
+                suggestData,
                 suggestNode;
 
             $input.on('focus blur keydown input click', function(e) {
@@ -32,7 +34,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                             if (code === 13) {
                                 if (curItem !== undefined) {
                                     e.preventDefault();
-                                    $input.val(curData[curItem]);
+                                    $input.val(curValue);
                                     renderSuggest();
                                 }
                             } else {
@@ -64,6 +66,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
             
             if (!data && val) { // Request the data.
                 curItem = undefined;
+                curValue = '';
                 timer = setTimeout(function() {
                     timer = null;
                     value = val;
@@ -82,12 +85,14 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
             } else if (data && data.length) { // Actually render.
                 curData = data;
                 removeSuggest();
-                suggestNode = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
+                suggestData = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
+                suggestNode = suggestData.node;
+                curValue = suggestData.value;
                 $B(suggestNode).on('mousedown', function(e) {
                     e.preventDefault();
                     var index = e.target._nyaIndex;
                     if (curData && typeof index === 'number') {
-                        $input.val(curData[index]);
+                        $input.val(e.target._nyaValue);
                         renderSuggest();
                     }
                 });
@@ -118,13 +123,18 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
 
 nya::suggested-input__suggest $value $data $cur $itemTemplate
     TEST ($data && $data.length)
+        SET $currentVal ""
         nya::island fly=(true) border=(true) class="nya-suggested-input__suggest" AS $suggestNode
             EACH $index $item $data
                 SET $isCurrent (false)
                 div:if(($isCurrent = ($cur === ((this._nyaIndex = $index)))), .current)
                     CHOOSE
                         WHEN $itemTemplate
-                            CALL $itemTemplate $item $isCurrent
+                            CALL $itemTemplate $item $isCurrent AS $inputVal
                         OTHERWISE
-                                $item
-    EXPOSE $suggestNode
+                            $item
+                            SET $inputVal $item
+                    JS
+                        this._nyaValue = $inputVal;
+                        if ($isCurrent) { $currentVal = $inputVal; }
+    EXPOSE ({node: $suggestNode, value: $currentVal})

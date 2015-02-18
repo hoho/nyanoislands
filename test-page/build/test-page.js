@@ -1286,13 +1286,15 @@ $C.tpl["page"] = function() {
 };
 
 $C.tpl["suggest-item"] = function($val, $isCurrent) {
-    var $ConkittyEnv = $ConkittyGetEnv(this);
-    return $C($ConkittyEnv.p)
+    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet;
+    $C($ConkittyEnv.p)
         .text("Val: ")
         .text(function $C_suggest_item_467_6() { return $val; })
         .text(", Cur: ")
         .text(function $C_suggest_item_469_5() { return (!!$isCurrent); })
+        .act(function() { $ConkittyTemplateRet = ('Val: ' + $val); })
     .end();
+    return $ConkittyTemplateRet;
 };
 
 $C._tpl["nya::head"] = function($avatar, $ahref) {
@@ -1518,18 +1520,18 @@ $C._tpl["nya::radio-buttons"] = function($name, $items, $value, $theme, $size, $
     return $ConkittyTemplateRet;
 };
 
-$C._tpl["nya::input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $class, $disabled, $noAPI) {
+$C._tpl["nya::input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $class, $disabled, $autocomplete, $noAPI) {
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $ret;
     $C($ConkittyEnv.p)
         .act(function() {
-            $ret = $C._tpl["nya::_input"].call(new $ConkittyEnvClass(this), $name, $value, $size, $type, $placeholder, $id, $reset, (false), $class, $disabled, $noAPI);
+            $ret = $C._tpl["nya::_input"].call(new $ConkittyEnvClass(this), $name, $value, $size, $type, $placeholder, $id, $reset, (false), $class, $disabled, $autocomplete, $noAPI);
         })
         .act(function() { $ConkittyTemplateRet = $ret; })
     .end();
     return $ConkittyTemplateRet;
 };
 
-$C._tpl["nya::_input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $rows, $class, $disabled, $noAPI) {
+$C._tpl["nya::_input"] = function($name, $value, $size, $type, $placeholder, $id, $reset, $rows, $class, $disabled, $autocomplete, $noAPI) {
     ($size === undefined) && ($size = "m");
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $node, $inputNode, $resetNode;
     $C($ConkittyEnv.p)
@@ -1538,10 +1540,10 @@ $C._tpl["nya::_input"] = function($name, $value, $size, $type, $placeholder, $id
                 .div({"class": "nya-input nya-input_reset"})
                     .act(function() { $node = this; })
                     .attr("class", function() { return $ConkittyChange(this, (Nya.Input.getClass($size, $class))); })
-                    .elem(function $C__input_10_17(){return $rows?"textarea":"input"}, function $C__input_10_17(){return{"class":$ConkittyClasses("nya-input__input form-control",$disabled?"disabled":undefined),name:$name,id:$id,placeholder:$placeholder,rows:$rows?$rows!==true?$rows:undefined:undefined,value:$rows?undefined:$value,type:$rows?undefined:$type,disabled:$disabled?"disabled":undefined}})
+                    .elem(function $C__input_10_17(){return $rows?"textarea":"input"}, function $C__input_10_17(){return{"class":$ConkittyClasses("nya-input__input form-control",$disabled?"disabled":undefined),name:$name,id:$id,placeholder:$placeholder,rows:$rows?$rows!==true?$rows:undefined:undefined,value:$rows?undefined:$value,type:$rows?undefined:$type,disabled:$disabled?"disabled":undefined,autocomplete:$autocomplete?$autocomplete:undefined}})
                         .act(function() { $inputNode = this; })
-                        .test(function $C__input_11_27() { return $rows; })
-                            .text(function $C__input_12_26() { return $value; })
+                        .test(function $C__input_15_27() { return $rows; })
+                            .text(function $C__input_16_26() { return $value; })
                     .end(2)
                     .span({"class": "close"})
                         .act(function() { $resetNode = this; })
@@ -1549,11 +1551,11 @@ $C._tpl["nya::_input"] = function($name, $value, $size, $type, $placeholder, $id
                             .text("&times;", true)
             .end(4)
             .otherwise()
-                .elem(function $C__input_18_13(){return $rows?"textarea":"input"}, function $C__input_18_13(){return{"class":$ConkittyClasses("nya-input nya-input__input form-control",$disabled?"disabled":undefined),name:$name,id:$id,placeholder:$placeholder,rows:$rows?$rows!==true?$rows:undefined:undefined,value:$rows?undefined:$value,type:$rows?undefined:$type,disabled:$disabled?"disabled":undefined}})
+                .elem(function $C__input_22_13(){return $rows?"textarea":"input"}, function $C__input_22_13(){return{"class":$ConkittyClasses("nya-input nya-input__input form-control",$disabled?"disabled":undefined),name:$name,id:$id,placeholder:$placeholder,rows:$rows?$rows!==true?$rows:undefined:undefined,value:$rows?undefined:$value,type:$rows?undefined:$type,disabled:$disabled?"disabled":undefined,autocomplete:$autocomplete?$autocomplete:undefined}})
                     .act(function() { $inputNode = this; })
                     .attr("class", function() { return $ConkittyChange(this, (Nya.Input.getClass($size, $class))); })
-                    .test(function $C__input_21_23() { return $rows; })
-                        .text(function $C__input_22_22() { return $value; })
+                    .test(function $C__input_29_23() { return $rows; })
+                        .text(function $C__input_30_22() { return $value; })
         .end(4)
         .act(function() { $ConkittyTemplateRet = (function() {
             if ($resetNode) {
@@ -1672,7 +1674,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $input;
     $C($ConkittyEnv.p)
         .act(function() {
-            $input = $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), $name, $value, $size, $type, $placeholder, $id, $reset, "nya-suggested-input", $disabled, $noAPI);
+            $input = $C._tpl["nya::input"].call(new $ConkittyEnvClass(this), $name, $value, $size, $type, $placeholder, $id, $reset, "nya-suggested-input", $disabled, "off", $noAPI);
         })
         .act(function() {
             $C._tpl["nya::suggested-input__suggest"].call(new $ConkittyEnvClass(this));
@@ -1690,6 +1692,8 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                     req,
                     curData,
                     curItem,
+                    curValue,
+                    suggestData,
                     suggestNode;
 
                 $input.on('focus blur keydown input click', function(e) {
@@ -1706,7 +1710,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                                 if (code === 13) {
                                     if (curItem !== undefined) {
                                         e.preventDefault();
-                                        $input.val(curData[curItem]);
+                                        $input.val(curValue);
                                         renderSuggest();
                                     }
                                 } else {
@@ -1738,6 +1742,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
 
                 if (!data && val) {
                     curItem = undefined;
+                    curValue = '';
                     timer = setTimeout(function() {
                         timer = null;
                         value = val;
@@ -1756,12 +1761,14 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                 } else if (data && data.length) {
                     curData = data;
                     removeSuggest();
-                    suggestNode = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
+                    suggestData = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
+                    suggestNode = suggestData.node;
+                    curValue = suggestData.value;
                     $B(suggestNode).on('mousedown', function(e) {
                         e.preventDefault();
                         var index = e.target._nyaIndex;
                         if (curData && typeof index === 'number') {
-                            $input.val(curData[index]);
+                            $input.val(e.target._nyaValue);
                             renderSuggest();
                         }
                     });
@@ -1794,31 +1801,38 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
 };
 
 $C._tpl["nya::suggested-input__suggest"] = function($value, $data, $cur, $itemTemplate) {
-    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $suggestNode, $index, $item, $isCurrent;
+    var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $currentVal, $suggestNode, $index, $item, $isCurrent, $inputVal;
     $C($ConkittyEnv.p)
-        .test(function $C_suggested_input__suggest_120_10() { return ($data && $data.length); })
+        .test(function $C_suggested_input__suggest_125_10() { return ($data && $data.length); })
+            .act(function $C_suggested_input__suggest_126_9() { $currentVal = ""; })
             .act(function() {
                 $suggestNode = $C._tpl["nya::island"].call(new $ConkittyEnvClass(
                     this,
                     function() {
                         return $C()
-                            .each(function $C_suggested_input__suggest_122_32() { return $data; })
+                            .each(function $C_suggested_input__suggest_128_32() { return $data; })
                                 .act(function($C_, $C__) { $item = $C_; $index = $C__; })
-                                .act(function $C_suggested_input__suggest_123_17() { $isCurrent = (false); })
-                                .div(function $C_suggested_input__suggest_124_17(){return{"class":($isCurrent=$cur===(this._nyaIndex=$index))?"current":undefined}})
+                                .act(function $C_suggested_input__suggest_129_17() { $isCurrent = (false); })
+                                .div(function $C_suggested_input__suggest_130_17(){return{"class":($isCurrent=$cur===(this._nyaIndex=$index))?"current":undefined}})
                                     .choose()
-                                        .when(function $C_suggested_input__suggest_126_31() { return $itemTemplate; })
+                                        .when(function $C_suggested_input__suggest_132_31() { return $itemTemplate; })
                                             .act(function() {
-                                                $C.tpl[$itemTemplate].call(new $ConkittyEnvClass(this), $item, $isCurrent);
+                                                $inputVal = $C.tpl[$itemTemplate].call(new $ConkittyEnvClass(this), $item, $isCurrent);
                                             })
                                         .end()
                                         .otherwise()
-                                            .text(function $C_suggested_input__suggest_129_34() { return $item; })
-                        .end(5); }
+                                            .text(function $C_suggested_input__suggest_135_30() { return $item; })
+                                            .act(function $C_suggested_input__suggest_136_29() { $inputVal = $item; })
+                                    .end(2)
+                                    .act(function() {
+                                        this._nyaValue = $inputVal;
+                                        if ($isCurrent) { $currentVal = $inputVal; }
+                                    })
+                        .end(3); }
                 ), (true), (true), "nya-suggested-input__suggest");
             })
         .end()
-        .act(function() { $ConkittyTemplateRet = $suggestNode; })
+        .act(function() { $ConkittyTemplateRet = ({node: $suggestNode, value: $currentVal}); })
     .end();
     return $ConkittyTemplateRet;
 };

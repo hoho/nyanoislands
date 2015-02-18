@@ -467,3 +467,4 @@ suggest-item $val $isCurrent
     $val
     ", Cur: "
     (!!$isCurrent)
+    EXPOSE ('Val: ' + $val)
