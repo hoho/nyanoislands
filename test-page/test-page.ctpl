@@ -458,3 +458,12 @@ page
                     nya::suggested-input suggest=(function() { return function(val) { return [val + ' ' + Math.random(), val + ' ' + Math.random(), val + ' ' + Math.random()]; }; })
 
             div.col-lg-6
+                section[style="margin-bottom: 150px;"]
+                    nya::suggested-input itemTemplate="suggest-item" suggest=(function() { return function(val) { return [val + ' ' + Math.random(), val + ' ' + Math.random(), val + ' ' + Math.random()]; }; })
+
+
+suggest-item $val $isCurrent
+    "Val: "
+    $val
+    ", Cur: "
+    (!!$isCurrent)

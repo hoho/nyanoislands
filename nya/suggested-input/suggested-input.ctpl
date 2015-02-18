@@ -1,4 +1,4 @@
-nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $class $disabled $noAPI
+nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $itemTemplate $class $disabled $noAPI
     &|(typeof theme === 'undefined' ? '"suggested-input.light.css"' : '"suggested-input.' + theme + '.css"')|
     &"suggested-input.js"
     nya::input name=$name value=$value size=$size type=$type placeholder=$placeholder id=$id reset=$reset class="nya-suggested-input" disabled=$disabled noAPI=$noAPI AS $input
@@ -82,7 +82,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
             } else if (data && data.length) { // Actually render.
                 curData = data;
                 removeSuggest();
-                suggestNode = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem);
+                suggestNode = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
                 $B(suggestNode).on('mousedown', function(e) {
                     e.preventDefault();
                     var index = e.target._nyaIndex;
@@ -116,10 +116,15 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
     EXPOSE $input
 
 
-nya::suggested-input__suggest $value $data $cur
+nya::suggested-input__suggest $value $data $cur $itemTemplate
     TEST ($data && $data.length)
         nya::island fly=(true) border=(true) class="nya-suggested-input__suggest" AS $suggestNode
             EACH $index $item $data
-                div:if(($cur === ((this._nyaIndex = $index))), .current)
-                    $item
+                SET $isCurrent (false)
+                div:if(($isCurrent = ($cur === ((this._nyaIndex = $index)))), .current)
+                    CHOOSE
+                        WHEN $itemTemplate
+                            CALL $itemTemplate $item $isCurrent
+                        OTHERWISE
+                                $item
     EXPOSE $suggestNode
