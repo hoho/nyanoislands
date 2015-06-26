@@ -34,7 +34,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                             if (code === 13) {
                                 if (curItem !== undefined) {
                                     e.preventDefault();
-                                    $input.val(curValue);
+                                    setInputVal(curValue);
                                     renderSuggest();
                                 }
                             } else {
@@ -52,6 +52,16 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                         break;
                 }
             });
+        }
+
+        function setInputVal(val) {
+            if (typeof val === 'function') {
+                val = val();
+            }
+            if (val !== undefined) {
+                $input.val(val);
+            }
+            removeSuggest();
         }
 
         function renderSuggest(data, val) {
@@ -92,7 +102,7 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
                     e.preventDefault();
                     var index = e.target._nyaIndex;
                     if (curData && typeof index === 'number') {
-                        $input.val(e.target._nyaValue);
+                        setInputVal(e.target._nyaValue);
                         renderSuggest();
                     }
                 });
@@ -112,10 +122,15 @@ nya::suggested-input $name $value $size $type $placeholder $id $reset $suggest $
         function setSuggestPosition() {
             var suggest = Nya._curSuggest;
             if (suggest) {
-                var pos = suggest[0].getBoundingClientRect();
-                suggest = suggest[1].style;
-                suggest.left = Math.round(pos.left) + window.pageXOffset + 'px';
-                suggest.top = Math.round(pos.bottom) + window.pageYOffset + 'px';
+                for (var parent = suggest[0].parentNode; parent && parent !== document.body; parent = parent.parentNode);
+                if (parent) {
+                    var pos = suggest[0].getBoundingClientRect();
+                    suggest = suggest[1].style;
+                    suggest.left = Math.round(pos.left) + window.pageXOffset + 'px';
+                    suggest.top = Math.round(pos.bottom) + window.pageYOffset + 'px';
+                } else {
+                    removeSuggest();
+                }
             }
         }
     EXPOSE $input
