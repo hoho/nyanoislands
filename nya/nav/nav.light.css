@@ -14,7 +14,8 @@
 .nya-nav__link {
   border-top: 3px solid transparent;
   display: inline-block;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease;
+          transition: border-color 0.3s ease, color 0.3s ease;
 }
 .nya-nav__link:hover {
   border-color: #23527c;

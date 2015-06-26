@@ -1514,7 +1514,6 @@ $C._tpl["nya::radio-buttons"] = function($name, $items, $value, $theme, $size, $
                     btn[0].active(a);
                 }
             });
-
         })
     .end();
     return $ConkittyTemplateRet;
@@ -1710,7 +1709,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                                 if (code === 13) {
                                     if (curItem !== undefined) {
                                         e.preventDefault();
-                                        $input.val(curValue);
+                                        setInputVal(curValue);
                                         renderSuggest();
                                     }
                                 } else {
@@ -1730,6 +1729,16 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                 });
             }
 
+            function setInputVal(val) {
+                if (typeof val === 'function') {
+                    val = val();
+                }
+                if (val !== undefined) {
+                    $input.val(val);
+                }
+                removeSuggest();
+            }
+
             function renderSuggest(data, val) {
                 if (timer) { clearTimeout(timer); timer = null; }
                 if (req && (typeof req.reject === 'function')) { req.reject(); }
@@ -1740,7 +1749,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                     curData = null;
                 }
 
-                if (!data && val) {
+                if (!data && val) {                     
                     curItem = undefined;
                     curValue = '';
                     timer = setTimeout(function() {
@@ -1758,7 +1767,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                             }
                         }
                     }, 200);
-                } else if (data && data.length) {
+                } else if (data && data.length) {                    
                     curData = data;
                     removeSuggest();
                     suggestData = $C._tpl['nya::suggested-input__suggest'].call(document.body, val, data, curItem, $itemTemplate);
@@ -1768,7 +1777,7 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
                         e.preventDefault();
                         var index = e.target._nyaIndex;
                         if (curData && typeof index === 'number') {
-                            $input.val(e.target._nyaValue);
+                            setInputVal(e.target._nyaValue);
                             renderSuggest();
                         }
                     });
@@ -1788,10 +1797,15 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
             function setSuggestPosition() {
                 var suggest = Nya._curSuggest;
                 if (suggest) {
-                    var pos = suggest[0].getBoundingClientRect();
-                    suggest = suggest[1].style;
-                    suggest.left = Math.round(pos.left) + window.pageXOffset + 'px';
-                    suggest.top = Math.round(pos.bottom) + window.pageYOffset + 'px';
+                    for (var parent = suggest[0].parentNode; parent && parent !== document.body; parent = parent.parentNode);
+                    if (parent) {
+                        var pos = suggest[0].getBoundingClientRect();
+                        suggest = suggest[1].style;
+                        suggest.left = Math.round(pos.left) + window.pageXOffset + 'px';
+                        suggest.top = Math.round(pos.bottom) + window.pageYOffset + 'px';
+                    } else {
+                        removeSuggest();
+                    }
                 }
             }
         })
@@ -1803,26 +1817,26 @@ $C._tpl["nya::suggested-input"] = function($name, $value, $size, $type, $placeho
 $C._tpl["nya::suggested-input__suggest"] = function($value, $data, $cur, $itemTemplate) {
     var $ConkittyEnv = $ConkittyGetEnv(this), $ConkittyTemplateRet, $currentVal, $suggestNode, $index, $item, $isCurrent, $inputVal;
     $C($ConkittyEnv.p)
-        .test(function $C_suggested_input__suggest_125_10() { return ($data && $data.length); })
-            .act(function $C_suggested_input__suggest_126_9() { $currentVal = ""; })
+        .test(function $C_suggested_input__suggest_140_10() { return ($data && $data.length); })
+            .act(function $C_suggested_input__suggest_141_9() { $currentVal = ""; })
             .act(function() {
                 $suggestNode = $C._tpl["nya::island"].call(new $ConkittyEnvClass(
                     this,
                     function() {
                         return $C()
-                            .each(function $C_suggested_input__suggest_128_32() { return $data; })
+                            .each(function $C_suggested_input__suggest_143_32() { return $data; })
                                 .act(function($C_, $C__) { $item = $C_; $index = $C__; })
-                                .act(function $C_suggested_input__suggest_129_17() { $isCurrent = (false); })
-                                .div(function $C_suggested_input__suggest_130_17(){return{"class":($isCurrent=$cur===(this._nyaIndex=$index))?"current":undefined}})
+                                .act(function $C_suggested_input__suggest_144_17() { $isCurrent = (false); })
+                                .div(function $C_suggested_input__suggest_145_17(){return{"class":($isCurrent=$cur===(this._nyaIndex=$index))?"current":undefined}})
                                     .choose()
-                                        .when(function $C_suggested_input__suggest_132_31() { return $itemTemplate; })
+                                        .when(function $C_suggested_input__suggest_147_31() { return $itemTemplate; })
                                             .act(function() {
                                                 $inputVal = $C.tpl[$itemTemplate].call(new $ConkittyEnvClass(this), $item, $isCurrent);
                                             })
                                         .end()
                                         .otherwise()
-                                            .text(function $C_suggested_input__suggest_135_30() { return $item; })
-                                            .act(function $C_suggested_input__suggest_136_29() { $inputVal = $item; })
+                                            .text(function $C_suggested_input__suggest_150_30() { return $item; })
+                                            .act(function $C_suggested_input__suggest_151_29() { $inputVal = $item; })
                                     .end(2)
                                     .act(function() {
                                         this._nyaValue = $inputVal;
@@ -2552,7 +2566,7 @@ Nya.Radio.getClass = Nya.Checkbox.getClass;
             } else {
                 val += '';
                 if (val !== ret._val) {
-                    for (i = ret._b.length; i--;) {
+                    for (i = ret._b.length; i--; ) {
                         btn = ret._b[i];
                         a = val === btn[2].value;
                         btn[0].active(a);

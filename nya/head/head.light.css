@@ -37,6 +37,7 @@
 }
 .nya-head__title_arrow .nya-head__title-arrow:before {
   background-color: #5cb85c;
+  background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
   background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%);
   box-shadow: 1px -1px 0px rgba(0, 0, 0, 0.1);
   content: '';
