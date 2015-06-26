@@ -25,7 +25,7 @@
             } else {
                 val += '';
                 if (val !== ret._val) {
-                    for (i = ret._b.length; i--;) {
+                    for (i = ret._b.length; i--; ) {
                         btn = ret._b[i];
                         a = val === btn[2].value;
                         btn[0].active(a);
