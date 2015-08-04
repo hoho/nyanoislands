@@ -88,8 +88,8 @@ gulp.task('test-pages', ['build'], function() {
     var nyanoislands = require('./index.js');
 
     ['', 'light', 'dark'].forEach(function(theme) {
-        var cssFilter = gulpFilter('**/*.css');
-        var jsFilter = gulpFilter(['**/*.js']);
+        var cssFilter = gulpFilter('**/*.css', {restore: true});
+        var jsFilter = gulpFilter('**/*.js', {restore: true});
 
         return gulp.src('test-page/test-page.ctpl')
             .pipe(conkitty({
@@ -101,10 +101,10 @@ gulp.task('test-pages', ['build'], function() {
             }))
             .pipe(cssFilter)
             .pipe(concat('test-page.css'))
-            .pipe(cssFilter.restore())
+            .pipe(cssFilter.restore)
             .pipe(jsFilter)
             .pipe(concat('test-page.js'))
-            .pipe(jsFilter.restore())
+            .pipe(jsFilter.restore)
             .pipe(add('test-page.html', fs.readFileSync('test-page/test-page.html', {encoding: 'utf8'})))
             .pipe(gulp.dest(path.join('test-page', 'build', theme)));
     });

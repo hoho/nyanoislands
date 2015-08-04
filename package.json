@@ -22,19 +22,19 @@
     },
     "dependencies": {
         "babydom": "~0.0.7",
-        "glob": "~5.0.10"
+        "glob": "~5.0.14"
     },
     "devDependencies": {
         "gulp": "~3.9.0",
-        "gulp-eslint": "~0.14.0",
+        "gulp-eslint": "~1.0.0",
         "gulp-autoprefixer": "~2.3.1",
         "gulp-less": "~3.0.3",
         "gulp-add": "~0.0.2",
         "gulp-conkitty": "~0.5.15",
-        "gulp-filter": "~2.0.2",
+        "gulp-filter": "~3.0.0",
         "gulp-concat": "~2.6.0",
         "bootstrap": "~3.3.5",
-        "lodash": "~3.9.3",
+        "lodash": "~3.10.1",
         "del": "~1.2.0"
     }
 }
