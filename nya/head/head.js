@@ -42,6 +42,12 @@
                     showDropdown(link, elem);
                 }
                 e.stopImmediatePropagation();
+                // Nested links are evil, but let's support them.
+                for (var i = e.target; i && (i !== link[0]); i = i.parentNode) {
+                    if (i.tagName === 'A') {
+                        return;
+                    }
+                }
                 e.preventDefault();
             });
         }
